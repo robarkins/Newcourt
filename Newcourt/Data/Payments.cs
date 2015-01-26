@@ -16,7 +16,7 @@ namespace Newcourt.Data
     {
         public int PaymentID { get; set; }
         public int SupplierID { get; set; }
-        public int BankAccountID { get; set; }
+        public string BankAccountCode { get; set; }
         public string Username { get; set; }
         public decimal Amount { get; set; }
         public Nullable<System.DateTime> TimeProcessed { get; set; }

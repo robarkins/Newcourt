@@ -62,6 +62,11 @@ namespace Newcourt.Views
             AddTab(new PaymentsCtrl());
         }
 
+        private void btnBankAccounts_Click(object sender, EventArgs e)
+        {
+            AddTab(new BankAccountBrowseCtrl());
+        }
+
         private void btnCompanyInfo_Click(object sender, EventArgs e)
         {
             CompanyInfoDialogFrm frm = new CompanyInfoDialogFrm();
@@ -74,11 +79,6 @@ namespace Newcourt.Views
             {
                 tcMain.TabPages.Remove(tcMain.SelectedTab);
             }
-        }
-
-        private void btnBankAccounts_Click(object sender, EventArgs e)
-        {
-            AddTab(new PaymentsSummaryReportCtrl());
         }
     }
 }

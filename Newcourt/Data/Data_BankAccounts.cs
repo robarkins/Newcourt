@@ -8,7 +8,7 @@ namespace Newcourt.Data
 {
     public class Data_BankAccounts
     {
-        public int BankAccountID { get; set; }
+        public String BankAccountCode { get; set; }
         public String BankAccountName { get; set; }
         public String BIC { get; set; }
         public String IBAN { get; set; }
@@ -23,7 +23,7 @@ namespace Newcourt.Data
                     return (from a in ctx.BankAccounts
                             select new Data_BankAccounts()
                             {
-                                BankAccountID = a.BankAccountID,
+                                BankAccountCode = a.BankAccountCode,
                                 BankAccountName = a.BankAccountName,
                                 BIC = a.BIC,
                                 IBAN = a.IBAN,
@@ -38,41 +38,39 @@ namespace Newcourt.Data
             }
         }
 
-        public static void SaveBankAccounts(List<Data_BankAccounts> bankAccounts)
+        public static void SaveBankAccount(Data_BankAccounts bankAccount)
         {
             try
             {
                 using (NewcourtEntities ctx = new NewcourtEntities())
                 {
-                    foreach(var i in bankAccounts)
-                    {
-                        BankAccounts record = ctx.BankAccounts.FirstOrDefault(a => a.BankAccountID == i.BankAccountID);
+                    BankAccounts record = ctx.BankAccounts.FirstOrDefault(a => a.BankAccountCode == bankAccount.BankAccountCode);
 
-                        if (record != null)
-                        {
-                            record.BankAccountName = i.BankAccountName;
-                            record.BIC = i.BIC;
-                            record.IBAN = i.IBAN;
-                            record.OIN = i.OIN;
-                        }
-                        else
-                        {
-                            
-                        }
+                    if (record != null)
+                    {
+                        record.BankAccountName = bankAccount.BankAccountName;
+                        record.BIC = bankAccount.BIC;
+                        record.IBAN = bankAccount.IBAN;
+                        record.OIN = bankAccount.OIN;
                     }
+                    else
+                    {
+                        ctx.BankAccounts.Add(new BankAccounts()
+                        {
+                            BankAccountCode = bankAccount.BankAccountCode,
+                            BankAccountName = bankAccount.BankAccountName,
+                            BIC = bankAccount.BIC,
+                            IBAN = bankAccount.IBAN,
+                            OIN = bankAccount.IBAN
+                        });
+                    }
+
+                    ctx.SaveChanges();
                 }
             }
             catch(Exception ex)
             {
                 throw ex;
-            }
-        }
-
-        public String CodeName
-        {
-            get
-            {
-                return String.Format("{0} - {1}", BankAccountID, BankAccountName);
             }
         }
     }

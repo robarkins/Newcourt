@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Newcourt.Views
 {
-    public partial class MasterDialogFrm : Form
+    public partial class MasterDialogFrm: Form
     {
         public MasterDialogFrm()
         {

@@ -43,4 +43,4 @@ C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.CompanyInfoDialogFrm.r
 C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.BankAccountBrowseCtrl.resources
 C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.MasterReportCtrl.resources
 C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.PaymentsSummaryReportCtrl.resources
-C:\Development\Newcourt\Newcourt\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.BankAccountDialogFrm.resources

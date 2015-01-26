@@ -41,8 +41,10 @@
             this.btnPayments = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ddbSystem = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnBankAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSystemParams = new System.Windows.Forms.ToolStripMenuItem();
+            this.ddbBank = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBankAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTabControl.SuspendLayout();
             this.ucToolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +76,8 @@
             // ucToolStrip1
             // 
             this.ucToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbBank,
+            this.toolStripSeparator2,
             this.ddbSuppliers,
             this.toolStripSeparator1,
             this.ddbSystem});
@@ -131,7 +135,6 @@
             // ddbSystem
             // 
             this.ddbSystem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBankAccounts,
             this.btnSystemParams});
             this.ddbSystem.Image = ((System.Drawing.Image)(resources.GetObject("ddbSystem.Image")));
             this.ddbSystem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -139,13 +142,6 @@
             this.ddbSystem.Name = "ddbSystem";
             this.ddbSystem.Size = new System.Drawing.Size(123, 36);
             this.ddbSystem.Text = "System Setup";
-            // 
-            // btnBankAccounts
-            // 
-            this.btnBankAccounts.Name = "btnBankAccounts";
-            this.btnBankAccounts.Size = new System.Drawing.Size(200, 30);
-            this.btnBankAccounts.Text = "Bank Accounts";
-            this.btnBankAccounts.Click += new System.EventHandler(this.btnBankAccounts_Click);
             // 
             // btnSystemParams
             // 
@@ -155,6 +151,28 @@
             this.btnSystemParams.Size = new System.Drawing.Size(200, 30);
             this.btnSystemParams.Text = "Company Information";
             this.btnSystemParams.Click += new System.EventHandler(this.btnCompanyInfo_Click);
+            // 
+            // ddbBank
+            // 
+            this.ddbBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBankAccounts});
+            this.ddbBank.Image = ((System.Drawing.Image)(resources.GetObject("ddbBank.Image")));
+            this.ddbBank.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbBank.Name = "ddbBank";
+            this.ddbBank.Size = new System.Drawing.Size(62, 36);
+            this.ddbBank.Text = "Bank";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // btnBankAccounts
+            // 
+            this.btnBankAccounts.Name = "btnBankAccounts";
+            this.btnBankAccounts.Size = new System.Drawing.Size(153, 22);
+            this.btnBankAccounts.Text = "Bank Accounts";
+            this.btnBankAccounts.Click += new System.EventHandler(this.btnBankAccounts_Click);
             // 
             // Main
             // 
@@ -189,6 +207,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnSystemParams;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem btnPayments;
+        private System.Windows.Forms.ToolStripDropDownButton ddbBank;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnBankAccounts;
     }
 }

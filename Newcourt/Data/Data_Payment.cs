@@ -10,7 +10,7 @@ namespace Newcourt.Data
     {
         public int PaymentID { get; set; }
         public int SupplierID { get; set; }
-        public int BankAccountID { get; set; }
+        public String BankAccountCode { get; set; }
         public String Username { get; set; }
         public decimal Amount { get; set; }
         public DateTime? TimeProcessed { get; set; }
@@ -29,7 +29,7 @@ namespace Newcourt.Data
                         ctx.Payments.Add(new Payments()
                         {
                             SupplierID = i.SupplierID,
-                            BankAccountID = i.BankAccountID,
+                            BankAccountCode = i.BankAccountCode,
                             Username = i.Username,
                             Amount = i.Amount
                         });

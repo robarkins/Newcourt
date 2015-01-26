@@ -19,7 +19,7 @@ namespace Newcourt.Data
             this.Payments = new HashSet<Payments>();
         }
     
-        public int BankAccountID { get; set; }
+        public string BankAccountCode { get; set; }
         public string BankAccountName { get; set; }
         public string BIC { get; set; }
         public string IBAN { get; set; }

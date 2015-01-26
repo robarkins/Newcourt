@@ -124,12 +124,7 @@ namespace Newcourt.Controls
 
                     if (suppliers != null)
                     {
-                        int bankAccountId = 0;
-
-                        if (!int.TryParse(luBankAccounts.SelectedValue.ToString(), out bankAccountId))
-                        {
-                            throw new Exception("Bank Account ID is not a valid Int32 value!");
-                        }
+                        String bankAccountCode = luBankAccounts.SelectedValue.ToString();
 
                         foreach (var i in suppliers)
                         {
@@ -138,7 +133,7 @@ namespace Newcourt.Controls
                                 payments.Add(new Data_Payment()
                                 {
                                     SupplierID = i.SupplierID,
-                                    BankAccountID = bankAccountId,
+                                    BankAccountCode = bankAccountCode,
                                     Username = Global.Username,
                                     Amount = i.PaymentAmount ?? 0
                                 });
@@ -147,7 +142,7 @@ namespace Newcourt.Controls
 
                         Data_Payment.SavePayments(payments);
 
-                        String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountId, dtPaymentDate.Value, Global.Username);
+                        String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username);
                         using (StreamWriter sw = new StreamWriter(dlgSaveFile.FileName))
                         {
                             sw.WriteLine(xml);

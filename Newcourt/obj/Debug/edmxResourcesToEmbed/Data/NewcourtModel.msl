@@ -1,29 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="NewcourtModelStoreContainer" CdmEntityContainer="NewcourtEntities">
-    <EntitySetMapping Name="BankAccounts">
-      <EntityTypeMapping TypeName="NewcourtModel.BankAccounts">
-        <MappingFragment StoreEntitySet="BankAccounts">
-          <ScalarProperty Name="OIN" ColumnName="OIN" />
-          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
-          <ScalarProperty Name="BIC" ColumnName="BIC" />
-          <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
-          <ScalarProperty Name="BankAccountID" ColumnName="BankAccountID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Payments">
-      <EntityTypeMapping TypeName="NewcourtModel.Payments">
-        <MappingFragment StoreEntitySet="Payments">
-          <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="BankAccountID" ColumnName="BankAccountID" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Suppliers">
       <EntityTypeMapping TypeName="NewcourtModel.Suppliers">
         <MappingFragment StoreEntitySet="Suppliers">
@@ -80,5 +57,28 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
+    <EntitySetMapping Name="BankAccounts">
+      <EntityTypeMapping TypeName="NewcourtModel.BankAccounts">
+        <MappingFragment StoreEntitySet="BankAccounts">
+          <ScalarProperty Name="OIN" ColumnName="OIN" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="BIC" ColumnName="BIC" />
+          <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+          <ScalarProperty Name="BankAccountCode" ColumnName="BankAccountCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="NewcourtModel.Payments">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="BankAccountCode" ColumnName="BankAccountCode" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

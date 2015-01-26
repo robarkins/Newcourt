@@ -7,9 +7,9 @@
     <Schema Namespace="NewcourtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BankAccounts">
           <Key>
-            <PropertyRef Name="BankAccountID" />
+            <PropertyRef Name="BankAccountCode" />
           </Key>
-          <Property Name="BankAccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BankAccountCode" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="BankAccountName" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="BIC" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="IBAN" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -21,7 +21,7 @@
           </Key>
           <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SupplierID" Type="int" Nullable="false" />
-          <Property Name="BankAccountID" Type="int" Nullable="false" />
+          <Property Name="BankAccountCode" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Amount" Type="numeric" Precision="15" Scale="2" Nullable="false" />
           <Property Name="TimeProcessed" Type="datetime" />
@@ -77,19 +77,19 @@
           <Property Name="IsAdmin" Type="tinyint" Nullable="false" />
           <Property Name="LastLoggedIn" Type="datetime" />
         </EntityType>
-        <Association Name="FK__Payments__BankAc__267ABA7A">
+        <Association Name="FK__Payments__BankAc__3E52440B">
           <End Role="BankAccounts" Type="Self.BankAccounts" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BankAccounts">
-              <PropertyRef Name="BankAccountID" />
+              <PropertyRef Name="BankAccountCode" />
             </Principal>
             <Dependent Role="Payments">
-              <PropertyRef Name="BankAccountID" />
+              <PropertyRef Name="BankAccountCode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Suppli__25869641">
+        <Association Name="FK__Payments__Suppli__3D5E1FD2">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Userna__276EDEB3">
+        <Association Name="FK__Payments__Userna__3F466844">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,7 +126,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="GenerateSEPAPaymentXML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BankAccountID" Type="int" Mode="In" />
+          <Parameter Name="BankAccountCode" Type="nvarchar" Mode="In" />
           <Parameter Name="PaymentDate" Type="datetime" Mode="In" />
           <Parameter Name="Username" Type="nvarchar" Mode="In" />
         </Function>
@@ -137,15 +137,15 @@
           <EntitySet Name="SupplierTypes" EntityType="Self.SupplierTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemParameters" EntityType="Self.SystemParameters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Payments__BankAc__267ABA7A" Association="Self.FK__Payments__BankAc__267ABA7A">
+          <AssociationSet Name="FK__Payments__BankAc__3E52440B" Association="Self.FK__Payments__BankAc__3E52440B">
             <End Role="BankAccounts" EntitySet="BankAccounts" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payments__Suppli__25869641" Association="Self.FK__Payments__Suppli__25869641">
+          <AssociationSet Name="FK__Payments__Suppli__3D5E1FD2" Association="Self.FK__Payments__Suppli__3D5E1FD2">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payments__Userna__276EDEB3" Association="Self.FK__Payments__Userna__276EDEB3">
+          <AssociationSet Name="FK__Payments__Userna__3F466844" Association="Self.FK__Payments__Userna__3F466844">
             <End Role="Users" EntitySet="Users" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
@@ -159,59 +159,34 @@
     <edmx:ConceptualModels>
       <Schema Namespace="NewcourtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="NewcourtEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BankAccounts" EntityType="NewcourtModel.BankAccounts" />
-          <EntitySet Name="Payments" EntityType="NewcourtModel.Payments" />
           <EntitySet Name="Suppliers" EntityType="NewcourtModel.Suppliers" />
           <EntitySet Name="SupplierTypes" EntityType="NewcourtModel.SupplierTypes" />
           <EntitySet Name="SystemParameters" EntityType="NewcourtModel.SystemParameters" />
           <EntitySet Name="Users" EntityType="NewcourtModel.Users" />
-          <AssociationSet Name="FK__Payments__BankAc__2645B050" Association="NewcourtModel.FK__Payments__BankAc__2645B050">
-            <End Role="BankAccounts" EntitySet="BankAccounts" />
-            <End Role="Payments" EntitySet="Payments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Payments__Suppli__25518C17" Association="NewcourtModel.FK__Payments__Suppli__25518C17">
-            <End Role="Suppliers" EntitySet="Suppliers" />
-            <End Role="Payments" EntitySet="Payments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Payments__Userna__2739D489" Association="NewcourtModel.FK__Payments__Userna__2739D489">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Payments" EntitySet="Payments" />
-          </AssociationSet>
           <AssociationSet Name="FK__Suppliers__Suppl__17F790F9" Association="NewcourtModel.FK__Suppliers__Suppl__17F790F9">
             <End Role="SupplierTypes" EntitySet="SupplierTypes" />
             <End Role="Suppliers" EntitySet="Suppliers" />
           </AssociationSet>
           <FunctionImport Name="GenerateSEPAPaymentXML" ReturnType="Collection(String)">
-            <Parameter Name="BankAccountID" Mode="In" Type="Int32" />
+            <Parameter Name="BankAccountCode" Mode="In" Type="String" />
             <Parameter Name="PaymentDate" Mode="In" Type="DateTime" />
             <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="BankAccounts" EntityType="NewcourtModel.BankAccounts" />
+          <EntitySet Name="Payments" EntityType="NewcourtModel.Payments" />
+          <AssociationSet Name="FK__Payments__BankAc__3E52440B" Association="NewcourtModel.FK__Payments__BankAc__3E52440B">
+            <End Role="BankAccounts" EntitySet="BankAccounts" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Suppli__3D5E1FD2" Association="NewcourtModel.FK__Payments__Suppli__3D5E1FD2">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Userna__3F466844" Association="NewcourtModel.FK__Payments__Userna__3F466844">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="BankAccounts">
-          <Key>
-            <PropertyRef Name="BankAccountID" />
-          </Key>
-          <Property Name="BankAccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BankAccountName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="BIC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="OIN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__BankAc__2645B050" FromRole="BankAccounts" ToRole="Payments" />
-        </EntityType>
-        <EntityType Name="Payments">
-          <Key>
-            <PropertyRef Name="PaymentID" />
-          </Key>
-          <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SupplierID" Type="Int32" Nullable="false" />
-          <Property Name="BankAccountID" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
-          <Property Name="TimeProcessed" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="BankAccounts" Relationship="NewcourtModel.FK__Payments__BankAc__2645B050" FromRole="Payments" ToRole="BankAccounts" />
-          <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__Payments__Suppli__25518C17" FromRole="Payments" ToRole="Suppliers" />
-          <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__Payments__Userna__2739D489" FromRole="Payments" ToRole="Users" />
-        </EntityType>
         <EntityType Name="Suppliers">
           <Key>
             <PropertyRef Name="SupplierID" />
@@ -238,8 +213,8 @@
           <Property Name="SortCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="BIC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Suppli__25518C17" FromRole="Suppliers" ToRole="Payments" />
           <NavigationProperty Name="SupplierTypes" Relationship="NewcourtModel.FK__Suppliers__Suppl__17F790F9" FromRole="Suppliers" ToRole="SupplierTypes" />
+          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Suppliers" ToRole="Payments" />
         </EntityType>
         <EntityType Name="SupplierTypes">
           <Key>
@@ -265,44 +240,8 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="IsAdmin" Type="Byte" Nullable="false" />
           <Property Name="LastLoggedIn" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Userna__2739D489" FromRole="Users" ToRole="Payments" />
+          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Users" ToRole="Payments" />
         </EntityType>
-        <Association Name="FK__Payments__BankAc__2645B050">
-          <End Type="NewcourtModel.BankAccounts" Role="BankAccounts" Multiplicity="1" />
-          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BankAccounts">
-              <PropertyRef Name="BankAccountID" />
-            </Principal>
-            <Dependent Role="Payments">
-              <PropertyRef Name="BankAccountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Payments__Suppli__25518C17">
-          <End Type="NewcourtModel.Suppliers" Role="Suppliers" Multiplicity="1" />
-          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Suppliers">
-              <PropertyRef Name="SupplierID" />
-            </Principal>
-            <Dependent Role="Payments">
-              <PropertyRef Name="SupplierID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Payments__Userna__2739D489">
-          <End Type="NewcourtModel.Users" Role="Users" Multiplicity="1" />
-          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Username" />
-            </Principal>
-            <Dependent Role="Payments">
-              <PropertyRef Name="Username" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Suppliers__Suppl__17F790F9">
           <End Type="NewcourtModel.SupplierTypes" Role="SupplierTypes" Multiplicity="0..1" />
           <End Type="NewcourtModel.Suppliers" Role="Suppliers" Multiplicity="*" />
@@ -318,35 +257,73 @@
         <ComplexType Name="GenerateSEPAPaymentXML_Result">
           <Property Type="String" Name="Column1" Nullable="true" />
         </ComplexType>
+        <EntityType Name="BankAccounts">
+          <Key>
+            <PropertyRef Name="BankAccountCode" />
+          </Key>
+          <Property Name="BankAccountCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccountName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="BIC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="OIN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__BankAc__3E52440B" FromRole="BankAccounts" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="BankAccountCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+          <Property Name="TimeProcessed" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BankAccounts" Relationship="NewcourtModel.FK__Payments__BankAc__3E52440B" FromRole="Payments" ToRole="BankAccounts" />
+          <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Payments" ToRole="Suppliers" />
+          <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Payments" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__Payments__BankAc__3E52440B">
+          <End Type="NewcourtModel.BankAccounts" Role="BankAccounts" Multiplicity="1" />
+          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankAccounts">
+              <PropertyRef Name="BankAccountCode" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="BankAccountCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Suppli__3D5E1FD2">
+          <End Type="NewcourtModel.Suppliers" Role="Suppliers" Multiplicity="1" />
+          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__Userna__3F466844">
+          <End Type="NewcourtModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="NewcourtModel.Payments" Role="Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NewcourtModelStoreContainer" CdmEntityContainer="NewcourtEntities">
-          <EntitySetMapping Name="BankAccounts">
-            <EntityTypeMapping TypeName="NewcourtModel.BankAccounts">
-              <MappingFragment StoreEntitySet="BankAccounts">
-                <ScalarProperty Name="OIN" ColumnName="OIN" />
-                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
-                <ScalarProperty Name="BIC" ColumnName="BIC" />
-                <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
-                <ScalarProperty Name="BankAccountID" ColumnName="BankAccountID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Payments">
-            <EntityTypeMapping TypeName="NewcourtModel.Payments">
-              <MappingFragment StoreEntitySet="Payments">
-                <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="BankAccountID" ColumnName="BankAccountID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
             <EntityTypeMapping TypeName="NewcourtModel.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
@@ -404,6 +381,29 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML">
           </FunctionImportMapping>
+          <EntitySetMapping Name="BankAccounts">
+            <EntityTypeMapping TypeName="NewcourtModel.BankAccounts">
+              <MappingFragment StoreEntitySet="BankAccounts">
+                <ScalarProperty Name="OIN" ColumnName="OIN" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="BIC" ColumnName="BIC" />
+                <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+                <ScalarProperty Name="BankAccountCode" ColumnName="BankAccountCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="NewcourtModel.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="BankAccountCode" ColumnName="BankAccountCode" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

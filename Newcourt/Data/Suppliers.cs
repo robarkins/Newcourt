@@ -42,7 +42,7 @@ namespace Newcourt.Data
         public string BIC { get; set; }
         public string IBAN { get; set; }
     
-        public virtual ICollection<Payments> Payments { get; set; }
         public virtual SupplierTypes SupplierTypes { get; set; }
+        public virtual ICollection<Payments> Payments { get; set; }
     }
 }

@@ -39,11 +39,11 @@
             // pnlContent
             // 
             this.pnlContent.Controls.Add(this.grpCompanyInfo);
-            this.pnlContent.Size = new System.Drawing.Size(617, 56);
+            this.pnlContent.Size = new System.Drawing.Size(617, 113);
             // 
             // pnlBottom
             // 
-            this.pnlBottom.Location = new System.Drawing.Point(0, 56);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 113);
             this.pnlBottom.Size = new System.Drawing.Size(617, 32);
             // 
             // btnSave
@@ -61,7 +61,7 @@
             this.grpCompanyInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpCompanyInfo.Location = new System.Drawing.Point(0, 0);
             this.grpCompanyInfo.Name = "grpCompanyInfo";
-            this.grpCompanyInfo.Size = new System.Drawing.Size(617, 56);
+            this.grpCompanyInfo.Size = new System.Drawing.Size(617, 113);
             this.grpCompanyInfo.TabIndex = 0;
             this.grpCompanyInfo.TabStop = false;
             this.grpCompanyInfo.Text = "Company Details";
@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 88);
+            this.ClientSize = new System.Drawing.Size(617, 145);
             this.Name = "CompanyInfoDialogFrm";
             this.Text = "Company Information";
             this.pnlContent.ResumeLayout(false);

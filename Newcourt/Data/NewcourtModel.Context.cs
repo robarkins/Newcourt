@@ -27,18 +27,18 @@ namespace Newcourt.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BankAccounts> BankAccounts { get; set; }
-        public virtual DbSet<Payments> Payments { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<SupplierTypes> SupplierTypes { get; set; }
         public virtual DbSet<SystemParameters> SystemParameters { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<BankAccounts> BankAccounts { get; set; }
+        public virtual DbSet<Payments> Payments { get; set; }
     
-        public virtual ObjectResult<string> GenerateSEPAPaymentXML(Nullable<int> bankAccountID, Nullable<System.DateTime> paymentDate, string username)
+        public virtual ObjectResult<string> GenerateSEPAPaymentXML(string bankAccountCode, Nullable<System.DateTime> paymentDate, string username)
         {
-            var bankAccountIDParameter = bankAccountID.HasValue ?
-                new ObjectParameter("BankAccountID", bankAccountID) :
-                new ObjectParameter("BankAccountID", typeof(int));
+            var bankAccountCodeParameter = bankAccountCode != null ?
+                new ObjectParameter("BankAccountCode", bankAccountCode) :
+                new ObjectParameter("BankAccountCode", typeof(string));
     
             var paymentDateParameter = paymentDate.HasValue ?
                 new ObjectParameter("PaymentDate", paymentDate) :
@@ -48,7 +48,7 @@ namespace Newcourt.Data
                 new ObjectParameter("Username", username) :
                 new ObjectParameter("Username", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GenerateSEPAPaymentXML", bankAccountIDParameter, paymentDateParameter, usernameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GenerateSEPAPaymentXML", bankAccountCodeParameter, paymentDateParameter, usernameParameter);
         }
     }
 }

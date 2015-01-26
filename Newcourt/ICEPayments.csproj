@@ -156,6 +156,12 @@
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="Views\BankAccountDialogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BankAccountDialogFrm.Designer.cs">
+      <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCDataGridView.resx">
       <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BankAccountDialogFrm.resx">
+      <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
