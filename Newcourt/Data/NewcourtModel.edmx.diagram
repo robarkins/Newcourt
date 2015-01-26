@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4363af7e4ff142b69b22e1a571ce6602" Name="Diagram1" ZoomLevel="68">
+        <EntityTypeShape EntityType="NewcourtModel.BankAccounts" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="NewcourtModel.Payments" Width="1.5" PointX="5.25" PointY="2.5" />
+        <EntityTypeShape EntityType="NewcourtModel.Suppliers" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="NewcourtModel.SupplierTypes" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="NewcourtModel.SystemParameters" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="NewcourtModel.Users" Width="1.5" PointX="3" PointY="11.375" />
+        <AssociationConnector Association="NewcourtModel.FK__Payments__BankAc__2645B050" />
+        <AssociationConnector Association="NewcourtModel.FK__Payments__Suppli__25518C17" />
+        <AssociationConnector Association="NewcourtModel.FK__Payments__Userna__2739D489" />
+        <AssociationConnector Association="NewcourtModel.FK__Suppliers__Suppl__17F790F9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

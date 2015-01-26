@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="dsNewcourt">
+      <rd:DataSourceID>b8eeae60-f74f-4f5c-aebf-2236fb1bc7b5</rd:DataSourceID>
+      <DataSourceReference>dsNewcourt</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>e9de0558-428e-4608-b552-a4b1faccccda</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>2.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>PaymentSummaryRpt</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <List Name="List1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <Color>SlateGray</Color>
+        </Style>
+        <ReportItems>
+          <Textbox Name="FirstName">
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <Color>SlateGray</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <rd:DefaultName>FirstName</rd:DefaultName>
+            <Value>=Fields!FirstName.Value</Value>
+            <CanGrow>true</CanGrow>
+            <Height>0.27in</Height>
+          </Textbox>
+          <List Name="List2">
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>12pt</FontSize>
+            </Style>
+            <ReportItems>
+              <Textbox Name="Surname">
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <rd:DefaultName>Surname</rd:DefaultName>
+                <Value>=Fields!Surname.Value</Value>
+                <CanGrow>true</CanGrow>
+                <Height>0.24in</Height>
+              </Textbox>
+              <List Name="List3">
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>10pt</FontSize>
+                </Style>
+                <ReportItems>
+                  <Textbox Name="Amount">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <rd:DefaultName>Amount</rd:DefaultName>
+                    <Value>=Fields!Amount.Value</Value>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.21in</Height>
+                  </Textbox>
+                  <List Name="List4">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                    <ReportItems>
+                      <Textbox Name="TimeProcessed">
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                        <rd:DefaultName>TimeProcessed</rd:DefaultName>
+                        <Value>=Fields!TimeProcessed.Value</Value>
+                        <CanGrow>true</CanGrow>
+                        <Height>0.21in</Height>
+                      </Textbox>
+                      <Table Name="table1">
+                        <Top>0.5in</Top>
+                        <Style />
+                        <Header>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
+                          <TableRows>
+                            <TableRow>
+                              <TableCells>
+                                <TableCell>
+                                  <ReportItems>
+                                    <Textbox Name="textbox2">
+                                      <Style>
+                                        <BackgroundColor>SteelBlue</BackgroundColor>
+                                        <FontFamily>Tahoma</FontFamily>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                        <BorderStyle>
+                                          <Default>Solid</Default>
+                                        </BorderStyle>
+                                        <BorderColor>
+                                          <Default>LightGrey</Default>
+                                        </BorderColor>
+                                        <TextAlign>Right</TextAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                      <rd:DefaultName>textbox2</rd:DefaultName>
+                                      <Value>Payment ID</Value>
+                                      <CanGrow>true</CanGrow>
+                                      <Height>0.22in</Height>
+                                      <Width>1in</Width>
+                                    </Textbox>
+                                  </ReportItems>
+                                </TableCell>
+                              </TableCells>
+                              <Height>0.22in</Height>
+                            </TableRow>
+                          </TableRows>
+                        </Header>
+                        <Details>
+                          <TableRows>
+                            <TableRow>
+                              <TableCells>
+                                <TableCell>
+                                  <ReportItems>
+                                    <Textbox Name="PaymentID">
+                                      <Style>
+                                        <FontFamily>Tahoma</FontFamily>
+                                        <FontSize>10pt</FontSize>
+                                        <BorderStyle>
+                                          <Default>Solid</Default>
+                                        </BorderStyle>
+                                        <BorderColor>
+                                          <Default>LightGrey</Default>
+                                        </BorderColor>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                      <rd:DefaultName>PaymentID</rd:DefaultName>
+                                      <Value>=Fields!PaymentID.Value</Value>
+                                      <CanGrow>true</CanGrow>
+                                      <Height>0.21in</Height>
+                                      <Width>1in</Width>
+                                    </Textbox>
+                                  </ReportItems>
+                                </TableCell>
+                              </TableCells>
+                              <Height>0.21in</Height>
+                            </TableRow>
+                          </TableRows>
+                        </Details>
+                        <TableColumns>
+                          <TableColumn>
+                            <Width>1in</Width>
+                          </TableColumn>
+                        </TableColumns>
+                        <DataSetName>DataSet1</DataSetName>
+                      </Table>
+                    </ReportItems>
+                    <Grouping Name="list1_TimeProcessed">
+                      <GroupExpressions>
+                        <GroupExpression>=Fields!TimeProcessed.Value</GroupExpression>
+                      </GroupExpressions>
+                      <PageBreakAtEnd>true</PageBreakAtEnd>
+                    </Grouping>
+                    <Sorting>
+                      <SortBy>
+                        <SortExpression>=Fields!TimeProcessed.Value</SortExpression>
+                      </SortBy>
+                    </Sorting>
+                    <Top>0.5in</Top>
+                    <DataSetName>DataSet1</DataSetName>
+                  </List>
+                </ReportItems>
+                <Grouping Name="list1_Amount">
+                  <GroupExpressions>
+                    <GroupExpression>=Fields!Amount.Value</GroupExpression>
+                  </GroupExpressions>
+                  <PageBreakAtEnd>true</PageBreakAtEnd>
+                </Grouping>
+                <Sorting>
+                  <SortBy>
+                    <SortExpression>=Fields!Amount.Value</SortExpression>
+                  </SortBy>
+                </Sorting>
+                <Top>0.5in</Top>
+                <DataSetName>DataSet1</DataSetName>
+              </List>
+            </ReportItems>
+            <Grouping Name="list1_Surname">
+              <GroupExpressions>
+                <GroupExpression>=Fields!Surname.Value</GroupExpression>
+              </GroupExpressions>
+              <PageBreakAtEnd>true</PageBreakAtEnd>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!Surname.Value</SortExpression>
+              </SortBy>
+            </Sorting>
+            <Top>0.5in</Top>
+            <DataSetName>DataSet1</DataSetName>
+          </List>
+        </ReportItems>
+        <Grouping Name="list1_FirstName">
+          <GroupExpressions>
+            <GroupExpression>=Fields!FirstName.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!FirstName.Value</SortExpression>
+          </SortBy>
+        </Sorting>
+        <Top>0.36in</Top>
+        <DataSetName>DataSet1</DataSetName>
+      </List>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PaymentID">
+          <DataField>PaymentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Surname">
+          <DataField>Surname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TimeProcessed">
+          <DataField>TimeProcessed</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>dsNewcourt</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>select a.PaymentID, b.FirstName, b.Surname, a.Amount, a.TimeProcessed
+from Payments a
+inner join Suppliers b on (a.SupplierID = b.SupplierID)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

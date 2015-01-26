@@ -1,0 +1,46 @@
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Views.Main.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Properties.Resources.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\ICEPayments.csproj.GenerateResource.Cache
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\Newcourt.exe.config
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\Newcourt.exe
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\Newcourt.pdb
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.UCDataGridView.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.exe
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.pdb
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\EntityFramework.dll
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\EntityFramework.xml
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.MasterBrowseCtrl.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.SupplierBrowseCtrl.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.SupplierTypeBrowseCtrl.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Views.MasterDialogFrm.resources
+c:\users\rarkins\documents\visual studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Views.SupplierTypeDialogFrm.resources
+C:\Users\rarkins\Documents\Visual Studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Views.SupplierDialogFrm.resources
+C:\Users\rarkins\Documents\Visual Studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.PaymentsCtrl.resources
+C:\Users\rarkins\Documents\Visual Studio 2013\Projects\Newcourt\Newcourt\obj\Debug\Newcourt.Views.SystemParamsDialogFrm.resources
+C:\Development\Newcourt\Newcourt\bin\Debug\Newcourt.exe.config
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.exe
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.pdb
+C:\Development\Newcourt\Newcourt\bin\Debug\Newcourt.exe
+C:\Development\Newcourt\Newcourt\bin\Debug\Newcourt.pdb
+C:\Development\Newcourt\Newcourt\bin\Debug\EntityFramework.dll
+C:\Development\Newcourt\Newcourt\bin\Debug\EntityFramework.SqlServer.dll
+C:\Development\Newcourt\Newcourt\bin\Debug\EntityFramework.xml
+C:\Development\Newcourt\Newcourt\bin\Debug\EntityFramework.SqlServer.xml
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.MasterBrowseCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.PaymentsCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.SupplierBrowseCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.SupplierTypeBrowseCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.UCDataGridView.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.Main.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Properties.Resources.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.MasterDialogFrm.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.SupplierDialogFrm.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.SupplierTypeDialogFrm.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\ICEPayments.csproj.GenerateResource.Cache
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Views.CompanyInfoDialogFrm.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.BankAccountBrowseCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.MasterReportCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\Newcourt.Controls.PaymentsSummaryReportCtrl.resources
+C:\Development\Newcourt\Newcourt\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
