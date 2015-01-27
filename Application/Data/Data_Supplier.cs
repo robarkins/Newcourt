@@ -200,6 +200,52 @@ namespace Newcourt.Data
             }
         }
 
+        public static List<Data_Supplier> SearchSuppliers(String keyword, String supplierTypeCode)
+        {
+            try
+            {
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    keyword = String.Format("{0}", keyword);
+                    return (from a in ctx.Suppliers
+                            where (keyword == String.Empty || a.FirstName.Contains(keyword) || a.Surname.Contains(keyword) || a.Address1.Contains(keyword) 
+                                  || a.Address2.Contains(keyword) || a.Address3.Contains(keyword) || a.Address4.Contains(keyword) || a.Address5.Contains(keyword))
+                            where (a.SupplierTypes.SupplierTypeCode == supplierTypeCode || supplierTypeCode == String.Empty)
+                            select new Data_Supplier()
+                            {
+                                SupplierID = a.SupplierID,
+                                SupplierTypeCode = a.SupplierTypeCode,
+                                FirstName = a.FirstName,
+                                Surname = a.Surname,
+                                Address1 = a.Address1,
+                                Address2 = a.Address2,
+                                Address3 = a.Address3,
+                                Address4 = a.Address4,
+                                Address5 = a.Address5,
+                                Phone = a.Phone,
+                                Mobile = a.Mobile,
+                                PPSVat = a.PPSVat,
+                                BankName = a.BankName,
+                                BankAddress1 = a.BankAddress1,
+                                BankAddress2 = a.BankAddress2,
+                                BankAddress3 = a.BankAddress3,
+                                BankAddress4 = a.BankAddress4,
+                                BankAddress5 = a.BankAddress5,
+                                BankAccNumber = a.BankAccNumber,
+                                SortCode = a.SortCode,
+                                BIC = a.BIC,
+                                IBAN = a.IBAN,
+                                SupplierTypeName = a.SupplierTypes.Name
+                            }).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void SaveSupplier(Data_Supplier supplier)
         {
             try

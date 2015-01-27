@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newcourt.Data;
 using System.IO;
+using Newcourt.Views;
 
 namespace Newcourt.Controls
 {
@@ -22,73 +23,6 @@ namespace Newcourt.Controls
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
                 bsBankAccounts.DataSource = Data_BankAccount.GetBankAccounts();
-                
-                luSupplierTypes.SelectedIndex = -1;
-
-                GetRecords();
-            }
-            catch(Exception ex)
-            {
-                Utils.ShowException(ex);
-            }
-        }
-
-        private void GetRecords()
-        {
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-
-                String supplierTypeCode = String.Empty;
-
-                if (luSupplierTypes.SelectedValue != null)
-                {
-                    supplierTypeCode = luSupplierTypes.SelectedValue.ToString();
-                }
-
-                bsRecords.DataSource = Data_Supplier.GetSuppliers(supplierTypeCode);
-            }
-            catch(Exception ex)
-            {
-                Utils.ShowException(ex);
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
-        }
-
-        private void luSupplierTypes_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!String.IsNullOrWhiteSpace(luSupplierTypes.Text))
-                {
-                    String type = luSupplierTypes.Text.Trim();
-
-                    List<Data_SupplierType> supplierTypes = bsSupplierTypes.DataSource as List<Data_SupplierType>;
-
-                    if (supplierTypes != null)
-                    {
-                        if (!supplierTypes.Exists(a => a.SupplierTypeCode == type))
-                        {
-                            luSupplierTypes.Text = String.Empty;
-                            luSupplierTypes.SelectedIndex = -1;
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                Utils.ShowException(ex);
-            }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetRecords();
             }
             catch(Exception ex)
             {
@@ -160,6 +94,12 @@ namespace Newcourt.Controls
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SupplierSelectDialogFrm frm = new SupplierSelectDialogFrm();
+            frm.ShowDialog();
         }
     }
 }
