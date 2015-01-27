@@ -21,7 +21,7 @@ namespace Newcourt.Controls
             try
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
-                bsBankAccounts.DataSource = Data_BankAccounts.GetBankAccounts();
+                bsBankAccounts.DataSource = Data_BankAccount.GetBankAccounts();
                 
                 luSupplierTypes.SelectedIndex = -1;
 

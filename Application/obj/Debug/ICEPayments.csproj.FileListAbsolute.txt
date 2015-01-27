@@ -53,7 +53,6 @@ C:\Development\Newcourt\Application\bin\Debug\EntityFramework.dll
 C:\Development\Newcourt\Application\bin\Debug\EntityFramework.SqlServer.dll
 C:\Development\Newcourt\Application\bin\Debug\EntityFramework.xml
 C:\Development\Newcourt\Application\bin\Debug\EntityFramework.SqlServer.xml
-C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.BankAccountBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.MasterBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.MasterReportCtrl.resources

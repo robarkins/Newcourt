@@ -34,6 +34,9 @@
             this.cmsTabControl = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCloseTab = new System.Windows.Forms.ToolStripMenuItem();
             this.ucToolStrip1 = new Newcourt.Controls.UCToolStrip();
+            this.ddbBank = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnBankAccounts = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ddbSuppliers = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnSupplierAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSupplierTypes = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,9 +45,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ddbSystem = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnSystemParams = new System.Windows.Forms.ToolStripMenuItem();
-            this.ddbBank = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnBankAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTabControl.SuspendLayout();
             this.ucToolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,29 @@
             this.ucToolStrip1.Size = new System.Drawing.Size(1172, 39);
             this.ucToolStrip1.TabIndex = 0;
             this.ucToolStrip1.Text = "ucToolStrip1";
+            // 
+            // ddbBank
+            // 
+            this.ddbBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBankAccounts});
+            this.ddbBank.Image = ((System.Drawing.Image)(resources.GetObject("ddbBank.Image")));
+            this.ddbBank.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ddbBank.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbBank.Name = "ddbBank";
+            this.ddbBank.Size = new System.Drawing.Size(78, 36);
+            this.ddbBank.Text = "Bank";
+            // 
+            // btnBankAccounts
+            // 
+            this.btnBankAccounts.Name = "btnBankAccounts";
+            this.btnBankAccounts.Size = new System.Drawing.Size(153, 22);
+            this.btnBankAccounts.Text = "Bank Accounts";
+            this.btnBankAccounts.Click += new System.EventHandler(this.btnBankAccounts_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // ddbSuppliers
             // 
@@ -151,28 +174,6 @@
             this.btnSystemParams.Size = new System.Drawing.Size(200, 30);
             this.btnSystemParams.Text = "Company Information";
             this.btnSystemParams.Click += new System.EventHandler(this.btnCompanyInfo_Click);
-            // 
-            // ddbBank
-            // 
-            this.ddbBank.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnBankAccounts});
-            this.ddbBank.Image = ((System.Drawing.Image)(resources.GetObject("ddbBank.Image")));
-            this.ddbBank.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ddbBank.Name = "ddbBank";
-            this.ddbBank.Size = new System.Drawing.Size(62, 36);
-            this.ddbBank.Text = "Bank";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
-            // 
-            // btnBankAccounts
-            // 
-            this.btnBankAccounts.Name = "btnBankAccounts";
-            this.btnBankAccounts.Size = new System.Drawing.Size(153, 22);
-            this.btnBankAccounts.Text = "Bank Accounts";
-            this.btnBankAccounts.Click += new System.EventHandler(this.btnBankAccounts_Click);
             // 
             // Main
             // 

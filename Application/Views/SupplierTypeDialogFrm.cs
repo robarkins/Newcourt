@@ -23,7 +23,7 @@ namespace Newcourt.Views
 
             if (mode == Common.FormMode.Edit)
             {
-                this.Text = String.Format("Edit {0}", supplierType.SupplierTypeCode);
+                this.Text = String.Format("Edit Supplier Type {0}", supplierType.SupplierTypeCode);
                 txtCode.ReadOnly = true;
 
                 txtCode.Text = supplierType.SupplierTypeCode;
@@ -33,37 +33,54 @@ namespace Newcourt.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCode.Text.Trim() == String.Empty)
+            try
             {
-                Utils.ShowInformation("You must enter a Supplier Type Code!");
-                txtCode.Focus();
-            }
-            else
-            {
-                if (!ValidateCode(txtCode.Text.Trim()) && formMode == Common.FormMode.Add)
+                if (txtCode.Text.Trim() == String.Empty)
                 {
-                    if (Utils.AskQuestion(String.Format("Supplier Type Code {0} aleady exists! Do you want to overwrite?", txtCode.Text.Trim())) == DialogResult.No)
-                    {
-                        txtCode.Focus();
-                        return;
-                    }
+                    Utils.ShowInformation("You must enter a Supplier Type Code!");
+                    txtCode.Focus();
                 }
-
-                Data_SupplierType.SaveSupplierType(new Data_SupplierType()
+                else
                 {
-                    SupplierTypeCode = txtCode.Text.Trim(),
-                    Name = txtName.Text.Trim()
-                });
+                    if (formMode == Common.FormMode.Add)
+                    {
+                        if (!ValidateCode(txtCode.Text.Trim()))
+                        {
+                            if (Utils.AskQuestion(String.Format("Supplier Type Code {0} aleady exists! Do you want to overwrite?", txtCode.Text.Trim())) == DialogResult.No)
+                            {
+                                txtCode.Focus();
+                                return;
+                            }
+                        }
+                    }
 
-                DialogResult = DialogResult.OK;
+                    Data_SupplierType.SaveSupplierType(new Data_SupplierType()
+                    {
+                        SupplierTypeCode = txtCode.Text.Trim(),
+                        Name = txtName.Text.Trim()
+                    });
+
+                    DialogResult = DialogResult.OK;
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
             }
         }
 
         private bool ValidateCode(String supplierTypeCode)
         {
-            Data_SupplierType type = Data_SupplierType.GetSupplierType(supplierTypeCode);
+            try
+            {
+                Data_SupplierType type = Data_SupplierType.GetSupplierType(supplierTypeCode);
 
-            return type == null;
+                return type == null;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
             
         }
     }

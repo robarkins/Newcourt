@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.grpDetails = new System.Windows.Forms.GroupBox();
-            this.lblCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtBIC = new System.Windows.Forms.TextBox();
-            this.lblBIC = new System.Windows.Forms.Label();
-            this.txtIBAN = new System.Windows.Forms.TextBox();
-            this.lblIBAN = new System.Windows.Forms.Label();
-            this.lblOIN = new System.Windows.Forms.Label();
             this.txtOIN = new System.Windows.Forms.TextBox();
+            this.lblOIN = new System.Windows.Forms.Label();
+            this.lblIBAN = new System.Windows.Forms.Label();
+            this.txtIBAN = new System.Windows.Forms.TextBox();
+            this.lblBIC = new System.Windows.Forms.Label();
+            this.txtBIC = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.grpDetails.SuspendLayout();
@@ -57,6 +57,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(155, 5);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -82,73 +83,13 @@
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "Bank Account Details";
             // 
-            // lblCode
+            // txtOIN
             // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(8, 27);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(35, 13);
-            this.lblCode.TabIndex = 0;
-            this.lblCode.Text = "Code:";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(61, 23);
-            this.txtCode.MaxLength = 15;
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(94, 20);
-            this.txtCode.TabIndex = 3;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(61, 49);
-            this.txtName.MaxLength = 70;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(246, 20);
-            this.txtName.TabIndex = 4;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(8, 52);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 13);
-            this.lblName.TabIndex = 5;
-            this.lblName.Text = "Name:";
-            // 
-            // txtBIC
-            // 
-            this.txtBIC.Location = new System.Drawing.Point(61, 75);
-            this.txtBIC.MaxLength = 11;
-            this.txtBIC.Name = "txtBIC";
-            this.txtBIC.Size = new System.Drawing.Size(246, 20);
-            this.txtBIC.TabIndex = 6;
-            // 
-            // lblBIC
-            // 
-            this.lblBIC.AutoSize = true;
-            this.lblBIC.Location = new System.Drawing.Point(8, 78);
-            this.lblBIC.Name = "lblBIC";
-            this.lblBIC.Size = new System.Drawing.Size(27, 13);
-            this.lblBIC.TabIndex = 7;
-            this.lblBIC.Text = "BIC:";
-            // 
-            // txtIBAN
-            // 
-            this.txtIBAN.Location = new System.Drawing.Point(61, 101);
-            this.txtIBAN.MaxLength = 35;
-            this.txtIBAN.Name = "txtIBAN";
-            this.txtIBAN.Size = new System.Drawing.Size(246, 20);
-            this.txtIBAN.TabIndex = 8;
-            // 
-            // lblIBAN
-            // 
-            this.lblIBAN.AutoSize = true;
-            this.lblIBAN.Location = new System.Drawing.Point(8, 104);
-            this.lblIBAN.Name = "lblIBAN";
-            this.lblIBAN.Size = new System.Drawing.Size(35, 13);
-            this.lblIBAN.TabIndex = 9;
-            this.lblIBAN.Text = "IBAN:";
+            this.txtOIN.Location = new System.Drawing.Point(61, 127);
+            this.txtOIN.MaxLength = 35;
+            this.txtOIN.Name = "txtOIN";
+            this.txtOIN.Size = new System.Drawing.Size(246, 20);
+            this.txtOIN.TabIndex = 11;
             // 
             // lblOIN
             // 
@@ -159,13 +100,73 @@
             this.lblOIN.TabIndex = 10;
             this.lblOIN.Text = "OIN:";
             // 
-            // txtOIN
+            // lblIBAN
             // 
-            this.txtOIN.Location = new System.Drawing.Point(61, 127);
-            this.txtOIN.MaxLength = 35;
-            this.txtOIN.Name = "txtOIN";
-            this.txtOIN.Size = new System.Drawing.Size(246, 20);
-            this.txtOIN.TabIndex = 11;
+            this.lblIBAN.AutoSize = true;
+            this.lblIBAN.Location = new System.Drawing.Point(8, 104);
+            this.lblIBAN.Name = "lblIBAN";
+            this.lblIBAN.Size = new System.Drawing.Size(35, 13);
+            this.lblIBAN.TabIndex = 9;
+            this.lblIBAN.Text = "IBAN:";
+            // 
+            // txtIBAN
+            // 
+            this.txtIBAN.Location = new System.Drawing.Point(61, 101);
+            this.txtIBAN.MaxLength = 35;
+            this.txtIBAN.Name = "txtIBAN";
+            this.txtIBAN.Size = new System.Drawing.Size(246, 20);
+            this.txtIBAN.TabIndex = 8;
+            // 
+            // lblBIC
+            // 
+            this.lblBIC.AutoSize = true;
+            this.lblBIC.Location = new System.Drawing.Point(8, 78);
+            this.lblBIC.Name = "lblBIC";
+            this.lblBIC.Size = new System.Drawing.Size(27, 13);
+            this.lblBIC.TabIndex = 7;
+            this.lblBIC.Text = "BIC:";
+            // 
+            // txtBIC
+            // 
+            this.txtBIC.Location = new System.Drawing.Point(61, 75);
+            this.txtBIC.MaxLength = 11;
+            this.txtBIC.Name = "txtBIC";
+            this.txtBIC.Size = new System.Drawing.Size(246, 20);
+            this.txtBIC.TabIndex = 6;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(8, 52);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.TabIndex = 5;
+            this.lblName.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(61, 49);
+            this.txtName.MaxLength = 70;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(246, 20);
+            this.txtName.TabIndex = 4;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(61, 23);
+            this.txtCode.MaxLength = 15;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(94, 20);
+            this.txtCode.TabIndex = 3;
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(8, 27);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(35, 13);
+            this.lblCode.TabIndex = 0;
+            this.lblCode.Text = "Code:";
             // 
             // BankAccountDialogFrm
             // 

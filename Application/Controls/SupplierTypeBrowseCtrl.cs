@@ -30,39 +30,6 @@ namespace Newcourt.Controls
 
         protected override void AddRecord()
         {
-            AddSupplierType();
-        }
-
-        protected override void EditRecord()
-        {
-            EditSupplierType();
-        }
-
-        protected override void DeleteRecord()
-        {
-            DeleteSupplierType();
-        }
-
-        private void GetRecords()
-        {
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                bsRecords.DataSource = Data_SupplierType.GetSupplierTypes();
-
-            }
-            catch(Exception ex)
-            {
-                Utils.ShowException(ex);
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
-        }
-
-        private void AddSupplierType()
-        {
             try
             {
                 SupplierTypeDialogFrm frm = new SupplierTypeDialogFrm(Common.FormMode.Add, null);
@@ -77,7 +44,7 @@ namespace Newcourt.Controls
             }
         }
 
-        private void EditSupplierType()
+        protected override void EditRecord()
         {
             try
             {
@@ -103,7 +70,7 @@ namespace Newcourt.Controls
             }
         }
 
-        private void DeleteSupplierType()
+        protected override void DeleteRecord()
         {
             try
             {
@@ -111,7 +78,7 @@ namespace Newcourt.Controls
 
                 if (supplierType != null)
                 {
-                    if(Utils.AskQuestion(String.Format("Are you sure you want to delete Supplier Type {0}", supplierType.SupplierTypeCode)) == DialogResult.Yes)
+                    if (Utils.AskQuestion(String.Format("Are you sure you want to delete Supplier Type {0}", supplierType.SupplierTypeCode)) == DialogResult.Yes)
                     {
                         if (Data_SupplierType.DeleteSupplierType(supplierType.SupplierTypeCode))
                         {
@@ -124,9 +91,39 @@ namespace Newcourt.Controls
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        protected override void RefreshRecords()
+        {
+            try
+            {
+                GetRecords();
+            }
             catch(Exception ex)
             {
                 Utils.ShowException(ex);
+            }
+        }
+
+        private void GetRecords()
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                bsRecords.DataSource = Data_SupplierType.GetSupplierTypes();
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
     }

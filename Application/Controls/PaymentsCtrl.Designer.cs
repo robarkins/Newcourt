@@ -117,18 +117,18 @@
             // luBankAccounts
             // 
             this.luBankAccounts.DataSource = this.bsBankAccounts;
-            this.luBankAccounts.DisplayMember = "BankAccountName";
+            this.luBankAccounts.DisplayMember = "BankAccountCode";
             this.luBankAccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.luBankAccounts.FormattingEnabled = true;
             this.luBankAccounts.Location = new System.Drawing.Point(58, 25);
             this.luBankAccounts.Name = "luBankAccounts";
             this.luBankAccounts.Size = new System.Drawing.Size(121, 21);
             this.luBankAccounts.TabIndex = 4;
-            this.luBankAccounts.ValueMember = "BankAccountID";
+            this.luBankAccounts.ValueMember = "BankAccountCode";
             // 
             // bsBankAccounts
             // 
-            this.bsBankAccounts.DataSource = typeof(Newcourt.Data.Data_BankAccounts);
+            this.bsBankAccounts.DataSource = typeof(Newcourt.Data.Data_BankAccount);
             // 
             // lblBank
             // 

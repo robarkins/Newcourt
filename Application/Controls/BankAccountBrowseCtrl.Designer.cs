@@ -75,7 +75,7 @@
             // 
             // bsRecords
             // 
-            this.bsRecords.DataSource = typeof(Newcourt.Data.Data_BankAccounts);
+            this.bsRecords.DataSource = typeof(Newcourt.Data.Data_BankAccount);
             // 
             // dataGridViewTextBoxColumn1
             // 

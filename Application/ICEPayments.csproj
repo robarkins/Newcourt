@@ -115,7 +115,7 @@
     <Compile Include="Data\BankAccounts.cs">
       <DependentUpon>NewcourtModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Data_BankAccounts.cs" />
+    <Compile Include="Data\Data_BankAccount.cs" />
     <Compile Include="Data\Data_Payment.cs" />
     <Compile Include="Data\Data_Procedures.cs" />
     <Compile Include="Data\Data_Supplier.cs" />
@@ -284,6 +284,7 @@
   <ItemGroup>
     <Content Include="Database Scripts\1.0.0.1.sql" />
     <Content Include="Images\add.png" />
+    <Content Include="Images\bank.png" />
     <Content Include="Images\cancel.png" />
     <Content Include="Images\companyInfo.png" />
     <Content Include="Images\delete.png" />

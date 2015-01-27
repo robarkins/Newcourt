@@ -39,21 +39,6 @@ namespace Newcourt.Controls
 
         protected override void EditRecord()
         {
-            EditSupplier();
-        }
-
-        protected override void DeleteRecord()
-        {
-            DeleteSupplier();
-        }
-
-        protected override void RefreshRecords()
-        {
-            GetRecords();
-        }
-
-        private void EditSupplier()
-        {
             try
             {
                 Data_Supplier record = Utils.GetCurrentRecord<Data_Supplier>(bsRecords);
@@ -73,18 +58,30 @@ namespace Newcourt.Controls
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        protected override void RefreshRecords()
+        {
+            try
+            {
+                GetRecords();
+            }
             catch(Exception ex)
             {
                 Utils.ShowException(ex);
             }
         }
 
-        private void DeleteSupplier()
+        protected override void DeleteRecord()
         {
             try
             {
                 Data_Supplier supplier = Utils.GetCurrentRecord<Data_Supplier>(bsRecords);
-                
+
                 if (supplier != null)
                 {
                     if (Utils.AskQuestion(String.Format("Are you sure you want to delete supplier {0}?", supplier.SupplierID)) == DialogResult.Yes)
@@ -94,7 +91,7 @@ namespace Newcourt.Controls
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Utils.ShowException(ex);
             }
@@ -107,9 +104,9 @@ namespace Newcourt.Controls
                 Cursor.Current = Cursors.WaitCursor;
                 bsRecords.DataSource = Data_Supplier.GetSuppliers();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Utils.ShowException(ex);
+                throw ex;
             }
             finally
             {
