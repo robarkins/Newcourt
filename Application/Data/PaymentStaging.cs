@@ -12,20 +12,13 @@ namespace Newcourt.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class PaymentStaging
     {
-        public Users()
-        {
-            this.Payments = new HashSet<Payments>();
-            this.PaymentStaging = new HashSet<PaymentStaging>();
-        }
-    
         public string Username { get; set; }
-        public string Password { get; set; }
-        public byte IsAdmin { get; set; }
-        public Nullable<System.DateTime> LastLoggedIn { get; set; }
+        public int SupplierId { get; set; }
+        public decimal Amount { get; set; }
     
-        public virtual ICollection<Payments> Payments { get; set; }
-        public virtual ICollection<PaymentStaging> PaymentStaging { get; set; }
+        public virtual Suppliers Suppliers { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

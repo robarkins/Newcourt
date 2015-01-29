@@ -17,6 +17,7 @@ namespace Newcourt.Data
         public Suppliers()
         {
             this.Payments = new HashSet<Payments>();
+            this.PaymentStaging = new HashSet<PaymentStaging>();
         }
     
         public int SupplierID { get; set; }
@@ -44,5 +45,6 @@ namespace Newcourt.Data
     
         public virtual SupplierTypes SupplierTypes { get; set; }
         public virtual ICollection<Payments> Payments { get; set; }
+        public virtual ICollection<PaymentStaging> PaymentStaging { get; set; }
     }
 }

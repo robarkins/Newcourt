@@ -13,7 +13,7 @@ using Newcourt.Views;
 
 namespace Newcourt.Controls
 {
-    public partial class PaymentsCtrl : UserControl
+    public partial class PaymentsCtrl : UserControl, IDisposable
     {
         public PaymentsCtrl()
         {
@@ -23,6 +23,7 @@ namespace Newcourt.Controls
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
                 bsBankAccounts.DataSource = Data_BankAccount.GetBankAccounts();
+                GetRecords();
             }
             catch(Exception ex)
             {
@@ -99,7 +100,75 @@ namespace Newcourt.Controls
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SupplierSelectDialogFrm frm = new SupplierSelectDialogFrm();
-            frm.ShowDialog();
+            
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                GetRecords();
+            }
         }
+
+        private void GetRecords()
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                bsRecords.DataSource = Data_PaymentStaging.GetPaymentStagingByUsername(Global.Username);
+                
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void SavePaymentStaging()
+        {
+            try
+            {
+                List<Data_PaymentStaging> payments = bsRecords.DataSource as List<Data_PaymentStaging>;
+
+                if (payments != null)
+                {
+                    Data_PaymentStaging.SavePaymentStaging(Global.Username, payments);
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteFromPaymentStaging();
+        }
+
+        private void mnuDelete_Click(object sender, EventArgs e)
+        {
+            DeleteFromPaymentStaging();
+        }
+
+        private void DeleteFromPaymentStaging()
+        {
+            try
+            {
+                Data_PaymentStaging payment = Utils.GetCurrentRecord<Data_PaymentStaging>(bsRecords);
+
+                if (payment != null)
+                {
+                    Data_PaymentStaging.DeleteFromPaymentStaging(payment.Username, payment.SuppplierId);
+                    GetRecords();
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
     }
 }

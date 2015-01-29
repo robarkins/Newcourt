@@ -20,7 +20,7 @@ namespace Newcourt.Views
             try
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
-                bsSuppliers.DataSource = Data_Supplier.GetSuppliers();
+                bsSuppliers.DataSource = Data_Supplier.GetSuppliersWithPaymentStagingCheck(Global.Username);
 
                 luSupplierType.SelectedIndex = -1;
             }
@@ -60,6 +60,45 @@ namespace Newcourt.Views
             try
             {
                 bsSuppliers.DataSource = Data_Supplier.SearchSuppliers(txtSearchKeyword.Text.Trim(), luSupplierType.Text.Trim());
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                List<Data_PaymentStaging> staging = new List<Data_PaymentStaging>();
+
+                foreach(DataGridViewRow i in grdSuppliers.Rows)
+                {
+                    DataGridViewCheckBoxCell cell = i.Cells["Selected"] as DataGridViewCheckBoxCell;
+
+                    bool isSelected = Convert.ToBoolean(cell.Value);
+
+                    if (isSelected)
+                    {
+                        Data_Supplier supplier = i.DataBoundItem as Data_Supplier;
+
+                        if (supplier != null)
+                        {
+                            staging.Add(new Data_PaymentStaging()
+                            {
+                                Username = Global.Username,
+                                SuppplierId = supplier.SupplierID,
+                                Amount = 0
+                            });
+                        }
+                    }
+                }
+
+                Data_PaymentStaging.SavePaymentStaging(Global.Username, staging);
+                DialogResult = DialogResult.OK;
+                
             }
             catch(Exception ex)
             {

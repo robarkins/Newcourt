@@ -75,9 +75,18 @@ namespace Newcourt.Views
 
         private void btnCloseTab_Click(object sender, EventArgs e)
         {
-            if (tcMain.TabPages.Count > 0)
+            try
             {
-                tcMain.TabPages.Remove(tcMain.SelectedTab);
+                if (tcMain.TabPages.Count > 0)
+                {
+                    TabPage test = tcMain.SelectedTab;
+                    test.Controls[0].Dispose();
+                    tcMain.TabPages.Remove(tcMain.SelectedTab);
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
             }
         }
     }

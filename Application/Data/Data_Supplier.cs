@@ -32,6 +32,7 @@ namespace Newcourt.Data
         public String IBAN { get; set; }
         public String SupplierTypeName { get; set; }
         public decimal? PaymentAmount { get; set; }
+        public bool PaymentExists { get; set; }
 
         public static List<Data_Supplier> GetSuppliers()
         {
@@ -64,7 +65,8 @@ namespace Newcourt.Data
                                 SortCode = a.SortCode,
                                 BIC = a.BIC,
                                 IBAN = a.IBAN,
-                                SupplierTypeName = a.SupplierTypes.Name
+                                SupplierTypeName = a.SupplierTypes.Name,
+                                PaymentExists = false
                             }).ToList();
                 }
             }
@@ -109,6 +111,64 @@ namespace Newcourt.Data
                                 SupplierTypeName = a.SupplierTypes.Name
                             }).ToList();
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static List<Data_Supplier> GetSuppliersWithPaymentStagingCheck(String username)
+        {
+            try
+            {
+                List<Data_Supplier> suppliers = null;
+
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    suppliers = (from a in ctx.Suppliers
+                                 select new Data_Supplier()
+                                 {
+                                     SupplierID = a.SupplierID,
+                                     SupplierTypeCode = a.SupplierTypeCode,
+                                     FirstName = a.FirstName,
+                                     Surname = a.Surname,
+                                     Address1 = a.Address1,
+                                     Address2 = a.Address2,
+                                     Address3 = a.Address3,
+                                     Address4 = a.Address4,
+                                     Address5 = a.Address5,
+                                     Phone = a.Phone,
+                                     Mobile = a.Mobile,
+                                     PPSVat = a.PPSVat,
+                                     BankName = a.BankName,
+                                     BankAddress1 = a.BankAddress1,
+                                     BankAddress2 = a.BankAddress2,
+                                     BankAddress3 = a.BankAddress3,
+                                     BankAddress4 = a.BankAddress4,
+                                     BankAddress5 = a.BankAddress5,
+                                     BankAccNumber = a.BankAccNumber,
+                                     SortCode = a.SortCode,
+                                     BIC = a.BIC,
+                                     IBAN = a.IBAN,
+                                     SupplierTypeName = a.SupplierTypes.Name
+                                 }).ToList();
+
+                    List<Data_PaymentStaging> payments = Data_PaymentStaging.GetPaymentStagingByUsername(username);
+
+                    if (payments != null)
+                    {
+                        foreach (var i in suppliers)
+                        {
+                            if (payments.Exists(a => a.SuppplierId == i.SupplierID))
+                            {
+                                i.PaymentExists = true;
+                            }
+                        }
+                    }
+                }
+
+                return suppliers;
             }
             catch (Exception ex)
             {

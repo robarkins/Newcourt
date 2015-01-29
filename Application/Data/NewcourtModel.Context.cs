@@ -33,6 +33,7 @@ namespace Newcourt.Data
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<BankAccounts> BankAccounts { get; set; }
         public virtual DbSet<Payments> Payments { get; set; }
+        public virtual DbSet<PaymentStaging> PaymentStaging { get; set; }
     
         public virtual ObjectResult<string> GenerateSEPAPaymentXML(string bankAccountCode, Nullable<System.DateTime> paymentDate, string username)
         {

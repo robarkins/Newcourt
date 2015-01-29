@@ -81,6 +81,15 @@ create table SystemParameters (
 
 go
 
+create table PaymentStaging (
+	Username nvarchar(15) references Users(Username) not null,
+	SupplierId int references Suppliers(SupplierId) not null,
+	Amount numeric(15, 2) not null,
+	primary key (Username, SupplierId)
+)
+
+go
+
 -----------------------------------------------------------------------
 ------------------------ STORED PROCEDURES ----------------------------
 
@@ -153,6 +162,7 @@ begin
 	for xml path('Document'))
 
 	update Payments set TimeProcessed = @date where Username = @Username and TimeProcessed is null
+	delete from PaymentStaging where Username = @Username
 
 	select '<?xml version="1.0" encoding="UTF-8"?>' + replace(convert(nvarchar(max), @xml), '<Document ns="">', '<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">')
 

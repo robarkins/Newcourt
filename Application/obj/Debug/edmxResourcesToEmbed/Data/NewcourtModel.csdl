@@ -28,6 +28,15 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Payments" EntitySet="Payments" />
     </AssociationSet>
+    <EntitySet Name="PaymentStaging" EntityType="NewcourtModel.PaymentStaging" />
+    <AssociationSet Name="FK__PaymentSt__Suppl__531856C7" Association="NewcourtModel.FK__PaymentSt__Suppl__531856C7">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentSt__Usern__5224328E" Association="NewcourtModel.FK__PaymentSt__Usern__5224328E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Suppliers">
     <Key>
@@ -57,6 +66,7 @@
     <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SupplierTypes" Relationship="NewcourtModel.FK__Suppliers__Suppl__17F790F9" FromRole="Suppliers" ToRole="SupplierTypes" />
     <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Suppliers" ToRole="Payments" />
+    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Suppl__531856C7" FromRole="Suppliers" ToRole="PaymentStaging" />
   </EntityType>
   <EntityType Name="SupplierTypes">
     <Key>
@@ -83,6 +93,7 @@
     <Property Name="IsAdmin" Type="Byte" Nullable="false" />
     <Property Name="LastLoggedIn" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Users" ToRole="Payments" />
+    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Usern__5224328E" FromRole="Users" ToRole="PaymentStaging" />
   </EntityType>
   <Association Name="FK__Suppliers__Suppl__17F790F9">
     <End Type="NewcourtModel.SupplierTypes" Role="SupplierTypes" Multiplicity="0..1" />
@@ -156,6 +167,41 @@
         <PropertyRef Name="Username" />
       </Principal>
       <Dependent Role="Payments">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PaymentStaging">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="SupplierId" />
+    </Key>
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierId" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+    <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__PaymentSt__Suppl__531856C7" FromRole="PaymentStaging" ToRole="Suppliers" />
+    <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__PaymentSt__Usern__5224328E" FromRole="PaymentStaging" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__PaymentSt__Suppl__531856C7">
+    <End Type="NewcourtModel.Suppliers" Role="Suppliers" Multiplicity="1" />
+    <End Type="NewcourtModel.PaymentStaging" Role="PaymentStaging" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="PaymentStaging">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentSt__Usern__5224328E">
+    <End Type="NewcourtModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="NewcourtModel.PaymentStaging" Role="PaymentStaging" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="PaymentStaging">
         <PropertyRef Name="Username" />
       </Dependent>
     </ReferentialConstraint>

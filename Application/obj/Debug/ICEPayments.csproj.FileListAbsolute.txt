@@ -70,3 +70,4 @@ C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.SupplierTypeDialogF
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.CompanyInfoDialogFrm.resources
 C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csproj.GenerateResource.Cache
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.SupplierSelectDialogFrm.resources
+C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
