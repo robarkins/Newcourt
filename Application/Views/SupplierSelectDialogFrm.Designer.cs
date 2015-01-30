@@ -49,6 +49,8 @@
             this.address4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsSuppliers = new System.Windows.Forms.BindingSource(this.components);
+            this.btnMarkAll = new System.Windows.Forms.Button();
+            this.btnUnmarkAll = new System.Windows.Forms.Button();
             this.pnlContent.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.grpFilters.SuspendLayout();
@@ -66,7 +68,13 @@
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Controls.Add(this.btnUnmarkAll);
+            this.pnlBottom.Controls.Add(this.btnMarkAll);
             this.pnlBottom.Size = new System.Drawing.Size(852, 32);
+            this.pnlBottom.Controls.SetChildIndex(this.btnCancel, 0);
+            this.pnlBottom.Controls.SetChildIndex(this.btnSave, 0);
+            this.pnlBottom.Controls.SetChildIndex(this.btnMarkAll, 0);
+            this.pnlBottom.Controls.SetChildIndex(this.btnUnmarkAll, 0);
             // 
             // btnSave
             // 
@@ -181,6 +189,7 @@
             this.grdSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdSuppliers.Size = new System.Drawing.Size(846, 158);
             this.grdSuppliers.TabIndex = 0;
+            this.grdSuppliers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdSuppliers_CellFormatting);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -261,6 +270,26 @@
             // 
             this.bsSuppliers.DataSource = typeof(Newcourt.Data.Data_Supplier);
             // 
+            // btnMarkAll
+            // 
+            this.btnMarkAll.Location = new System.Drawing.Point(11, 5);
+            this.btnMarkAll.Name = "btnMarkAll";
+            this.btnMarkAll.Size = new System.Drawing.Size(75, 23);
+            this.btnMarkAll.TabIndex = 2;
+            this.btnMarkAll.Text = "Mark All";
+            this.btnMarkAll.UseVisualStyleBackColor = true;
+            this.btnMarkAll.Click += new System.EventHandler(this.btnMarkAll_Click);
+            // 
+            // btnUnmarkAll
+            // 
+            this.btnUnmarkAll.Location = new System.Drawing.Point(92, 5);
+            this.btnUnmarkAll.Name = "btnUnmarkAll";
+            this.btnUnmarkAll.Size = new System.Drawing.Size(75, 23);
+            this.btnUnmarkAll.TabIndex = 3;
+            this.btnUnmarkAll.Text = "Unmark All";
+            this.btnUnmarkAll.UseVisualStyleBackColor = true;
+            this.btnUnmarkAll.Click += new System.EventHandler(this.btnUnmarkAll_Click);
+            // 
             // SupplierSelectDialogFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn address3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn address4DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn address5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnMarkAll;
+        private System.Windows.Forms.Button btnUnmarkAll;
     }
 }

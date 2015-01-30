@@ -13,6 +13,7 @@ namespace Newcourt.Views
 {
     public partial class SupplierSelectDialogFrm : MasterDialogFrm
     {
+        private List<Data_Supplier> suppliers;
         public SupplierSelectDialogFrm()
         {
             InitializeComponent();
@@ -20,7 +21,9 @@ namespace Newcourt.Views
             try
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
-                bsSuppliers.DataSource = Data_Supplier.GetSuppliersWithPaymentStagingCheck(Global.Username);
+
+                suppliers = Data_Supplier.GetSuppliersWithPaymentStagingCheck(Global.Username);
+                bsSuppliers.DataSource = suppliers;
 
                 luSupplierType.SelectedIndex = -1;
             }
@@ -59,7 +62,8 @@ namespace Newcourt.Views
         {
             try
             {
-                bsSuppliers.DataSource = Data_Supplier.SearchSuppliers(txtSearchKeyword.Text.Trim(), luSupplierType.Text.Trim());
+                suppliers = Data_Supplier.SearchSuppliers(Global.Username, txtSearchKeyword.Text.Trim(), luSupplierType.Text.Trim());
+                bsSuppliers.DataSource = suppliers;
             }
             catch(Exception ex)
             {
@@ -105,5 +109,45 @@ namespace Newcourt.Views
                 Utils.ShowException(ex);
             }
         }
+
+        private void grdSuppliers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                if (suppliers[e.RowIndex].PaymentExists)
+                {
+                    grdSuppliers.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = true;
+                    e.CellStyle.BackColor = ColorTranslator.FromHtml("#ff3333");
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        private void btnMarkAll_Click(object sender, EventArgs e)
+        {
+            SelectRows(true);
+        }
+
+        private void SelectRows(bool value)
+        {
+            foreach(DataGridViewRow i in grdSuppliers.Rows)
+            {
+                DataGridViewCheckBoxCell check = i.Cells["Selected"] as DataGridViewCheckBoxCell;
+
+                if (!check.ReadOnly)
+                {
+                    check.Value = value;
+                }
+            }
+        }
+
+        private void btnUnmarkAll_Click(object sender, EventArgs e)
+        {
+            SelectRows(false);
+        }
+
     }
 }

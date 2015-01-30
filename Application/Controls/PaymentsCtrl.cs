@@ -13,7 +13,7 @@ using Newcourt.Views;
 
 namespace Newcourt.Controls
 {
-    public partial class PaymentsCtrl : UserControl, IDisposable
+    public partial class PaymentsCtrl : UserControl
     {
         public PaymentsCtrl()
         {
@@ -43,9 +43,9 @@ namespace Newcourt.Controls
         {
             try
             {
-                List<Data_Supplier> suppliers = bsRecords.DataSource as List<Data_Supplier>;
+                List<Data_PaymentStaging> suppliers = bsRecords.DataSource as List<Data_PaymentStaging>;
 
-                if (suppliers.Sum(a => a.PaymentAmount) == 0)
+                if (suppliers.Sum(a => a.Amount) == 0)
                 {
                     Utils.ShowInformation("No payments entered!");
                     return;
@@ -63,26 +63,26 @@ namespace Newcourt.Controls
 
                         foreach (var i in suppliers)
                         {
-                            if (i.PaymentAmount != null)
+                            if (i.Amount != 0)
                             {
                                 payments.Add(new Data_Payment()
                                 {
-                                    SupplierID = i.SupplierID,
+                                    SupplierID = i.SuppplierId,
                                     BankAccountCode = bankAccountCode,
                                     Username = Global.Username,
-                                    Amount = i.PaymentAmount ?? 0
+                                    Amount = i.Amount
                                 });
                             }
                         }
 
-                        Data_Payment.SavePayments(payments);
-
+                        SavePaymentStaging();
                         String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username);
                         using (StreamWriter sw = new StreamWriter(dlgSaveFile.FileName))
                         {
                             sw.WriteLine(xml);
                         }
 
+                        bsRecords.DataSource = null;
                         Utils.ShowInformation("SEPA Payment file created!");
                     }
                 }
@@ -168,6 +168,12 @@ namespace Newcourt.Controls
             {
                 Utils.ShowException(ex);
             }
+        }
+
+        private void grdRecords_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+            Utils.ShowError("The value entered is not a valid Decimal!");
         }
 
     }

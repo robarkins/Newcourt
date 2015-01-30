@@ -31,7 +31,7 @@ namespace Newcourt.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentsCtrl));
             this.grpOptions = new System.Windows.Forms.GroupBox();
             this.lblPaymentDate = new System.Windows.Forms.Label();
@@ -163,6 +163,7 @@ namespace Newcourt.Controls
             this.address3DataGridViewTextBoxColumn,
             this.address4DataGridViewTextBoxColumn,
             this.address5DataGridViewTextBoxColumn});
+            this.grdRecords.ContextMenuStrip = this.cmsRecords;
             this.grdRecords.DataSource = this.bsRecords;
             this.grdRecords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdRecords.Location = new System.Drawing.Point(3, 41);
@@ -173,6 +174,7 @@ namespace Newcourt.Controls
             this.grdRecords.Size = new System.Drawing.Size(912, 156);
             this.grdRecords.TabIndex = 0;
             this.grdRecords.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecords_CellEnter);
+            this.grdRecords.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdRecords_DataError);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -214,9 +216,9 @@ namespace Newcourt.Controls
             // 
             this.PaymentAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PaymentAmount.DataPropertyName = "Amount";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle1;
             this.PaymentAmount.FillWeight = 10F;
             this.PaymentAmount.HeaderText = "Amount";
             this.PaymentAmount.Name = "PaymentAmount";
@@ -325,13 +327,13 @@ namespace Newcourt.Controls
             this.cmsRecords.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDelete});
             this.cmsRecords.Name = "cmsRecords";
-            this.cmsRecords.Size = new System.Drawing.Size(153, 48);
+            this.cmsRecords.Size = new System.Drawing.Size(108, 26);
             // 
             // mnuDelete
             // 
             this.mnuDelete.Image = ((System.Drawing.Image)(resources.GetObject("mnuDelete.Image")));
             this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(152, 22);
+            this.mnuDelete.Size = new System.Drawing.Size(107, 22);
             this.mnuDelete.Text = "Delete";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 

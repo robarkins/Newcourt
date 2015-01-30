@@ -130,12 +130,12 @@ begin
 	select '' [@ns],
 		(select @msgId [GrpHdr/MsgId],
 				CONVERT(nvarchar(30), @date, 126) [GrpHdr/CreDtTm],
-				count(a.PaymentID) [GrpHdr/NbOfTxs],
+				count(a.SupplierId) [GrpHdr/NbOfTxs],
 				sum(a.Amount) [GrpHdr/CtrlSum],
 				@oin [GrpHdr/InitgPty/Id/OrgId/Othr/Id],
 				(select @msgId [PmtInfId],
 						'TRF' [PmtMtd],
-						count(a.PaymentID) [NbOfTxs],
+						count(a.SupplierId) [NbOfTxs],
 						sum(a.Amount) [CtrlSum],
 						'SEPA' [PmtTpInf/SvcLvl/Cd],
 						CONVERT(nvarchar(10), @PaymentDate, 126) [ReqdExctnDt],
@@ -151,17 +151,23 @@ begin
 						 c.IBAN [CdtrAcct/Id/IBAN],
 						 'EUR' [CdtrAcct/Ccy]
 						 from Suppliers c
-						 inner join Payments d on (c.SupplierID = d.SupplierID)
-						 where d.Username = @Username and d.TimeProcessed is null
+						 inner join PaymentStaging d on (c.SupplierID = d.SupplierID)
+						 where d.Username = @Username
 						for xml path('CdtTrfTxInf'), type)
 						from SystemParameters b
 				for xml path('PmtInf'), type)
-		 from Payments a
-		 where a.Username = @Username and a.TimeProcessed is null
+		 from PaymentStaging a
+		 where a.Username = @Username
 		for xml path('CstmrCdtTrfInitn'), type)
 	for xml path('Document'))
-
-	update Payments set TimeProcessed = @date where Username = @Username and TimeProcessed is null
+	
+	select @xml
+	
+	insert into Payments
+	(SupplierID, BankAccountCode, Username, Amount, TimeProcessed)
+	select SupplierId, @BankAccountCode, @Username, Amount, GETDATE()
+	from PaymentStaging
+	
 	delete from PaymentStaging where Username = @Username
 
 	select '<?xml version="1.0" encoding="UTF-8"?>' + replace(convert(nvarchar(max), @xml), '<Document ns="">', '<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">')
