@@ -69,6 +69,8 @@ namespace Newcourt.Controls
                         return;
                     }
 
+                    String sepaFileCount = (Data_SystemParameters.GetSepaFileCount() + 1).ToString().PadLeft(6, '0');
+                    dlgSaveFile.FileName = String.Format("SEPA-{0:ddMMyyyy}-{1}", DateTime.Now, sepaFileCount);
                     if (dlgSaveFile.ShowDialog() == DialogResult.OK)
                     {
                         Cursor.Current = Cursors.WaitCursor;

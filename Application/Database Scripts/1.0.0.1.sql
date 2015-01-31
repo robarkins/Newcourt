@@ -75,7 +75,15 @@ go
 create table SystemParameters (
 	ID integer not null,
 	DatabaseVersion nvarchar(20),
-	CompanyName nvarchar(70)
+	CompanyName nvarchar(70),
+	Address1 nvarchar(70),
+	Address2 nvarchar(70),
+	Address3 nvarchar(70),
+	Address4 nvarchar(70),
+	Address5 nvarchar(70),
+	Phone nvarchar(70),
+	VatRegNo nvarchar(15),
+	SepaFileCount integer default 0,
 	primary key (ID)
 )
 
@@ -143,7 +151,7 @@ begin
 						@iban [DbtrAcct/Id/IBAN],
 						'EUR' [DbtrAcct/Ccy],
 						@bic [DbtrAgt/FinInstnId/BIC],
-						(select 'Supplier Payment - ' + c.FirstName + ' ' + c.Surname [PmtId/EndToEndId],
+						(select 'SEPA Payment - ' + c.FirstName + ' ' + c.Surname [PmtId/EndToEndId],
 						 'EUR' [Amt/InstdAmt/@Ccy],
 						 d.Amount [Amt/InstdAmt],
 						 c.BIC [CdtrAgt/FinInstnId/BIC],
@@ -169,6 +177,7 @@ begin
 	from PaymentStaging
 	
 	delete from PaymentStaging where Username = @Username
+	update SystemParameters set SepaFileCount = coalesce(SepaFileCount, 0) + 1
 
 	select '<?xml version="1.0" encoding="UTF-8"?>' + replace(convert(nvarchar(max), @xml), '<Document ns="">', '<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">')
 

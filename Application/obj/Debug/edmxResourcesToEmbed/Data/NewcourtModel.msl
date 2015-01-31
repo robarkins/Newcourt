@@ -40,6 +40,14 @@
     <EntitySetMapping Name="SystemParameters">
       <EntityTypeMapping TypeName="NewcourtModel.SystemParameters">
         <MappingFragment StoreEntitySet="SystemParameters">
+          <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address5" ColumnName="Address5" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="SepaFileCount" ColumnName="SepaFileCount" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="DatabaseVersion" ColumnName="DatabaseVersion" />
           <ScalarProperty Name="ID" ColumnName="ID" />

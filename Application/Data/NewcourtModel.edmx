@@ -76,6 +76,14 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="DatabaseVersion" Type="nvarchar" MaxLength="20" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="70" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="70" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="70" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="70" />
+          <Property Name="Address4" Type="nvarchar" MaxLength="70" />
+          <Property Name="Address5" Type="nvarchar" MaxLength="70" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="70" />
+          <Property Name="VatRegNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="SepaFileCount" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -86,7 +94,7 @@
           <Property Name="IsAdmin" Type="tinyint" Nullable="false" />
           <Property Name="LastLoggedIn" Type="datetime" />
         </EntityType>
-        <Association Name="FK__Payments__BankAc__41EDCAC5">
+        <Association Name="FK__Payments__BankAc__3E52440B">
           <End Role="BankAccounts" Type="Self.BankAccounts" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -98,7 +106,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Suppli__40F9A68C">
+        <Association Name="FK__Payments__Suppli__3D5E1FD2">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Userna__42E1EEFE">
+        <Association Name="FK__Payments__Userna__3F466844">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -122,7 +130,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PaymentSt__Suppl__531856C7">
+        <Association Name="FK__PaymentSt__Suppl__4AB81AF0">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="PaymentStaging" Type="Self.PaymentStaging" Multiplicity="*" />
           <ReferentialConstraint>
@@ -134,7 +142,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PaymentSt__Usern__5224328E">
+        <Association Name="FK__PaymentSt__Usern__49C3F6B7">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="PaymentStaging" Type="Self.PaymentStaging" Multiplicity="*" />
           <ReferentialConstraint>
@@ -146,7 +154,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Suppliers__Suppl__339FAB6E">
+        <Association Name="FK__Suppliers__Suppl__1DE57479">
           <End Role="SupplierTypes" Type="Self.SupplierTypes" Multiplicity="0..1" />
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
           <ReferentialConstraint>
@@ -171,27 +179,27 @@
           <EntitySet Name="SupplierTypes" EntityType="Self.SupplierTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemParameters" EntityType="Self.SystemParameters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Payments__BankAc__41EDCAC5" Association="Self.FK__Payments__BankAc__41EDCAC5">
+          <AssociationSet Name="FK__Payments__BankAc__3E52440B" Association="Self.FK__Payments__BankAc__3E52440B">
             <End Role="BankAccounts" EntitySet="BankAccounts" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payments__Suppli__40F9A68C" Association="Self.FK__Payments__Suppli__40F9A68C">
+          <AssociationSet Name="FK__Payments__Suppli__3D5E1FD2" Association="Self.FK__Payments__Suppli__3D5E1FD2">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payments__Userna__42E1EEFE" Association="Self.FK__Payments__Userna__42E1EEFE">
+          <AssociationSet Name="FK__Payments__Userna__3F466844" Association="Self.FK__Payments__Userna__3F466844">
             <End Role="Users" EntitySet="Users" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__PaymentSt__Suppl__531856C7" Association="Self.FK__PaymentSt__Suppl__531856C7">
+          <AssociationSet Name="FK__PaymentSt__Suppl__4AB81AF0" Association="Self.FK__PaymentSt__Suppl__4AB81AF0">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="PaymentStaging" EntitySet="PaymentStaging" />
           </AssociationSet>
-          <AssociationSet Name="FK__PaymentSt__Usern__5224328E" Association="Self.FK__PaymentSt__Usern__5224328E">
+          <AssociationSet Name="FK__PaymentSt__Usern__49C3F6B7" Association="Self.FK__PaymentSt__Usern__49C3F6B7">
             <End Role="Users" EntitySet="Users" />
             <End Role="PaymentStaging" EntitySet="PaymentStaging" />
           </AssociationSet>
-          <AssociationSet Name="FK__Suppliers__Suppl__339FAB6E" Association="Self.FK__Suppliers__Suppl__339FAB6E">
+          <AssociationSet Name="FK__Suppliers__Suppl__1DE57479" Association="Self.FK__Suppliers__Suppl__1DE57479">
             <End Role="SupplierTypes" EntitySet="SupplierTypes" />
             <End Role="Suppliers" EntitySet="Suppliers" />
           </AssociationSet>
@@ -283,6 +291,14 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="DatabaseVersion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CompanyName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="SepaFileCount" Type="Int32" />
+          <Property Name="Address1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Address4" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Address5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="VatRegNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -451,6 +467,14 @@
           <EntitySetMapping Name="SystemParameters">
             <EntityTypeMapping TypeName="NewcourtModel.SystemParameters">
               <MappingFragment StoreEntitySet="SystemParameters">
+                <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address5" ColumnName="Address5" />
+                <ScalarProperty Name="Address4" ColumnName="Address4" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="SepaFileCount" ColumnName="SepaFileCount" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="DatabaseVersion" ColumnName="DatabaseVersion" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
