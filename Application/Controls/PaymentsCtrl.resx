@@ -120,8 +120,14 @@
   <metadata name="bsBankAccounts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>265, 17</value>
   </metadata>
+  <metadata name="bsBankAccounts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>265, 17</value>
+  </metadata>
   <metadata name="bsSupplierTypes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="ucToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>519, 17</value>
   </metadata>
   <metadata name="PaymentAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -129,41 +135,40 @@
   <metadata name="cmsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>639, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mnuDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsQAAALEAGtI711AAABqElEQVRIS63UPyiuYRjH8ZdD
-        yZGFTY7pTMRgkH9l5ViVsBJZTMRmkdgMpKxisQmziDIoB3Xq+JM/EWWRkgHf39t9313up/z/1aeu671v
-        1+t53vt5Um8kE3mG+k8lA//wZGzh1ZzD/sFnnSJ1bT74iiuk70XhN/iJ9E39j2PnEDk4cr3uW5arZQc/
-        TC/bCNH12n85H7euvoeG+7UTlJhe9AUhm7CLxThzdTzsL8pNL8sIWYBdLMOeq+Nha6g3vcwgZAJ2sRbr
-        ro6HLaLZ9DKMkH7YxT9YcnU8bBYdppdOhLTDLrZhztXxsEn0ml6aENIAu9iDKVfHw0YwZHqpQMhv2MVB
-        jLo6HjaAMdOLDm1ILuyiBmmg6nhYN6ZNr3W9FF7kBn6DLlGX6jfbYa2YN/0BEtFh9Bt08/UjqI6HNWLF
-        9KtIxG7QsdDxUB0Pq8GG6fXFiegU+w06sHWujoeVYt/040hEp9hv2IUeKdXxsCLYF2ofEumC36CHXA+7
-        6niY3n93pm9BIjrFfoM2+8t8QJWrH1Hpaq8aiegU203v9QuJFODygy6QDZJKPQNwzRL7d6OuBwAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
   <metadata name="bsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>157, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="mnuDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAahJREFUSEut1D8ormEYx/GXQ8mRhU2O6UzEYJB/ZeVYlbASWUzEZpHYDKSsYrEJ
+        s4gyKAd16viTPxFlkZIB39/bfd9d7qf8/9Wnruu9b9fred77eVJvJBN5hvpPJQP/8GRs4dWcw/7BZ50i
+        dW0++IorpO9F4Tf4ifRN/Y9j5xA5OHK97luWq2UHP0wv2wjR9dp/OR+3rr6Hhvu1E5SYXvQFIZuwi8U4
+        c3U87C/KTS/LCFmAXSzDnqvjYWuoN73MIGQCdrEW666Ohy2i2fQyjJB+2MU/WHJ1PGwWHaaXToS0wy62
+        Yc7V8bBJ9JpemhDSALvYgylXx8NGMGR6qUDIb9jFQYy6Oh42gDHTiw5tSC7sogZpoOp4WDemTa91vRRe
+        5AZ+gy5Rl+o322GtmDf9ARLRYfQbdPP1I6iOhzVixfSrSMRu0LHQ8VAdD6vBhun1xYnoFPsNOrB1ro6H
+        lWLf9ONIRKfYb9iFHinV8bAi2BdqHxLpgt+gh1wPu+p4mN5/d6ZvQSI6xX6DNvvLfECVqx9R6WqvGono
+        FNtN7/ULiRTg8oMukA2SSj0DcM0S+3ejrgcAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="ucToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>519, 17</value>
   </metadata>
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

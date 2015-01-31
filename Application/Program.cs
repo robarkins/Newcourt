@@ -17,8 +17,10 @@ namespace Newcourt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Global.InitGlobalVariables();
-            Application.Run(new Main());
+            if (new LoginDialogFrm().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Main());
+            }
         }
     }
 }

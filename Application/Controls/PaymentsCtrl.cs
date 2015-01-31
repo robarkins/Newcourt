@@ -43,47 +43,66 @@ namespace Newcourt.Controls
         {
             try
             {
-                List<Data_PaymentStaging> suppliers = bsRecords.DataSource as List<Data_PaymentStaging>;
-
-                if (suppliers.Sum(a => a.Amount) == 0)
+                if (String.IsNullOrWhiteSpace(luBankAccounts.Text))
                 {
-                    Utils.ShowInformation("No payments entered!");
-                    return;
+                    Utils.ShowInformation("You must select a Bank Account!");
+                    luBankAccounts.Focus();
                 }
-
-                if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+                else if (String.IsNullOrWhiteSpace(dtPaymentDate.Text))
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    
-                    List<Data_Payment> payments = new List<Data_Payment>();
+                    Utils.ShowInformation("You must select a Payment Date!");
+                    dtPaymentDate.Focus();
+                }
+                else
+                {
+                    List<Data_PaymentStaging> suppliers = bsRecords.DataSource as List<Data_PaymentStaging>;
 
-                    if (suppliers != null)
+                    if (suppliers.Count == 0)
                     {
-                        String bankAccountCode = luBankAccounts.SelectedValue.ToString();
+                        Utils.ShowInformation("No Suppliers have been selected for payment!");
+                        return;
+                    }
 
-                        foreach (var i in suppliers)
+                    if (suppliers.Sum(a => a.Amount) == 0)
+                    {
+                        Utils.ShowInformation("No payments entered!");
+                        return;
+                    }
+
+                    if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+
+                        List<Data_Payment> payments = new List<Data_Payment>();
+
+                        if (suppliers != null)
                         {
-                            if (i.Amount != 0)
+                            String bankAccountCode = luBankAccounts.SelectedValue.ToString();
+
+                            foreach (var i in suppliers)
                             {
-                                payments.Add(new Data_Payment()
+                                if (i.Amount != 0)
                                 {
-                                    SupplierID = i.SuppplierId,
-                                    BankAccountCode = bankAccountCode,
-                                    Username = Global.Username,
-                                    Amount = i.Amount
-                                });
+                                    payments.Add(new Data_Payment()
+                                    {
+                                        SupplierID = i.SuppplierId,
+                                        BankAccountCode = bankAccountCode,
+                                        Username = Global.Username,
+                                        Amount = i.Amount
+                                    });
+                                }
                             }
-                        }
 
-                        SavePaymentStaging();
-                        String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username);
-                        using (StreamWriter sw = new StreamWriter(dlgSaveFile.FileName))
-                        {
-                            sw.WriteLine(xml);
-                        }
+                            SavePaymentStaging();
+                            String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username);
+                            using (StreamWriter sw = new StreamWriter(dlgSaveFile.FileName))
+                            {
+                                sw.WriteLine(xml);
+                            }
 
-                        bsRecords.DataSource = null;
-                        Utils.ShowInformation("SEPA Payment file created!");
+                            bsRecords.DataSource = null;
+                            Utils.ShowInformation("SEPA Payment file created!");
+                        }
                     }
                 }
             }

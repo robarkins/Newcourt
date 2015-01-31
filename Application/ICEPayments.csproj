@@ -122,6 +122,7 @@
     <Compile Include="Data\Data_Supplier.cs" />
     <Compile Include="Data\Data_SupplierType.cs" />
     <Compile Include="Data\Data_SystemParameters.cs" />
+    <Compile Include="Data\Data_User.cs" />
     <Compile Include="Data\GenerateSEPAPaymentXML_Result.cs">
       <DependentUpon>NewcourtModel.tt</DependentUpon>
     </Compile>
@@ -165,6 +166,12 @@
     </Compile>
     <Compile Include="Views\BankAccountDialogFrm.Designer.cs">
       <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginDialogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginDialogFrm.Designer.cs">
+      <DependentUpon>LoginDialogFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
@@ -230,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BankAccountDialogFrm.resx">
       <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginDialogFrm.resx">
+      <DependentUpon>LoginDialogFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -301,8 +311,10 @@
     <Content Include="Images\bank.png" />
     <Content Include="Images\cancel.png" />
     <Content Include="Images\companyInfo.png" />
+    <Content Include="Images\createFile.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
+    <Content Include="Images\login.png" />
     <Content Include="Images\ok.png" />
     <Content Include="Images\refresh.png" />
     <Content Include="Images\suppliers.png" />

@@ -11,9 +11,9 @@ namespace Newcourt
         public static String Username { get; set; }
         public const String FKVIOLATIONMSG = "{0} {1} cannot be deleted as it is currently referenced by another record in the system!";
 
-        public static void InitGlobalVariables()
+        public static void InitGlobalVariables(String username)
         {
-            Username = "Admin";
+            Username = username;
         }
     }
 }

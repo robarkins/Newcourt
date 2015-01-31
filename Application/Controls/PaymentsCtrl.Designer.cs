@@ -31,7 +31,7 @@ namespace Newcourt.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentsCtrl));
             this.grpOptions = new System.Windows.Forms.GroupBox();
             this.lblPaymentDate = new System.Windows.Forms.Label();
@@ -52,6 +52,8 @@ namespace Newcourt.Controls
             this.address3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsRecords = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.bsRecords = new System.Windows.Forms.BindingSource(this.components);
             this.ucToolStrip1 = new Newcourt.Controls.UCToolStrip();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
@@ -60,17 +62,15 @@ namespace Newcourt.Controls
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnCreateFile = new System.Windows.Forms.Button();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.cmsRecords = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsBankAccounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSupplierTypes)).BeginInit();
             this.grpSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).BeginInit();
+            this.cmsRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRecords)).BeginInit();
             this.ucToolStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
-            this.cmsRecords.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpOptions
@@ -216,9 +216,9 @@ namespace Newcourt.Controls
             // 
             this.PaymentAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PaymentAmount.DataPropertyName = "Amount";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle2;
             this.PaymentAmount.FillWeight = 10F;
             this.PaymentAmount.HeaderText = "Amount";
             this.PaymentAmount.Name = "PaymentAmount";
@@ -257,6 +257,21 @@ namespace Newcourt.Controls
             this.address5DataGridViewTextBoxColumn.HeaderText = "Address5";
             this.address5DataGridViewTextBoxColumn.Name = "address5DataGridViewTextBoxColumn";
             this.address5DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cmsRecords
+            // 
+            this.cmsRecords.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDelete});
+            this.cmsRecords.Name = "cmsRecords";
+            this.cmsRecords.Size = new System.Drawing.Size(108, 26);
+            // 
+            // mnuDelete
+            // 
+            this.mnuDelete.Image = ((System.Drawing.Image)(resources.GetObject("mnuDelete.Image")));
+            this.mnuDelete.Name = "mnuDelete";
+            this.mnuDelete.Size = new System.Drawing.Size(107, 22);
+            this.mnuDelete.Text = "Delete";
+            this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
             // bsRecords
             // 
@@ -322,21 +337,6 @@ namespace Newcourt.Controls
             this.dlgSaveFile.DefaultExt = "xml";
             this.dlgSaveFile.Filter = "XML file | *.xml";
             // 
-            // cmsRecords
-            // 
-            this.cmsRecords.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDelete});
-            this.cmsRecords.Name = "cmsRecords";
-            this.cmsRecords.Size = new System.Drawing.Size(108, 26);
-            // 
-            // mnuDelete
-            // 
-            this.mnuDelete.Image = ((System.Drawing.Image)(resources.GetObject("mnuDelete.Image")));
-            this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(107, 22);
-            this.mnuDelete.Text = "Delete";
-            this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
-            // 
             // PaymentsCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,11 +354,11 @@ namespace Newcourt.Controls
             this.grpSuppliers.ResumeLayout(false);
             this.grpSuppliers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).EndInit();
+            this.cmsRecords.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsRecords)).EndInit();
             this.ucToolStrip1.ResumeLayout(false);
             this.ucToolStrip1.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
-            this.cmsRecords.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

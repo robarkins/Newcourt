@@ -148,6 +148,32 @@
             this.dataGridViewTextBoxColumn118 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn119 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn125 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn126 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn129 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn130 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn131 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn132 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn133 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn134 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn135 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn136 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn137 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn138 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn139 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn140 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn141 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn142 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn143 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn144 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn145 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).BeginInit();
             this.grpRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRecords)).BeginInit();
@@ -156,31 +182,32 @@
             // grdRecords
             // 
             this.grdRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn96,
-            this.dataGridViewTextBoxColumn97,
-            this.dataGridViewTextBoxColumn98,
-            this.dataGridViewTextBoxColumn99,
-            this.dataGridViewTextBoxColumn100,
-            this.dataGridViewTextBoxColumn101,
-            this.dataGridViewTextBoxColumn102,
-            this.dataGridViewTextBoxColumn103,
-            this.dataGridViewTextBoxColumn104,
-            this.dataGridViewTextBoxColumn105,
-            this.dataGridViewTextBoxColumn106,
-            this.dataGridViewTextBoxColumn107,
-            this.dataGridViewTextBoxColumn108,
-            this.dataGridViewTextBoxColumn109,
-            this.dataGridViewTextBoxColumn110,
-            this.dataGridViewTextBoxColumn111,
-            this.dataGridViewTextBoxColumn112,
-            this.dataGridViewTextBoxColumn113,
-            this.dataGridViewTextBoxColumn114,
-            this.dataGridViewTextBoxColumn115,
-            this.dataGridViewTextBoxColumn116,
-            this.dataGridViewTextBoxColumn117,
-            this.dataGridViewTextBoxColumn118,
-            this.dataGridViewTextBoxColumn119,
-            this.dataGridViewTextBoxColumn120});
+            this.dataGridViewTextBoxColumn121,
+            this.dataGridViewTextBoxColumn122,
+            this.dataGridViewTextBoxColumn123,
+            this.dataGridViewTextBoxColumn124,
+            this.dataGridViewTextBoxColumn125,
+            this.dataGridViewTextBoxColumn126,
+            this.dataGridViewTextBoxColumn127,
+            this.dataGridViewTextBoxColumn128,
+            this.dataGridViewTextBoxColumn129,
+            this.dataGridViewTextBoxColumn130,
+            this.dataGridViewTextBoxColumn131,
+            this.dataGridViewTextBoxColumn132,
+            this.dataGridViewTextBoxColumn133,
+            this.dataGridViewTextBoxColumn134,
+            this.dataGridViewTextBoxColumn135,
+            this.dataGridViewTextBoxColumn136,
+            this.dataGridViewTextBoxColumn137,
+            this.dataGridViewTextBoxColumn138,
+            this.dataGridViewTextBoxColumn139,
+            this.dataGridViewTextBoxColumn140,
+            this.dataGridViewTextBoxColumn141,
+            this.dataGridViewTextBoxColumn142,
+            this.dataGridViewTextBoxColumn143,
+            this.dataGridViewTextBoxColumn144,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn145});
             // 
             // grpRecords
             // 
@@ -1029,6 +1056,194 @@
             this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
             this.dataGridViewTextBoxColumn120.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn121
+            // 
+            this.dataGridViewTextBoxColumn121.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn121.DataPropertyName = "SupplierID";
+            this.dataGridViewTextBoxColumn121.FillWeight = 8F;
+            this.dataGridViewTextBoxColumn121.HeaderText = "Supplier ID";
+            this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
+            // 
+            // dataGridViewTextBoxColumn122
+            // 
+            this.dataGridViewTextBoxColumn122.DataPropertyName = "SupplierTypeCode";
+            this.dataGridViewTextBoxColumn122.HeaderText = "SupplierTypeCode";
+            this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
+            this.dataGridViewTextBoxColumn122.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn123
+            // 
+            this.dataGridViewTextBoxColumn123.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn123.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn123.FillWeight = 15F;
+            this.dataGridViewTextBoxColumn123.HeaderText = "First Name";
+            this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
+            // 
+            // dataGridViewTextBoxColumn124
+            // 
+            this.dataGridViewTextBoxColumn124.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn124.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn124.FillWeight = 15F;
+            this.dataGridViewTextBoxColumn124.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
+            // 
+            // dataGridViewTextBoxColumn125
+            // 
+            this.dataGridViewTextBoxColumn125.DataPropertyName = "Address1";
+            this.dataGridViewTextBoxColumn125.HeaderText = "Address1";
+            this.dataGridViewTextBoxColumn125.Name = "dataGridViewTextBoxColumn125";
+            this.dataGridViewTextBoxColumn125.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn126
+            // 
+            this.dataGridViewTextBoxColumn126.DataPropertyName = "Address2";
+            this.dataGridViewTextBoxColumn126.HeaderText = "Address2";
+            this.dataGridViewTextBoxColumn126.Name = "dataGridViewTextBoxColumn126";
+            this.dataGridViewTextBoxColumn126.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn127
+            // 
+            this.dataGridViewTextBoxColumn127.DataPropertyName = "Address3";
+            this.dataGridViewTextBoxColumn127.HeaderText = "Address3";
+            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
+            this.dataGridViewTextBoxColumn127.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn128
+            // 
+            this.dataGridViewTextBoxColumn128.DataPropertyName = "Address4";
+            this.dataGridViewTextBoxColumn128.HeaderText = "Address4";
+            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
+            this.dataGridViewTextBoxColumn128.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn129
+            // 
+            this.dataGridViewTextBoxColumn129.DataPropertyName = "Address5";
+            this.dataGridViewTextBoxColumn129.HeaderText = "Address5";
+            this.dataGridViewTextBoxColumn129.Name = "dataGridViewTextBoxColumn129";
+            this.dataGridViewTextBoxColumn129.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn130
+            // 
+            this.dataGridViewTextBoxColumn130.DataPropertyName = "Phone";
+            this.dataGridViewTextBoxColumn130.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn130.Name = "dataGridViewTextBoxColumn130";
+            this.dataGridViewTextBoxColumn130.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn131
+            // 
+            this.dataGridViewTextBoxColumn131.DataPropertyName = "Mobile";
+            this.dataGridViewTextBoxColumn131.HeaderText = "Mobile";
+            this.dataGridViewTextBoxColumn131.Name = "dataGridViewTextBoxColumn131";
+            this.dataGridViewTextBoxColumn131.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn132
+            // 
+            this.dataGridViewTextBoxColumn132.DataPropertyName = "PPSVat";
+            this.dataGridViewTextBoxColumn132.HeaderText = "PPSVat";
+            this.dataGridViewTextBoxColumn132.Name = "dataGridViewTextBoxColumn132";
+            this.dataGridViewTextBoxColumn132.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn133
+            // 
+            this.dataGridViewTextBoxColumn133.DataPropertyName = "BankName";
+            this.dataGridViewTextBoxColumn133.HeaderText = "BankName";
+            this.dataGridViewTextBoxColumn133.Name = "dataGridViewTextBoxColumn133";
+            this.dataGridViewTextBoxColumn133.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn134
+            // 
+            this.dataGridViewTextBoxColumn134.DataPropertyName = "BankAddress1";
+            this.dataGridViewTextBoxColumn134.HeaderText = "BankAddress1";
+            this.dataGridViewTextBoxColumn134.Name = "dataGridViewTextBoxColumn134";
+            this.dataGridViewTextBoxColumn134.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn135
+            // 
+            this.dataGridViewTextBoxColumn135.DataPropertyName = "BankAddress2";
+            this.dataGridViewTextBoxColumn135.HeaderText = "BankAddress2";
+            this.dataGridViewTextBoxColumn135.Name = "dataGridViewTextBoxColumn135";
+            this.dataGridViewTextBoxColumn135.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn136
+            // 
+            this.dataGridViewTextBoxColumn136.DataPropertyName = "BankAddress3";
+            this.dataGridViewTextBoxColumn136.HeaderText = "BankAddress3";
+            this.dataGridViewTextBoxColumn136.Name = "dataGridViewTextBoxColumn136";
+            this.dataGridViewTextBoxColumn136.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn137
+            // 
+            this.dataGridViewTextBoxColumn137.DataPropertyName = "BankAddress4";
+            this.dataGridViewTextBoxColumn137.HeaderText = "BankAddress4";
+            this.dataGridViewTextBoxColumn137.Name = "dataGridViewTextBoxColumn137";
+            this.dataGridViewTextBoxColumn137.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn138
+            // 
+            this.dataGridViewTextBoxColumn138.DataPropertyName = "BankAddress5";
+            this.dataGridViewTextBoxColumn138.HeaderText = "BankAddress5";
+            this.dataGridViewTextBoxColumn138.Name = "dataGridViewTextBoxColumn138";
+            this.dataGridViewTextBoxColumn138.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn139
+            // 
+            this.dataGridViewTextBoxColumn139.DataPropertyName = "BankAccNumber";
+            this.dataGridViewTextBoxColumn139.HeaderText = "BankAccNumber";
+            this.dataGridViewTextBoxColumn139.Name = "dataGridViewTextBoxColumn139";
+            this.dataGridViewTextBoxColumn139.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn140
+            // 
+            this.dataGridViewTextBoxColumn140.DataPropertyName = "SortCode";
+            this.dataGridViewTextBoxColumn140.HeaderText = "SortCode";
+            this.dataGridViewTextBoxColumn140.Name = "dataGridViewTextBoxColumn140";
+            this.dataGridViewTextBoxColumn140.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn141
+            // 
+            this.dataGridViewTextBoxColumn141.DataPropertyName = "BIC";
+            this.dataGridViewTextBoxColumn141.HeaderText = "BIC";
+            this.dataGridViewTextBoxColumn141.Name = "dataGridViewTextBoxColumn141";
+            this.dataGridViewTextBoxColumn141.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn142
+            // 
+            this.dataGridViewTextBoxColumn142.DataPropertyName = "IBAN";
+            this.dataGridViewTextBoxColumn142.HeaderText = "IBAN";
+            this.dataGridViewTextBoxColumn142.Name = "dataGridViewTextBoxColumn142";
+            this.dataGridViewTextBoxColumn142.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn143
+            // 
+            this.dataGridViewTextBoxColumn143.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn143.DataPropertyName = "SupplierTypeName";
+            this.dataGridViewTextBoxColumn143.FillWeight = 22F;
+            this.dataGridViewTextBoxColumn143.HeaderText = "Supplier Type";
+            this.dataGridViewTextBoxColumn143.Name = "dataGridViewTextBoxColumn143";
+            // 
+            // dataGridViewTextBoxColumn144
+            // 
+            this.dataGridViewTextBoxColumn144.DataPropertyName = "PaymentAmount";
+            this.dataGridViewTextBoxColumn144.HeaderText = "PaymentAmount";
+            this.dataGridViewTextBoxColumn144.Name = "dataGridViewTextBoxColumn144";
+            this.dataGridViewTextBoxColumn144.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "PaymentExists";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "PaymentExists";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn145
+            // 
+            this.dataGridViewTextBoxColumn145.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn145.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn145.FillWeight = 40F;
+            this.dataGridViewTextBoxColumn145.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn145.Name = "dataGridViewTextBoxColumn145";
+            this.dataGridViewTextBoxColumn145.ReadOnly = true;
+            // 
             // SupplierBrowseCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1166,5 +1381,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn118;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn119;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn120;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn121;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn122;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn123;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn124;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn125;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn126;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn127;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn128;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn129;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn130;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn131;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn132;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn133;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn134;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn135;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn136;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn137;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn138;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn139;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn140;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn141;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn142;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn143;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn144;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn145;
     }
 }
