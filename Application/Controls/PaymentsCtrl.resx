@@ -120,23 +120,11 @@
   <metadata name="bsBankAccounts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>265, 17</value>
   </metadata>
-  <metadata name="bsBankAccounts.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>265, 17</value>
-  </metadata>
-  <metadata name="bsSupplierTypes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="ucToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>519, 17</value>
-  </metadata>
   <metadata name="PaymentAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="cmsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>639, 17</value>
-  </metadata>
-  <metadata name="bsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>157, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="mnuDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -152,23 +140,26 @@
         FNtN7/ULiRTg8oMukA2SSj0DcM0S+3ejrgcAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="bsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>157, 17</value>
+  </metadata>
   <metadata name="ucToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>519, 17</value>
   </metadata>
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJXSURBVEhLvZRdS1RRFIbfvj8I+gld9Qv6uIhMgv5MEARe
-        edV4MdmHSqkl9iXWwDQKUXkxk+U0mZlljlQkeVN2U/QXampOz7s7RwZpYOxEC17W3nu96z1r773O1v+3
-        SBuCn9NeTWpE9zWsCV3RA11TVXtCLOGsyyJtDH5JR9TL7KTqINIFsKwDIZZw1mVJ0hu16Qyz4/oOfug8
-        4/faF2KphKtxxR1U3IF3xW+1P8RSC19k1olwJ34QVNMIj2tT8M/VrktIZBDO4IfSCmfipFkqHo6Fu/FX
-        wYv4jBNOU3unrdC3k7pt1X/WzhCb1zFdZ7WL1T78CFjUoRAzpzHH3lrBvFDUNAlflNOK8vqk26AQsMKR
-        fKVzI12O4Y8U4DpmjrlGXh81CreoEgz621+5qQ86xcjbdTv55geAz9PHYGELGh57zTFfpLk9wLld+AIN
-        uiqcp+WzjPr0Tf2qUVmNs6zpBr07SO/eIpaL4bHXHDNnCAwA5/oOxrnaIFzXDt1hG/1Me5i5qlFgkTwo
-        xBiLkcwdM8dc5/SS613eo8uDcEWb9ZTWf6SzIAtO8zZkeRO6QQbkeCci3Y0xAUrUW2Lj5pjrHOc+1Dlu
-        68Tvy2tmSStN0m6+jjEqKgbRiLUW280E/xCNWNCWEJvSUarxFusq46cCDoaYOWvzWvqYrUzFTxArIjyD
-        9/hxqxX/yRqFZxErIzyP97gS/9J/JZy8Axa24Ix+6jX+JUgqTvW6TSO8yOwVFS/jPf5nwm75OYSX8B4/
-        S/O6Jbag3fR5O0dxmItrC69dRbviaBOTfgFfbU6VcdB2IQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJTSURBVEhLvZTbS1RRFMa/7heC/oSe+gu6PEQmQf9MEAQ+
+        +dT0MNpNKa3EbmIOTJMQlg8zWdpoaRdxpCLJl7KXon+hpub0+3b7yBAOjE204GOtfda3vrPO3uts/X9L
+        tCH4F9qrCQ3pgQY1rmt6qBuqaE/IpZx1WaKNwS/piHpYnVQNJLoIlnUg5FLOuiwteqM2nWF1XN/BD50n
+        fq99IdeScCV23EHHHXh3/Fb7Q65l4UusOhHuxF8GlVaER7Up+Odq1xUkMghn8AOtCmdi0RwdD0bhbvx1
+        8DLuccppaO+0Ffp2Sret+s/aGXLzOqabUbgXPwQWdSjkzKmvsbdWMD8oaoaCL8ppRXl90h1QCFhhS74y
+        uYmuRvglBbjOmWOukddHDcMtqgSD+fZbbuuDThG5K4+TT74feD+9DRa2oOHYz5zzQZp7Abj2NL7AgK4K
+        5xn5LFGvvqlPVTqrspdV3WJ2e5jdEXK5CMd+5pw5A6AfuNZnMMrRBuGadugen9HHMsvKXQ0Di+RBIeJu
+        RLp2zhxzXdNFrb/yPlMehMvarKeM/mOdBVnQxd2Q5U7oBhmQ455INBYxDkr0W+LDzTHXNa59pHOc1onf
+        h9fI0lGaYNx8HCN0VAyiCc+aHDcT/EPUY0FbQm5SR+nG21DTFH4y4GDImfNnXVMvs03R8TRiYwg/wzt+
+        0mzHa1m98BxiRYTn8Y7L8Zf+K+H0HrCwBcv6qdf4VyDtuKXbbQbhRVazdLyMd/zPhD3y0wgv4R3PtnK7
+        pbag3cx5Owd3GPG2cNuVtStmG5j0C6/PTkrE5mySAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -186,5 +177,8 @@
   </data>
   <metadata name="dlgSaveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>406, 17</value>
+  </metadata>
+  <metadata name="bsSupplierTypes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

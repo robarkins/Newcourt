@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Newcourt.Data
 {
@@ -42,6 +43,27 @@ namespace Newcourt.Data
                                 Address5 = a.Suppliers.Address5,
                                 SupplierTypeCode = a.Suppliers.SupplierTypeCode
                             }).ToList();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void SavePaymentStaging(Data_PaymentStaging payment)
+        {
+            try
+            {
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    PaymentStaging record = ctx.PaymentStaging.FirstOrDefault(a => a.Username == payment.Username && a.SupplierId == payment.SuppplierId);
+
+                    if (record != null)
+                    {
+                        record.Amount = payment.Amount;
+                        ctx.SaveChanges();
+                    }
                 }
             }
             catch(Exception ex)
@@ -99,6 +121,22 @@ namespace Newcourt.Data
                         ctx.PaymentStaging.Remove(payment);
                         ctx.SaveChanges();
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void DeleteAllPaymentStaging(String username)
+        {
+            try
+            {
+                using(NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    ctx.Database.ExecuteSqlCommand(String.Format("Delete from PaymentStaging where Username = '{0}'", username));
+                    ctx.SaveChanges();
                 }
             }
             catch (Exception ex)

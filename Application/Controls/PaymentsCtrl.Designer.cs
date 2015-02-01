@@ -16,7 +16,6 @@ namespace Newcourt.Controls
         {
             if (disposing && (components != null))
             {
-                SavePaymentStaging();
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -31,7 +30,7 @@ namespace Newcourt.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentsCtrl));
             this.grpOptions = new System.Windows.Forms.GroupBox();
             this.lblPaymentDate = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@ namespace Newcourt.Controls
             this.luBankAccounts = new System.Windows.Forms.ComboBox();
             this.bsBankAccounts = new System.Windows.Forms.BindingSource(this.components);
             this.lblBank = new System.Windows.Forms.Label();
-            this.bsSupplierTypes = new System.Windows.Forms.BindingSource(this.components);
             this.grpSuppliers = new System.Windows.Forms.GroupBox();
             this.grdRecords = new System.Windows.Forms.DataGridView();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,17 +58,19 @@ namespace Newcourt.Controls
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnCreateFile = new System.Windows.Forms.Button();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.bsSupplierTypes = new System.Windows.Forms.BindingSource(this.components);
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsBankAccounts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSupplierTypes)).BeginInit();
             this.grpSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).BeginInit();
             this.cmsRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRecords)).BeginInit();
             this.ucToolStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSupplierTypes)).BeginInit();
             this.SuspendLayout();
             // 
             // grpOptions
@@ -129,10 +129,6 @@ namespace Newcourt.Controls
             this.lblBank.TabIndex = 3;
             this.lblBank.Text = "Bank:";
             // 
-            // bsSupplierTypes
-            // 
-            this.bsSupplierTypes.DataSource = typeof(Newcourt.Data.Data_SupplierType);
-            // 
             // grpSuppliers
             // 
             this.grpSuppliers.Controls.Add(this.grdRecords);
@@ -173,7 +169,9 @@ namespace Newcourt.Controls
             this.grdRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdRecords.Size = new System.Drawing.Size(912, 156);
             this.grdRecords.TabIndex = 0;
+            this.grdRecords.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecords_CellEndEdit);
             this.grdRecords.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRecords_CellEnter);
+            this.grdRecords.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdRecords_ColumnHeaderMouseClick);
             this.grdRecords.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdRecords_DataError);
             // 
             // firstNameDataGridViewTextBoxColumn
@@ -184,6 +182,7 @@ namespace Newcourt.Controls
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
@@ -216,9 +215,9 @@ namespace Newcourt.Controls
             // 
             this.PaymentAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PaymentAmount.DataPropertyName = "Amount";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.PaymentAmount.DefaultCellStyle = dataGridViewCellStyle1;
             this.PaymentAmount.FillWeight = 10F;
             this.PaymentAmount.HeaderText = "Amount";
             this.PaymentAmount.Name = "PaymentAmount";
@@ -314,12 +313,23 @@ namespace Newcourt.Controls
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Controls.Add(this.btnClear);
             this.pnlBottom.Controls.Add(this.btnCreateFile);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom.Location = new System.Drawing.Point(0, 259);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(918, 32);
             this.pnlBottom.TabIndex = 2;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(11, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 1;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCreateFile
             // 
@@ -337,6 +347,10 @@ namespace Newcourt.Controls
             this.dlgSaveFile.DefaultExt = "xml";
             this.dlgSaveFile.Filter = "XML file | *.xml";
             // 
+            // bsSupplierTypes
+            // 
+            this.bsSupplierTypes.DataSource = typeof(Newcourt.Data.Data_SupplierType);
+            // 
             // PaymentsCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +364,6 @@ namespace Newcourt.Controls
             this.grpOptions.ResumeLayout(false);
             this.grpOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsBankAccounts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSupplierTypes)).EndInit();
             this.grpSuppliers.ResumeLayout(false);
             this.grpSuppliers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).EndInit();
@@ -359,6 +372,7 @@ namespace Newcourt.Controls
             this.ucToolStrip1.ResumeLayout(false);
             this.ucToolStrip1.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsSupplierTypes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,6 +396,9 @@ namespace Newcourt.Controls
         private System.Windows.Forms.ToolStripButton btnAdd;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnDelete;
+        private System.Windows.Forms.ContextMenuStrip cmsRecords;
+        private System.Windows.Forms.ToolStripMenuItem mnuDelete;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
@@ -392,7 +409,5 @@ namespace Newcourt.Controls
         private System.Windows.Forms.DataGridViewTextBoxColumn address3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn address4DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn address5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ContextMenuStrip cmsRecords;
-        private System.Windows.Forms.ToolStripMenuItem mnuDelete;
     }
 }

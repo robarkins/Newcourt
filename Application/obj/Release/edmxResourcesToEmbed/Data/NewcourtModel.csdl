@@ -83,6 +83,14 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="DatabaseVersion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="CompanyName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="SepaFileCount" Type="Int32" />
+    <Property Name="Address1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Address3" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Address4" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Address5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="VatRegNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

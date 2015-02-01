@@ -177,12 +177,15 @@ namespace Newcourt.Controls
         {
             try
             {
-                Data_PaymentStaging payment = Utils.GetCurrentRecord<Data_PaymentStaging>(bsRecords);
-
-                if (payment != null)
+                if (grdRecords.RowCount > 0 && Utils.AskQuestion("Are you sure you want to delete this Payment?") == DialogResult.Yes)
                 {
-                    Data_PaymentStaging.DeleteFromPaymentStaging(payment.Username, payment.SuppplierId);
-                    GetRecords();
+                    Data_PaymentStaging payment = Utils.GetCurrentRecord<Data_PaymentStaging>(bsRecords);
+
+                    if (payment != null)
+                    {
+                        Data_PaymentStaging.DeleteFromPaymentStaging(payment.Username, payment.SuppplierId);
+                        GetRecords();
+                    }
                 }
             }
             catch(Exception ex)
@@ -197,5 +200,49 @@ namespace Newcourt.Controls
             Utils.ShowError("The value entered is not a valid Decimal!");
         }
 
+        private void grdRecords_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Data_PaymentStaging payment = grdRecords.Rows[e.RowIndex].DataBoundItem as Data_PaymentStaging;
+
+                if (payment != null)
+                {
+                    Data_PaymentStaging.SavePaymentStaging(payment);
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grdRecords.RowCount > 0 && Utils.AskQuestion("You you sure you want to clear all Payments?") == DialogResult.Yes)
+                {
+                    Data_PaymentStaging.DeleteAllPaymentStaging(Global.Username);
+                    GetRecords();
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
+        private void grdRecords_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                grdRecords.Sort(grdRecords.Columns[e.ColumnIndex], ListSortDirection.Ascending);
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
     }
 }
