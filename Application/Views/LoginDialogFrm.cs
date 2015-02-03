@@ -27,14 +27,21 @@ namespace Newcourt.Views
             {
 #if DEBUG
                 DialogResult = DialogResult.OK;
-                Global.InitGlobalVariables("Admin");
+                int test = loginAttemps;
+                Global.InitGlobalVariables("Admin", true);
 #else
                 Cursor.Current = Cursors.WaitCursor;
-                bool validUser = Data_User.UserLogin(txtUsername.Text.Trim(), txtPassword.Text);
+                Data_User user = Data_User.GetUser(txtUsername.Text.Trim(), txtPassword.Text);
 
-                if (validUser)
+                if (user != null)
                 {
-                    Global.InitGlobalVariables(txtUsername.Text.Trim());
+                    if (!VerifyDatabaseVersion())
+                    {
+                        Utils.ShowError("The database is out of date for the current system. System load cannot contune. Please contact your administrator.");
+                        Application.Exit();
+                    }
+
+                    Global.InitGlobalVariables(user.Username, user.IsAdmin);
                     DialogResult = DialogResult.OK;
                 }
                 else
@@ -60,6 +67,18 @@ namespace Newcourt.Views
             finally
             {
                 Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private bool VerifyDatabaseVersion()
+        {
+            try
+            {
+                return Data_SystemParameters.GetDatabaseVersion() == Global.DBVERSION;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
     }

@@ -138,7 +138,7 @@
     <Property Name="BankAccountCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="Amount" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
-    <Property Name="TimeProcessed" Type="DateTime" Precision="3" />
+    <Property Name="TimeProcessed" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="BankAccounts" Relationship="NewcourtModel.FK__Payments__BankAc__3E52440B" FromRole="Payments" ToRole="BankAccounts" />
     <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Payments" ToRole="Suppliers" />
     <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Payments" ToRole="Users" />

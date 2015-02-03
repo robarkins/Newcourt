@@ -25,3 +25,7 @@ C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.CompanyInfoDialog
 C:\Development\Newcourt\Application\obj\Release\ICEPayments.csproj.GenerateResource.Cache
 C:\Development\Newcourt\Application\obj\Release\Newcourt.exe
 C:\Development\Newcourt\Application\obj\Release\Newcourt.pdb
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterEnquiryCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.PaymentEnquiryCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.UserBrowseCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.UserDialogFrm.resources

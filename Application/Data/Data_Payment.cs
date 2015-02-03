@@ -13,53 +13,34 @@ namespace Newcourt.Data
         public String BankAccountCode { get; set; }
         public String Username { get; set; }
         public decimal Amount { get; set; }
-        public DateTime? TimeProcessed { get; set; }
+        public DateTime TimeProcessed { get; set; }
+        public String FirstName { get; set; }
+        public String Surname { get; set; }
+        public String SupplierTypeCode { get; set; }
 
-        public static void SavePayments(List<Data_Payment> payments)
-        {
-            try
-            { 
-                using(NewcourtEntities ctx = new NewcourtEntities())
-                {
-                    // Delete unprocessed payments for current user before saving new ones
-                    DeleteUnprocessedPayments(Global.Username);
-
-                    foreach(var i in payments)
-                    {
-                        ctx.Payments.Add(new Payments()
-                        {
-                            SupplierID = i.SupplierID,
-                            BankAccountCode = i.BankAccountCode,
-                            Username = i.Username,
-                            Amount = i.Amount
-                        });
-                    }
-
-                    ctx.SaveChanges();
-                }
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public static void DeleteUnprocessedPayments(String username)
+        public static List<Data_Payment> GetPayments(String username, int supplierId, String supplierTypeCode, String bankAccountCode, DateTime dateFrom, DateTime dateTo)
         {
             try
             {
-                using(NewcourtEntities ctx = new NewcourtEntities())
+                using (NewcourtEntities ctx = new NewcourtEntities())
                 {
-                    List<Payments> payments = ctx.Payments.Where(a => a.Username == username && a.TimeProcessed == null).ToList();
-
-                    if (payments != null)
-                    {
-                        foreach(var i in payments)
-                        {
-                            ctx.Payments.Remove(i);
-                            ctx.SaveChanges();
-                        }
-                    }
+                    return (from a in ctx.Payments
+                            where (a.Username == username || username == String.Empty) && 
+                            (a.SupplierID == supplierId || supplierId == 0) &&
+                            (a.Suppliers.SupplierTypeCode == supplierTypeCode || supplierTypeCode == String.Empty) &&
+                            (a.TimeProcessed >= dateFrom && a.TimeProcessed < dateTo)
+                            select new Data_Payment()
+                            {
+                                PaymentID = a.PaymentID,
+                                SupplierID = a.SupplierID,
+                                BankAccountCode = a.BankAccountCode,
+                                Username = a.Username,
+                                Amount = a.Amount,
+                                TimeProcessed = a.TimeProcessed,
+                                FirstName = a.Suppliers.FirstName,
+                                Surname = a.Suppliers.Surname,
+                                SupplierTypeCode = a.Suppliers.SupplierTypeCode
+                            }).ToList();
                 }
             }
             catch(Exception ex)

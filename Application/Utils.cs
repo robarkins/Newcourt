@@ -67,5 +67,49 @@ namespace Newcourt
 
             return default(T);
         }
+
+        public static void DisableAllControls(Control control)
+        {
+            // Get control recursively
+            foreach(Control i in control.Controls)
+            {
+                DisableAllControls(i);
+            }
+
+            // Textbox
+            if (control.GetType() == typeof(TextBox))
+            {
+                TextBox c = control as TextBox;
+                c.ReadOnly = true;
+            }
+            // ComboBox
+            else if(control.GetType() == typeof(ComboBox))
+            {
+                ComboBox c = control as ComboBox;
+                c.Enabled = false;
+            }
+            // CheckBox
+            else if (control.GetType() == typeof(CheckBox))
+            {
+                CheckBox c = control as CheckBox;
+                c.Enabled = false;
+            }
+                // DateTimePicker
+            else if (control.GetType() == typeof(DateTimePicker))
+            {
+                DateTimePicker c = control as DateTimePicker;
+                c.Enabled = false;
+            }
+            // Button (Except Cancel or Close)
+            else if (control.GetType() == typeof(Button))
+            {
+                Button c = control as Button;
+                if (c.Text != "Cancel" && c.Text != "Close")
+                {
+                    c.Enabled = false;
+                }
+            }
+
+        }
     }
 }

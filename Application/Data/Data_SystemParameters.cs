@@ -35,6 +35,7 @@ namespace Newcourt.Data
                                 Address3 = a.Address3,
                                 Address4 = a.Address4,
                                 Address5 = a.Address5,
+                                Phone = a.Phone,
                                 VatRegNo = a.VatRegNo,
                                 SepaFileCount = a.SepaFileCount ?? 0
                             }).FirstOrDefault();
@@ -57,15 +58,46 @@ namespace Newcourt.Data
                     if (param != null)
                     {
                         param.CompanyName = systemParams.CompanyName;
+                        param.Address1 = systemParams.Address1;
+                        param.Address2 = systemParams.Address2;
+                        param.Address3 = systemParams.Address3;
+                        param.Address4 = systemParams.Address4;
+                        param.Address5 = systemParams.Address5;
+                        param.Phone = systemParams.Phone;
+                        param.VatRegNo = systemParams.VatRegNo;
                     }
                     else
                     {
                         ctx.SystemParameters.Add(new SystemParameters()
                         {
                             ID = 1,
-                            CompanyName = systemParams.CompanyName
+                            CompanyName = systemParams.CompanyName,
+                            Address1 = systemParams.Address1,
+                            Address2 = systemParams.Address2,
+                            Address3 = systemParams.Address3,
+                            Address4 = systemParams.Address4,
+                            Address5 = systemParams.Address5,
+                            Phone = systemParams.Phone,
+                            VatRegNo = systemParams.VatRegNo
                         });
                     }
+
+                    ctx.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static String GetCompanyName()
+        {
+            try
+            {
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    return ctx.SystemParameters.FirstOrDefault().CompanyName;
                 }
             }
             catch (Exception ex)
@@ -81,6 +113,21 @@ namespace Newcourt.Data
                 using(NewcourtEntities ctx = new NewcourtEntities())
                 {
                     return ctx.SystemParameters.FirstOrDefault().SepaFileCount ?? 0;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static String GetDatabaseVersion()
+        {
+            try
+            {
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    return ctx.SystemParameters.FirstOrDefault().DatabaseVersion;
                 }
             }
             catch(Exception ex)

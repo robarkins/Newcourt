@@ -42,7 +42,33 @@ namespace Newcourt.Views
             txtAddress4.Text = systemParams.Address4;
             txtAddress5.Text = systemParams.Address5;
             txtPhone.Text = systemParams.Phone;
+            txtVatRegNo.Text = systemParams.VatRegNo;
             txtSepaFileCount.Text = systemParams.SepaFileCount.ToString().PadLeft(6, '0');
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtCompanyName.Text))
+            {
+                Utils.ShowInformation("You must enter a Company Name!");
+                txtCompanyName.Focus();
+            }
+            else
+            {
+                Data_SystemParameters.SaveSystemParameters(new Data_SystemParameters()
+                {
+                    CompanyName = txtCompanyName.Text.Trim(),
+                    Address1 = txtAddress1.Text.Trim(),
+                    Address2 = txtAddress2.Text.Trim(),
+                    Address3 = txtAddress3.Text.Trim(),
+                    Address4 = txtAddress4.Text.Trim(),
+                    Address5 = txtAddress5.Text.Trim(),
+                    Phone = txtPhone.Text.Trim(),
+                    VatRegNo = txtVatRegNo.Text.Trim()
+                });
+
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }

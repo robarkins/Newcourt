@@ -22,11 +22,20 @@ namespace Newcourt.Views
             try
             {
                 this.formMode = formMode;
-                if (formMode == Common.FormMode.Edit)
+
+                if (formMode != Common.FormMode.Add)
                 {
+                    BindControls(bankAccount);
+
+                    if (formMode == Common.FormMode.View)
+                    {
+                        Utils.DisableAllControls(this);
+                        this.Text = String.Format("View Bank Account {0}", bankAccount.BankAccountCode);
+                        return;
+                    }
+
                     this.Text = String.Format("Edit Bank Account {0}", bankAccount.BankAccountCode);
                     txtCode.ReadOnly = true;
-                    BindControls(bankAccount);
                     txtName.Focus();
                 }
             }

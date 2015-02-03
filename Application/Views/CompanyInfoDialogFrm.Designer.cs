@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpCompanyInfo = new System.Windows.Forms.GroupBox();
+            this.lbPhone = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblVatRegNo = new System.Windows.Forms.Label();
             this.txtVatRegNo = new System.Windows.Forms.TextBox();
             this.txtAddress5 = new System.Windows.Forms.TextBox();
@@ -40,12 +42,10 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.grpSystemParameters = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSepaFileCount = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lbPhone = new System.Windows.Forms.Label();
-            this.lblDatabaseVersion = new System.Windows.Forms.Label();
             this.txtDatabaseVersion = new System.Windows.Forms.TextBox();
+            this.lblDatabaseVersion = new System.Windows.Forms.Label();
+            this.txtSepaFileCount = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.grpCompanyInfo.SuspendLayout();
@@ -66,6 +66,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(441, 5);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -93,6 +94,23 @@
             this.grpCompanyInfo.TabStop = false;
             this.grpCompanyInfo.Text = "Company Details";
             // 
+            // lbPhone
+            // 
+            this.lbPhone.AutoSize = true;
+            this.lbPhone.Location = new System.Drawing.Point(8, 54);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(41, 13);
+            this.lbPhone.TabIndex = 12;
+            this.lbPhone.Text = "Phone:";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(130, 51);
+            this.txtPhone.MaxLength = 15;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(148, 20);
+            this.txtPhone.TabIndex = 1;
+            // 
             // lblVatRegNo
             // 
             this.lblVatRegNo.AutoSize = true;
@@ -108,7 +126,7 @@
             this.txtVatRegNo.MaxLength = 15;
             this.txtVatRegNo.Name = "txtVatRegNo";
             this.txtVatRegNo.Size = new System.Drawing.Size(148, 20);
-            this.txtVatRegNo.TabIndex = 9;
+            this.txtVatRegNo.TabIndex = 2;
             // 
             // txtAddress5
             // 
@@ -116,7 +134,7 @@
             this.txtAddress5.MaxLength = 70;
             this.txtAddress5.Name = "txtAddress5";
             this.txtAddress5.Size = new System.Drawing.Size(148, 20);
-            this.txtAddress5.TabIndex = 8;
+            this.txtAddress5.TabIndex = 7;
             // 
             // txtAddress4
             // 
@@ -124,7 +142,7 @@
             this.txtAddress4.MaxLength = 70;
             this.txtAddress4.Name = "txtAddress4";
             this.txtAddress4.Size = new System.Drawing.Size(148, 20);
-            this.txtAddress4.TabIndex = 7;
+            this.txtAddress4.TabIndex = 6;
             // 
             // txtAddress3
             // 
@@ -132,7 +150,7 @@
             this.txtAddress3.MaxLength = 70;
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(148, 20);
-            this.txtAddress3.TabIndex = 6;
+            this.txtAddress3.TabIndex = 5;
             // 
             // txtAddress2
             // 
@@ -140,7 +158,7 @@
             this.txtAddress2.MaxLength = 70;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(148, 20);
-            this.txtAddress2.TabIndex = 5;
+            this.txtAddress2.TabIndex = 4;
             // 
             // txtAddress1
             // 
@@ -148,7 +166,7 @@
             this.txtAddress1.MaxLength = 70;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(148, 20);
-            this.txtAddress1.TabIndex = 4;
+            this.txtAddress1.TabIndex = 3;
             // 
             // lblAddress
             // 
@@ -165,7 +183,7 @@
             this.txtCompanyName.MaxLength = 70;
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(148, 20);
-            this.txtCompanyName.TabIndex = 2;
+            this.txtCompanyName.TabIndex = 0;
             // 
             // lblCompanyName
             // 
@@ -190,39 +208,13 @@
             this.grpSystemParameters.TabStop = false;
             this.grpSystemParameters.Text = "System Parameters";
             // 
-            // label1
+            // txtDatabaseVersion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SEPA File Count:";
-            // 
-            // txtSepaFileCount
-            // 
-            this.txtSepaFileCount.Location = new System.Drawing.Point(130, 25);
-            this.txtSepaFileCount.Name = "txtSepaFileCount";
-            this.txtSepaFileCount.ReadOnly = true;
-            this.txtSepaFileCount.Size = new System.Drawing.Size(100, 20);
-            this.txtSepaFileCount.TabIndex = 1;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(130, 51);
-            this.txtPhone.MaxLength = 15;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(148, 20);
-            this.txtPhone.TabIndex = 11;
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Location = new System.Drawing.Point(8, 54);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(41, 13);
-            this.lbPhone.TabIndex = 12;
-            this.lbPhone.Text = "Phone:";
+            this.txtDatabaseVersion.Location = new System.Drawing.Point(449, 25);
+            this.txtDatabaseVersion.Name = "txtDatabaseVersion";
+            this.txtDatabaseVersion.ReadOnly = true;
+            this.txtDatabaseVersion.Size = new System.Drawing.Size(148, 20);
+            this.txtDatabaseVersion.TabIndex = 3;
             // 
             // lblDatabaseVersion
             // 
@@ -233,13 +225,22 @@
             this.lblDatabaseVersion.TabIndex = 2;
             this.lblDatabaseVersion.Text = "Database Version:";
             // 
-            // txtDatabaseVersion
+            // txtSepaFileCount
             // 
-            this.txtDatabaseVersion.Location = new System.Drawing.Point(449, 25);
-            this.txtDatabaseVersion.Name = "txtDatabaseVersion";
-            this.txtDatabaseVersion.ReadOnly = true;
-            this.txtDatabaseVersion.Size = new System.Drawing.Size(148, 20);
-            this.txtDatabaseVersion.TabIndex = 3;
+            this.txtSepaFileCount.Location = new System.Drawing.Point(130, 25);
+            this.txtSepaFileCount.Name = "txtSepaFileCount";
+            this.txtSepaFileCount.ReadOnly = true;
+            this.txtSepaFileCount.Size = new System.Drawing.Size(100, 20);
+            this.txtSepaFileCount.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SEPA File Count:";
             // 
             // CompanyInfoDialogFrm
             // 

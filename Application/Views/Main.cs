@@ -1,4 +1,5 @@
 ﻿using Newcourt.Controls;
+using Newcourt.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,20 @@ namespace Newcourt.Views
         public Main()
         {
             InitializeComponent();
+
+            try
+            {
+                if (!Global.IsAdmin)
+                {
+                    ddbUsers.Visible = false;
+                }
+
+                SetCompanyName();
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
         }
 
         private void AddTab(UserControl userControl)
@@ -67,10 +82,22 @@ namespace Newcourt.Views
             AddTab(new BankAccountBrowseCtrl());
         }
 
+        private void paymentEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new PaymentEnquiryCtrl());
+        }
+
+        private void btnUserAccounts_Click(object sender, EventArgs e)
+        {
+            AddTab(new UserBrowseCtrl());
+        }
+
         private void btnCompanyInfo_Click(object sender, EventArgs e)
         {
-            CompanyInfoDialogFrm frm = new CompanyInfoDialogFrm();
-            frm.ShowDialog();
+            if (new CompanyInfoDialogFrm().ShowDialog() == DialogResult.OK)
+            {
+                SetCompanyName();
+            }
         }
 
         private void btnCloseTab_Click(object sender, EventArgs e)
@@ -87,6 +114,18 @@ namespace Newcourt.Views
             catch(Exception ex)
             {
                 Utils.ShowException(ex);
+            }
+        }
+
+        private void SetCompanyName()
+        {
+            try
+            {
+                this.Text = Data_SystemParameters.GetCompanyName();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

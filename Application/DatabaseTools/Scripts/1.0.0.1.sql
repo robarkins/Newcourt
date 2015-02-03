@@ -66,7 +66,7 @@ create table Payments (
 	BankAccountCode nvarchar(15) references BankAccounts(BankAccountCode) not null,
 	Username nvarchar(15) references Users(Username) not null,
 	Amount numeric(15, 2) not null,
-	TimeProcessed datetime,
+	TimeProcessed datetime not null,
 	primary key (PaymentID)
 )
 
@@ -192,3 +192,7 @@ insert into Users
 select 'Admin', 'Admin', 1, null
 
 go
+
+insert into SystemParameters
+(ID, DatabaseVersion, CompanyName)
+select 1, '1.0.0.1', 'Default Company'

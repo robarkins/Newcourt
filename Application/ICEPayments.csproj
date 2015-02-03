@@ -76,6 +76,18 @@
     <Compile Include="Controls\MasterReportCtrl.Designer.cs">
       <DependentUpon>MasterReportCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MasterEnquiryCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MasterEnquiryCtrl.Designer.cs">
+      <DependentUpon>MasterEnquiryCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PaymentEnquiryCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PaymentEnquiryCtrl.Designer.cs">
+      <DependentUpon>PaymentEnquiryCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PaymentsCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     </Compile>
     <Compile Include="Controls\UCToolStrip.Designer.cs">
       <DependentUpon>UCToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserBrowseCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserBrowseCtrl.Designer.cs">
+      <DependentUpon>UserBrowseCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\BankAccounts.cs">
       <DependentUpon>NewcourtModel.tt</DependentUpon>
@@ -211,14 +229,26 @@
     <Compile Include="Views\CompanyInfoDialogFrm.Designer.cs">
       <DependentUpon>CompanyInfoDialogFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserDialogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserDialogFrm.Designer.cs">
+      <DependentUpon>UserDialogFrm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\BankAccountBrowseCtrl.resx">
       <DependentUpon>BankAccountBrowseCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MasterBrowseCtrl.resx">
       <DependentUpon>MasterBrowseCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MasterEnquiryCtrl.resx">
+      <DependentUpon>MasterEnquiryCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MasterReportCtrl.resx">
       <DependentUpon>MasterReportCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PaymentEnquiryCtrl.resx">
+      <DependentUpon>PaymentEnquiryCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PaymentsCtrl.resx">
       <DependentUpon>PaymentsCtrl.cs</DependentUpon>
@@ -234,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCDataGridView.resx">
       <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserBrowseCtrl.resx">
+      <DependentUpon>UserBrowseCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BankAccountDialogFrm.resx">
       <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
@@ -268,6 +301,9 @@
     <EmbeddedResource Include="Views\CompanyInfoDialogFrm.resx">
       <DependentUpon>CompanyInfoDialogFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserDialogFrm.resx">
+      <DependentUpon>UserDialogFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Data\NewcourtModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NewcourtModel.Designer.cs</LastGenOutput>
@@ -286,10 +322,13 @@
       <LastGenOutput>NewcourtModel.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Newcourt.Data.Data_BankAccount.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_BankAccounts.datasource" />
+    <None Include="Properties\DataSources\Newcourt.Data.Data_Payment.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_PaymentStaging.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_Supplier.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_SupplierType.datasource" />
+    <None Include="Properties\DataSources\Newcourt.Data.Data_User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -306,7 +345,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database Scripts\1.0.0.1.sql" />
+    <None Include="DatabaseTools\Scripts\1.0.0.1.sql" />
     <Content Include="Images\add.png" />
     <Content Include="Images\bank.png" />
     <Content Include="Images\cancel.png" />
@@ -316,6 +355,7 @@
     <Content Include="Images\edit.png" />
     <Content Include="Images\login.png" />
     <Content Include="Images\ok.png" />
+    <Content Include="Images\payments.png" />
     <Content Include="Images\refresh.png" />
     <Content Include="Images\suppliers.png" />
     <Content Include="Images\system.png" />

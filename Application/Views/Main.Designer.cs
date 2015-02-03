@@ -34,6 +34,9 @@
             this.cmsTabControl = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCloseTab = new System.Windows.Forms.ToolStripMenuItem();
             this.ucToolStrip1 = new Newcourt.Controls.UCToolStrip();
+            this.ddbSystem = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnSystemParams = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ddbBank = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnBankAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,10 +44,13 @@
             this.btnSupplierAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSupplierTypes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnPayments = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ddbSystem = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnSystemParams = new System.Windows.Forms.ToolStripMenuItem();
+            this.ddbPayments = new System.Windows.Forms.ToolStripDropDownButton();
+            this.sEPAPaymentsWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.paymentEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.ddbUsers = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnUserAccounts = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTabControl.SuspendLayout();
             this.ucToolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,16 +82,45 @@
             // ucToolStrip1
             // 
             this.ucToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbSystem,
+            this.toolStripSeparator1,
             this.ddbBank,
             this.toolStripSeparator2,
             this.ddbSuppliers,
-            this.toolStripSeparator1,
-            this.ddbSystem});
+            this.toolStripSeparator4,
+            this.ddbPayments,
+            this.toolStripSeparator5,
+            this.ddbUsers});
             this.ucToolStrip1.Location = new System.Drawing.Point(0, 0);
             this.ucToolStrip1.Name = "ucToolStrip1";
             this.ucToolStrip1.Size = new System.Drawing.Size(1172, 39);
             this.ucToolStrip1.TabIndex = 0;
             this.ucToolStrip1.Text = "ucToolStrip1";
+            // 
+            // ddbSystem
+            // 
+            this.ddbSystem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSystemParams});
+            this.ddbSystem.Image = ((System.Drawing.Image)(resources.GetObject("ddbSystem.Image")));
+            this.ddbSystem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ddbSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbSystem.Name = "ddbSystem";
+            this.ddbSystem.Size = new System.Drawing.Size(123, 36);
+            this.ddbSystem.Text = "System Setup";
+            // 
+            // btnSystemParams
+            // 
+            this.btnSystemParams.Image = ((System.Drawing.Image)(resources.GetObject("btnSystemParams.Image")));
+            this.btnSystemParams.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSystemParams.Name = "btnSystemParams";
+            this.btnSystemParams.Size = new System.Drawing.Size(200, 30);
+            this.btnSystemParams.Text = "Company Information";
+            this.btnSystemParams.Click += new System.EventHandler(this.btnCompanyInfo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // ddbBank
             // 
@@ -114,9 +149,7 @@
             // 
             this.ddbSuppliers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSupplierAccounts,
-            this.btnSupplierTypes,
-            this.toolStripSeparator4,
-            this.btnPayments});
+            this.btnSupplierTypes});
             this.ddbSuppliers.Image = ((System.Drawing.Image)(resources.GetObject("ddbSuppliers.Image")));
             this.ddbSuppliers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ddbSuppliers.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -127,53 +160,75 @@
             // btnSupplierAccounts
             // 
             this.btnSupplierAccounts.Name = "btnSupplierAccounts";
-            this.btnSupplierAccounts.Size = new System.Drawing.Size(195, 22);
+            this.btnSupplierAccounts.Size = new System.Drawing.Size(170, 22);
             this.btnSupplierAccounts.Text = "Supplier Accounts";
             this.btnSupplierAccounts.Click += new System.EventHandler(this.btnSupplierAccounts_Click);
             // 
             // btnSupplierTypes
             // 
             this.btnSupplierTypes.Name = "btnSupplierTypes";
-            this.btnSupplierTypes.Size = new System.Drawing.Size(195, 22);
+            this.btnSupplierTypes.Size = new System.Drawing.Size(170, 22);
             this.btnSupplierTypes.Text = "Supplier Types";
             this.btnSupplierTypes.Click += new System.EventHandler(this.btnSupplierTypes_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
-            // btnPayments
+            // ddbPayments
             // 
-            this.btnPayments.Name = "btnPayments";
-            this.btnPayments.Size = new System.Drawing.Size(195, 22);
-            this.btnPayments.Text = "SEPA Payments Wizard";
-            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
+            this.ddbPayments.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sEPAPaymentsWizardToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.paymentEnquiryToolStripMenuItem});
+            this.ddbPayments.Image = ((System.Drawing.Image)(resources.GetObject("ddbPayments.Image")));
+            this.ddbPayments.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ddbPayments.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbPayments.Name = "ddbPayments";
+            this.ddbPayments.Size = new System.Drawing.Size(104, 36);
+            this.ddbPayments.Text = "Payments";
             // 
-            // toolStripSeparator1
+            // sEPAPaymentsWizardToolStripMenuItem
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.sEPAPaymentsWizardToolStripMenuItem.Name = "sEPAPaymentsWizardToolStripMenuItem";
+            this.sEPAPaymentsWizardToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.sEPAPaymentsWizardToolStripMenuItem.Text = "SEPA Payments Wizard";
+            this.sEPAPaymentsWizardToolStripMenuItem.Click += new System.EventHandler(this.btnPayments_Click);
             // 
-            // ddbSystem
+            // toolStripSeparator3
             // 
-            this.ddbSystem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSystemParams});
-            this.ddbSystem.Image = ((System.Drawing.Image)(resources.GetObject("ddbSystem.Image")));
-            this.ddbSystem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ddbSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ddbSystem.Name = "ddbSystem";
-            this.ddbSystem.Size = new System.Drawing.Size(123, 36);
-            this.ddbSystem.Text = "System Setup";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(192, 6);
             // 
-            // btnSystemParams
+            // paymentEnquiryToolStripMenuItem
             // 
-            this.btnSystemParams.Image = ((System.Drawing.Image)(resources.GetObject("btnSystemParams.Image")));
-            this.btnSystemParams.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSystemParams.Name = "btnSystemParams";
-            this.btnSystemParams.Size = new System.Drawing.Size(200, 30);
-            this.btnSystemParams.Text = "Company Information";
-            this.btnSystemParams.Click += new System.EventHandler(this.btnCompanyInfo_Click);
+            this.paymentEnquiryToolStripMenuItem.Name = "paymentEnquiryToolStripMenuItem";
+            this.paymentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.paymentEnquiryToolStripMenuItem.Text = "Payment Enquiry";
+            this.paymentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.paymentEnquiryToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
+            // 
+            // ddbUsers
+            // 
+            this.ddbUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnUserAccounts});
+            this.ddbUsers.Image = ((System.Drawing.Image)(resources.GetObject("ddbUsers.Image")));
+            this.ddbUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbUsers.Name = "ddbUsers";
+            this.ddbUsers.Size = new System.Drawing.Size(64, 36);
+            this.ddbUsers.Text = "Users";
+            // 
+            // btnUserAccounts
+            // 
+            this.btnUserAccounts.Name = "btnUserAccounts";
+            this.btnUserAccounts.Size = new System.Drawing.Size(152, 22);
+            this.btnUserAccounts.Text = "User Accounts";
+            this.btnUserAccounts.Click += new System.EventHandler(this.btnUserAccounts_Click);
             // 
             // Main
             // 
@@ -206,11 +261,17 @@
         private System.Windows.Forms.ToolStripDropDownButton ddbSystem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem btnSystemParams;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem btnPayments;
         private System.Windows.Forms.ToolStripDropDownButton ddbBank;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnBankAccounts;
+        private System.Windows.Forms.ToolStripDropDownButton ddbPayments;
+        private System.Windows.Forms.ToolStripMenuItem sEPAPaymentsWizardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem paymentEnquiryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripDropDownButton ddbUsers;
+        private System.Windows.Forms.ToolStripMenuItem btnUserAccounts;
     }
 }
 

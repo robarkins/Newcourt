@@ -25,14 +25,23 @@ namespace Newcourt.Views
                 this.formMode = formMode;
 
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
-                if (formMode == Common.FormMode.Edit)
-                {
-                    BindControls(supplier);
-                }
-                else
+                if (formMode == Common.FormMode.Add)
                 {
                     supplierID = -1;
                     luSupplierType.SelectedIndex = -1;
+                }
+                else
+                {
+                    BindControls(supplier);
+
+                    if (formMode == Common.FormMode.View)
+                    {
+                        Utils.DisableAllControls(this);
+                        this.Text = String.Format("View Supplier {0} ({1})", supplier.SupplierID, supplier.Name);
+                        return;
+                    }
+
+                    this.Text = String.Format("Edit Supplier {0} ({1})", supplier.SupplierID, supplier.Name);
                 }
                 
             }

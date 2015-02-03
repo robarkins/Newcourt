@@ -446,7 +446,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 373);
             this.Name = "SupplierDialogFrm";
-            this.Text = "Supplier Accounts";
+            this.Text = "Add Supplier Account";
             this.pnlContent.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.grpDetails.ResumeLayout(false);

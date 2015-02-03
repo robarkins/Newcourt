@@ -413,6 +413,14 @@ namespace Newcourt.Data
             }
         }
 
+        public String Name
+        {
+            get
+            {
+                return String.Format("{0} {1}", FirstName, Surname);
+            }
+        }
+
         public String Address
         {
             get
