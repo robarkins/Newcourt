@@ -2,7 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="dsNewcourt">
   <ConnectionProperties>
     <Extension>SQL</Extension>
-    <ConnectString>Data Source=ROB-LAPTOP;Initial Catalog=Newcourt</ConnectString>
+    <ConnectString>Data Source=IIS-DEVEL06;Initial Catalog=Newcourt</ConnectString>
     <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>bef46409-024c-4c95-81d4-3106d1e33aa3</DataSourceID>

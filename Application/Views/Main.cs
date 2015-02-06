@@ -92,6 +92,11 @@ namespace Newcourt.Views
             AddTab(new UserBrowseCtrl());
         }
 
+        private void btnPaymentDetail_Click(object sender, EventArgs e)
+        {
+            AddTab(new PaymentDetailReportCtrl());
+        }
+
         private void btnCompanyInfo_Click(object sender, EventArgs e)
         {
             if (new CompanyInfoDialogFrm().ShowDialog() == DialogResult.OK)

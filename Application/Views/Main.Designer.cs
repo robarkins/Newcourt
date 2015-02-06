@@ -51,6 +51,9 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.ddbUsers = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnUserAccounts = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPaymentDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTabControl.SuspendLayout();
             this.ucToolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -181,7 +184,9 @@
             this.ddbPayments.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sEPAPaymentsWizardToolStripMenuItem,
             this.toolStripSeparator3,
-            this.paymentEnquiryToolStripMenuItem});
+            this.paymentEnquiryToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.reportsToolStripMenuItem});
             this.ddbPayments.Image = ((System.Drawing.Image)(resources.GetObject("ddbPayments.Image")));
             this.ddbPayments.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ddbPayments.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -226,9 +231,29 @@
             // btnUserAccounts
             // 
             this.btnUserAccounts.Name = "btnUserAccounts";
-            this.btnUserAccounts.Size = new System.Drawing.Size(152, 22);
+            this.btnUserAccounts.Size = new System.Drawing.Size(150, 22);
             this.btnUserAccounts.Text = "User Accounts";
             this.btnUserAccounts.Click += new System.EventHandler(this.btnUserAccounts_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(192, 6);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPaymentDetail});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // btnPaymentDetail
+            // 
+            this.btnPaymentDetail.Name = "btnPaymentDetail";
+            this.btnPaymentDetail.Size = new System.Drawing.Size(154, 22);
+            this.btnPaymentDetail.Text = "Payment Detail";
+            this.btnPaymentDetail.Click += new System.EventHandler(this.btnPaymentDetail_Click);
             // 
             // Main
             // 
@@ -272,6 +297,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripDropDownButton ddbUsers;
         private System.Windows.Forms.ToolStripMenuItem btnUserAccounts;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnPaymentDetail;
     }
 }
 

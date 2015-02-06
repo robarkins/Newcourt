@@ -54,10 +54,8 @@ C:\Development\Newcourt\Application\bin\Debug\EntityFramework.SqlServer.xml
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.BankAccountBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.MasterBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.MasterEnquiryCtrl.resources
-C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.MasterReportCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.PaymentEnquiryCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.PaymentsCtrl.resources
-C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.PaymentsSummaryReportCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.SupplierBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.SupplierTypeBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.UCDataGridView.resources
@@ -73,6 +71,7 @@ C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.CompanyInfoDialogFr
 C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csproj.GenerateResource.Cache
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.exe
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.pdb
-C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.UserBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.UserDialogFrm.resources
+C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.PaymentDetailReportCtrl.resources
+C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache

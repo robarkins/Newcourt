@@ -112,5 +112,26 @@ namespace Newcourt.Data
                 throw ex;
             }
         }
+
+        public static void DeleteUser(String username)
+        {
+            try
+            {
+                using (NewcourtEntities ctx = new NewcourtEntities())
+                {
+                    Users user = ctx.Users.FirstOrDefault(a => a.Username == username);
+
+                    if (user != null)
+                    {
+                        ctx.Users.Remove(user);
+                        ctx.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -84,6 +84,34 @@ namespace Newcourt.Controls
             }
         }
 
+        protected override void DeleteRecord()
+        {
+            try
+            {
+                Data_User user = Utils.GetCurrentRecord<Data_User>(bsRecords);
+
+                if (user != null)
+                {
+                    if (user.Username == "Admin")
+                    {
+                        Utils.ShowInformation("The Admin user account cannot be deleted!");
+                    }
+                    else
+                    {
+                        if(Utils.AskQuestion(String.Format("Are you sure you want to delete user {0}?", user.Username)) == DialogResult.Yes)
+                        {
+                            Data_User.DeleteUser(user.Username);
+                            GetRecords();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
+        }
+
         protected override void RefreshRecords()
         {
             try

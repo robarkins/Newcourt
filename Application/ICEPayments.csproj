@@ -70,17 +70,17 @@
     <Compile Include="Controls\MasterBrowseCtrl.Designer.cs">
       <DependentUpon>MasterBrowseCtrl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MasterReportCtrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\MasterReportCtrl.Designer.cs">
-      <DependentUpon>MasterReportCtrl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\MasterEnquiryCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\MasterEnquiryCtrl.Designer.cs">
       <DependentUpon>MasterEnquiryCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PaymentDetailReportCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PaymentDetailReportCtrl.Designer.cs">
+      <DependentUpon>PaymentDetailReportCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PaymentEnquiryCtrl.cs">
       <SubType>UserControl</SubType>
@@ -93,12 +93,6 @@
     </Compile>
     <Compile Include="Controls\PaymentsCtrl.Designer.cs">
       <DependentUpon>PaymentsCtrl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PaymentsSummaryReportCtrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PaymentsSummaryReportCtrl.Designer.cs">
-      <DependentUpon>PaymentsSummaryReportCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\SupplierBrowseCtrl.cs">
       <SubType>UserControl</SubType>
@@ -244,17 +238,14 @@
     <EmbeddedResource Include="Controls\MasterEnquiryCtrl.resx">
       <DependentUpon>MasterEnquiryCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\MasterReportCtrl.resx">
-      <DependentUpon>MasterReportCtrl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\PaymentDetailReportCtrl.resx">
+      <DependentUpon>PaymentDetailReportCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PaymentEnquiryCtrl.resx">
       <DependentUpon>PaymentEnquiryCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PaymentsCtrl.resx">
       <DependentUpon>PaymentsCtrl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PaymentsSummaryReportCtrl.resx">
-      <DependentUpon>PaymentsSummaryReportCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SupplierBrowseCtrl.resx">
       <DependentUpon>SupplierBrowseCtrl.cs</DependentUpon>

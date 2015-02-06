@@ -1,6 +1,6 @@
 ﻿namespace Newcourt.Controls
 {
-    partial class MasterReportCtrl
+    partial class PaymentDetailReportCtrl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.rptViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // MasterReportCtrl
+            // rptViewer
             // 
+            this.rptViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptViewer.Location = new System.Drawing.Point(0, 0);
+            this.rptViewer.Name = "rptViewer";
+            this.rptViewer.Size = new System.Drawing.Size(611, 269);
+            this.rptViewer.TabIndex = 0;
+            // 
+            // PaymentDetailReportCtrl
+            // 
+            this.Controls.Add(this.rptViewer);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "MasterReportCtrl";
-            this.Size = new System.Drawing.Size(730, 323);
+            this.Name = "PaymentDetailReportCtrl";
+            this.Size = new System.Drawing.Size(611, 269);
+            this.Tag = "Payment Details Report";
+            this.Load += new System.EventHandler(this.PaymentDetailReportCtrl_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private Microsoft.Reporting.WinForms.ReportViewer rptViewer;
     }
 }
