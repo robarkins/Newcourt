@@ -21,7 +21,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://iis-devel06/ReportServer</TargetServerURL>
+        <TargetServerURL>http://rob-laptop/ReportServer</TargetServerURL>
         <TargetFolder>Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>

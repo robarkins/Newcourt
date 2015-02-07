@@ -7,9 +7,7 @@ C:\Development\Newcourt\Application\bin\Release\EntityFramework.xml
 C:\Development\Newcourt\Application\bin\Release\EntityFramework.SqlServer.xml
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.BankAccountBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterBrowseCtrl.resources
-C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterReportCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.PaymentsCtrl.resources
-C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.PaymentsSummaryReportCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.SupplierBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.SupplierTypeBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.UCDataGridView.resources
@@ -29,3 +27,5 @@ C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterEnquiryC
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.PaymentEnquiryCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.UserBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.UserDialogFrm.resources
+C:\Development\Newcourt\Application\obj\Release\ICEPayments.csprojResolveAssemblyReference.cache
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.PaymentDetailReportCtrl.resources

@@ -22,7 +22,7 @@ namespace Newcourt.Controls
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                rptViewer.ServerReport.ReportServerUrl = new Uri(@"http://IIS-DEVEL06/ReportServer");
+                rptViewer.ServerReport.ReportServerUrl = new Uri(@"http://ROB-LAPTOP/ReportServer");
                 rptViewer.ServerReport.ReportPath = "/Reports/PaymentDetail";
                 rptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
                 rptViewer.RefreshReport();

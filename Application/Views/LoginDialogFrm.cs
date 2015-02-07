@@ -18,7 +18,22 @@ namespace Newcourt.Views
         public LoginDialogFrm()
         {
             InitializeComponent();
-            loginAttemps = 0;
+
+            try
+            {
+                Object username = Utils.GetRegistryValue(Common.KEY_USERLOGIN);
+
+                if (username != null)
+                {
+                    txtUsername.Text = username.ToString();
+                }
+
+                loginAttemps = 0;
+            }
+            catch(Exception ex)
+            {
+                Utils.ShowException(ex);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -42,6 +57,7 @@ namespace Newcourt.Views
                     }
 
                     Global.InitGlobalVariables(user.Username, user.IsAdmin);
+                    Utils.SaveRegistryValue(Common.KEY_USERLOGIN, txtUsername.Text);
                     DialogResult = DialogResult.OK;
                 }
                 else

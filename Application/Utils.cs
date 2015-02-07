@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,51 @@ namespace Newcourt
         }
 
         # endregion
+
+        #region Registry
+
+        public static Object GetRegistryValue(String keyName)
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Newcourt");
+
+                if (key != null)
+                {
+                    Object obj = key.GetValue(keyName);
+
+                    if (obj != null)
+                    {
+                        return obj;
+                    }
+                }
+
+                return null;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void SaveRegistryValue(String keyName, Object value)
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\Newcourt");
+
+                if(key != null)
+                {
+                    key.SetValue(keyName, value);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
 
         public static T GetCurrentRecord<T>(BindingSource bs)
         {
