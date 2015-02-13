@@ -13,13 +13,15 @@ namespace Newcourt
 
         public static String Username { get; set; }
         public static bool IsAdmin { get; set; }
+        public static String CompanyName { get; set; }
 
         public static String ReportServer { get; set; }
 
-        public static void InitGlobalVariables(String username, bool isAdmin)
+        public static void InitGlobalVariables(String username, bool isAdmin, String companyName)
         {
             Username = username;
             IsAdmin = isAdmin;
+            CompanyName = companyName;
             ReportServer = "http://IIS-DEVEL06/ReportServer/";
         }
     }

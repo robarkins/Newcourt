@@ -55,6 +55,7 @@ namespace Newcourt.Views
             }
             else
             {
+                Global.CompanyName = txtCompanyName.Text.Trim();
                 Data_SystemParameters.SaveSystemParameters(new Data_SystemParameters()
                 {
                     CompanyName = txtCompanyName.Text.Trim(),

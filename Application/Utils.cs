@@ -14,12 +14,12 @@ namespace Newcourt
 
         public static DialogResult AskQuestion(String question)
         {
-            return MessageBox.Show(question, "Newcourt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return MessageBox.Show(question, Global.CompanyName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         public static void ShowError(String message)
         {
-            MessageBox.Show(message, "Newcourt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(message, Global.CompanyName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         public static void ShowException(Exception ex)
@@ -44,12 +44,12 @@ namespace Newcourt
                 }
             }
 
-            MessageBox.Show(message, "Newcourt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(message, Global.CompanyName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public static void ShowInformation(String message)
         {
-            MessageBox.Show(message, "Newcourt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, Global.CompanyName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         # endregion

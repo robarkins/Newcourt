@@ -126,7 +126,7 @@ namespace Newcourt.Views
         {
             try
             {
-                this.Text = Data_SystemParameters.GetCompanyName();
+                this.Text = Global.CompanyName;
             }
             catch (Exception ex)
             {

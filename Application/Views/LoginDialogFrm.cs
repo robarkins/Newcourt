@@ -43,7 +43,7 @@ namespace Newcourt.Views
 #if DEBUG
                 DialogResult = DialogResult.OK;
                 int test = loginAttemps;
-                Global.InitGlobalVariables("Admin", true);
+                Global.InitGlobalVariables("Admin", true, "Irish School of English");
 #else
                 Cursor.Current = Cursors.WaitCursor;
                 Data_User user = Data_User.GetUser(txtUsername.Text.Trim(), txtPassword.Text);
@@ -56,7 +56,8 @@ namespace Newcourt.Views
                         Application.Exit();
                     }
 
-                    Global.InitGlobalVariables(user.Username, user.IsAdmin);
+                    String companyName = Data_SystemParameters.GetCompanyName();
+                    Global.InitGlobalVariables(user.Username, user.IsAdmin, companyName);
                     Utils.SaveRegistryValue(Common.KEY_USERLOGIN, txtUsername.Text);
                     DialogResult = DialogResult.OK;
                 }
