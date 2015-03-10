@@ -75,3 +75,4 @@ C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.UserBrowseCtrl.r
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.UserDialogFrm.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.PaymentDetailReportCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
+C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.PaymentDetailByBatchReportFrm.resources

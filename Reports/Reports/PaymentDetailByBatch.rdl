@@ -922,9 +922,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=iif(Parameters!SupplierID.Value &lt;&gt; 0, "Supplier: " + Parameters!SupplierID.Label + " | ", "") +
- iif(Parameters!SupplierTypeCode.Value &lt;&gt; "", "Supplier Type: " + Parameters!SupplierTypeCode.Label + " | ", "") +
- iif(Parameters!BankAccountCode.Value &lt;&gt; "", "Bank Account: " + Parameters!BankAccountCode.Label, "")</Value>
+                <Value EvaluationMode="Constant" />
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1094,29 +1092,14 @@
       <Query>
         <DataSourceName>dsNewcourt</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@SupplierID">
-            <Value>=Parameters!SupplierID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@SupplierTypeCode">
-            <Value>=Parameters!SupplierTypeCode.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@BankAccountCode">
-            <Value>=Parameters!BankAccountCode.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@DateFrom">
-            <Value>=Parameters!DateFrom.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@DateTo">
-            <Value>=Parameters!DateTo.Value</Value>
+          <QueryParameter Name="@Batch">
+            <Value>=Parameters!Batch.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>select a.PaymentID, a.SupplierID, b.FirstName, b.Surname, b.SupplierTypeCode, a.BankAccountCode, DATEADD(dd, DATEDIFF(dd, 0, a.TimeProcessed), 0) [TimeProcessed], a.Amount
 from Payments a
 inner join Suppliers b on (a.SupplierID = b.SupplierID)
-where (a.SupplierID = @SupplierID or @SupplierID = 0)
-and (b.SupplierTypeCode = @SupplierTypeCode or @SupplierTypeCode = '')
-and (a.BankAccountCode = @BankAccountCode or @BankAccountCode = '')
-and (a.TimeProcessed &gt;= @DateFrom and a.TimeProcessed &lt; DATEADD(DAY, 1, convert(DATETIME, (CONVERT(DATE, @DateTo)))))</CommandText>
+where a.Batch = @Batch</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1154,127 +1137,11 @@ and (a.TimeProcessed &gt;= @DateFrom and a.TimeProcessed &lt; DATEADD(DAY, 1, co
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="dsSuppliers">
-      <Query>
-        <DataSourceName>dsNewcourt</DataSourceName>
-        <CommandText>select SupplierID, FirstName + ' ' + Surname [Name]
-from Suppliers
-union
-select 0, ''</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="SupplierID">
-          <DataField>SupplierID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="dsSupplierTypes">
-      <Query>
-        <DataSourceName>dsNewcourt</DataSourceName>
-        <CommandText>select SupplierTypeCode
-from SupplierTypes
-union
-select ''</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="SupplierTypeCode">
-          <DataField>SupplierTypeCode</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="dsBankAccounts">
-      <Query>
-        <DataSourceName>dsNewcourt</DataSourceName>
-        <CommandText>select BankAccountCode
-from BankAccounts
-union
-select ''</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="BankAccountCode">
-          <DataField>BankAccountCode</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="DateFrom">
-      <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=CDate("01/01/" &amp; Str(DateTime.Now.Year))</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Date From:</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="DateTo">
-      <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=DateTime.Now.Date</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Date To:</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="SupplierID">
+    <ReportParameter Name="Batch">
       <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value>0</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Supplier:</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>dsSuppliers</DataSetName>
-          <ValueField>SupplierID</ValueField>
-          <LabelField>Name</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
-    <ReportParameter Name="SupplierTypeCode">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value />
-        </Values>
-      </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Supplier Type:</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>dsSupplierTypes</DataSetName>
-          <ValueField>SupplierTypeCode</ValueField>
-          <LabelField>SupplierTypeCode</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
-    <ReportParameter Name="BankAccountCode">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value />
-        </Values>
-      </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Bank Account:</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>dsBankAccounts</DataSetName>
-          <ValueField>BankAccountCode</ValueField>
-          <LabelField>BankAccountCode</LabelField>
-        </DataSetReference>
-      </ValidValues>
+      <Prompt>Batch</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-IE</Language>

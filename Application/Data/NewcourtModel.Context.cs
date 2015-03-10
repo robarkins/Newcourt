@@ -35,7 +35,7 @@ namespace Newcourt.Data
         public virtual DbSet<Payments> Payments { get; set; }
         public virtual DbSet<PaymentStaging> PaymentStaging { get; set; }
     
-        public virtual ObjectResult<string> GenerateSEPAPaymentXML(string bankAccountCode, Nullable<System.DateTime> paymentDate, string username)
+        public virtual ObjectResult<string> GenerateSEPAPaymentXML(string bankAccountCode, Nullable<System.DateTime> paymentDate, string username, ObjectParameter batch)
         {
             var bankAccountCodeParameter = bankAccountCode != null ?
                 new ObjectParameter("BankAccountCode", bankAccountCode) :
@@ -49,7 +49,7 @@ namespace Newcourt.Data
                 new ObjectParameter("Username", username) :
                 new ObjectParameter("Username", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GenerateSEPAPaymentXML", bankAccountCodeParameter, paymentDateParameter, usernameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GenerateSEPAPaymentXML", bankAccountCodeParameter, paymentDateParameter, usernameParameter, batch);
         }
     }
 }

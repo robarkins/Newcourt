@@ -62,6 +62,7 @@ go
 
 create table Payments (
 	PaymentID integer identity(1, 1) not null,
+  Batch integer,
 	SupplierID integer references Suppliers(SupplierID) not null,
 	BankAccountCode nvarchar(15) references BankAccounts(BankAccountCode) not null,
 	Username nvarchar(15) references Users(Username) not null,
@@ -110,7 +111,8 @@ create procedure GenerateSEPAPaymentXML
 (
 	@BankAccountCode nvarchar(15),
 	@PaymentDate datetime,
-	@Username nvarchar(15)
+	@Username nvarchar(15),
+	@Batch integer output
 )
 as 
 begin
@@ -169,11 +171,14 @@ begin
 		for xml path('CstmrCdtTrfInitn'), type)
 	for xml path('Document'))
 	
-	select @xml
+	--select @xml
+	
+	select @Batch = coalesce(MAX(Batch), 0) + 1
+	from Payments
 	
 	insert into Payments
-	(SupplierID, BankAccountCode, Username, Amount, TimeProcessed)
-	select SupplierId, @BankAccountCode, @Username, Amount, GETDATE()
+	(SupplierID, BankAccountCode, Username, Amount, TimeProcessed, Batch)
+	select SupplierId, @BankAccountCode, @Username, Amount, GETDATE(), @Batch
 	from PaymentStaging
 	
 	delete from PaymentStaging where Username = @Username

@@ -200,6 +200,12 @@
     <Compile Include="Views\MasterDialogFrm.Designer.cs">
       <DependentUpon>MasterDialogFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PaymentDetailByBatchReportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentDetailByBatchReportFrm.Designer.cs">
+      <DependentUpon>PaymentDetailByBatchReportFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SupplierDialogFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </Compile>
     <EmbeddedResource Include="Views\MasterDialogFrm.resx">
       <DependentUpon>MasterDialogFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentDetailByBatchReportFrm.resx">
+      <DependentUpon>PaymentDetailByBatchReportFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SupplierDialogFrm.resx">
       <DependentUpon>SupplierDialogFrm.cs</DependentUpon>

@@ -13,6 +13,10 @@
       <Name>PaymentDetail.rdl</Name>
       <FullPath>PaymentDetail.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>PaymentDetailByBatch.rdl</Name>
+      <FullPath>PaymentDetailByBatch.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
@@ -21,7 +25,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://rob-laptop/ReportServer</TargetServerURL>
+        <TargetServerURL>http://iis-devel06/ReportServer</TargetServerURL>
         <TargetFolder>Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>

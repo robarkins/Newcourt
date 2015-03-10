@@ -96,7 +96,9 @@ namespace Newcourt.Controls
                             }
 
                             SavePaymentStaging();
-                            String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username);
+                            int batch = 0;
+                            String xml = Data_Procedures.GenerateSEPAPaymentsXML(bankAccountCode, dtPaymentDate.Value, Global.Username, ref batch);
+
                             using (StreamWriter sw = new StreamWriter(dlgSaveFile.FileName))
                             {
                                 sw.WriteLine(xml);
@@ -104,6 +106,8 @@ namespace Newcourt.Controls
 
                             bsRecords.DataSource = null;
                             Utils.ShowInformation("SEPA Payment file created!");
+
+                            new PaymentDetailByBatchReportFrm(batch).ShowDialog();
                         }
                     }
                 }

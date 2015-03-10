@@ -9,11 +9,6 @@
       <End Role="SupplierTypes" EntitySet="SupplierTypes" />
       <End Role="Suppliers" EntitySet="Suppliers" />
     </AssociationSet>
-    <FunctionImport Name="GenerateSEPAPaymentXML" ReturnType="Collection(String)">
-      <Parameter Name="BankAccountCode" Mode="In" Type="String" />
-      <Parameter Name="PaymentDate" Mode="In" Type="DateTime" />
-      <Parameter Name="Username" Mode="In" Type="String" />
-    </FunctionImport>
     <EntitySet Name="BankAccounts" EntityType="NewcourtModel.BankAccounts" />
     <EntitySet Name="Payments" EntityType="NewcourtModel.Payments" />
     <AssociationSet Name="FK__Payments__BankAc__3E52440B" Association="NewcourtModel.FK__Payments__BankAc__3E52440B">
@@ -37,6 +32,12 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="PaymentStaging" EntitySet="PaymentStaging" />
     </AssociationSet>
+    <FunctionImport Name="GenerateSEPAPaymentXML" ReturnType="Collection(String)">
+      <Parameter Name="BankAccountCode" Mode="In" Type="String" />
+      <Parameter Name="PaymentDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Batch" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Suppliers">
     <Key>
@@ -142,6 +143,7 @@
     <NavigationProperty Name="BankAccounts" Relationship="NewcourtModel.FK__Payments__BankAc__3E52440B" FromRole="Payments" ToRole="BankAccounts" />
     <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Payments" ToRole="Suppliers" />
     <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Payments" ToRole="Users" />
+    <Property Name="Batch" Type="Int32" />
   </EntityType>
   <Association Name="FK__Payments__BankAc__3E52440B">
     <End Type="NewcourtModel.BankAccounts" Role="BankAccounts" Multiplicity="1" />

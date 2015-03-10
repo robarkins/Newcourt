@@ -64,7 +64,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
     <EntitySetMapping Name="BankAccounts">
       <EntityTypeMapping TypeName="NewcourtModel.BankAccounts">
         <MappingFragment StoreEntitySet="BankAccounts">
@@ -79,6 +78,7 @@
     <EntitySetMapping Name="Payments">
       <EntityTypeMapping TypeName="NewcourtModel.Payments">
         <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
           <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -97,5 +97,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
   </EntityContainerMapping>
 </Mapping>
