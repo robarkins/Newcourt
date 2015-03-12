@@ -65,11 +65,6 @@ namespace Newcourt.Views
                     Utils.ShowInformation("You must enter a First Name!");
                     txtFirstName.Focus();
                 }
-                else if (String.IsNullOrWhiteSpace(txtPPSVat.Text))
-                {
-                    Utils.ShowInformation("You must enter a PPS / VAT number!");
-                    txtPPSVat.Focus();
-                }
                 else if (String.IsNullOrWhiteSpace(luSupplierType.Text))
                 {
                     Utils.ShowInformation("You must select a Supplier Type!");
@@ -85,11 +80,6 @@ namespace Newcourt.Views
                     Utils.ShowInformation("You must enter a Bank Name!");
                     txtBankName.Focus();
                 }
-                else if (String.IsNullOrWhiteSpace(txtBankAccNumber.Text))
-                {
-                    Utils.ShowInformation("You must enter a Bank Account Number!");
-                    txtBankAccNumber.Focus();
-                }
                 else if (String.IsNullOrWhiteSpace(txtSortCode.Text))
                 {
                     Utils.ShowInformation("You must enter a Sort Code!");
@@ -104,11 +94,6 @@ namespace Newcourt.Views
                 {
                     Utils.ShowInformation("You must enter an IBAN!");
                     txtIBAN.Focus();
-                }
-                else if (String.IsNullOrWhiteSpace(BankAddress))
-                {
-                    Utils.ShowInformation("You must enter a Bank Address!");
-                    txtBankAddress1.Focus();
                 }
                 else
                 {
@@ -176,7 +161,12 @@ namespace Newcourt.Views
             txtPhone.Text = supplier.Phone;
             txtMobile.Text = supplier.Mobile;
             txtPPSVat.Text = supplier.PPSVat;
-            luSupplierType.SelectedValue = supplier.SupplierTypeCode;
+            
+            if (!String.IsNullOrWhiteSpace(supplier.SupplierTypeCode)) 
+            {
+              luSupplierType.SelectedValue = supplier.SupplierTypeCode;
+            }
+            
             txtBankName.Text = supplier.BankName;
             txtBankAddress1.Text = supplier.BankAddress1;
             txtBankAddress2.Text = supplier.BankAddress2;

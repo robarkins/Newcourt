@@ -42,6 +42,7 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
@@ -346,6 +347,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseTools\Scripts\1.0.0.2.sql" />
+    <Content Include="Images\users.png" />
     <None Include="DatabaseTools\Scripts\1.0.0.1.sql" />
     <Content Include="Images\add.png" />
     <Content Include="Images\bank.png" />

@@ -51,14 +51,14 @@
           <Property Name="Address5" Type="nvarchar" MaxLength="70" />
           <Property Name="Phone" Type="nvarchar" MaxLength="70" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="70" />
-          <Property Name="PPSVat" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="PPSVat" Type="nvarchar" MaxLength="15" />
           <Property Name="BankName" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="BankAddress1" Type="nvarchar" MaxLength="70" />
           <Property Name="BankAddress2" Type="nvarchar" MaxLength="70" />
           <Property Name="BankAddress3" Type="nvarchar" MaxLength="70" />
           <Property Name="BankAddress4" Type="nvarchar" MaxLength="70" />
           <Property Name="BankAddress5" Type="nvarchar" MaxLength="70" />
-          <Property Name="BankAccNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="BankAccNumber" Type="nvarchar" MaxLength="15" />
           <Property Name="SortCode" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="BIC" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="IBAN" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -264,14 +264,14 @@
           <Property Name="Address5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="PPSVat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PPSVat" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="BankName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BankAddress1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BankAddress2" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BankAddress3" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BankAddress4" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BankAddress5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="BankAccNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="SortCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="BIC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />

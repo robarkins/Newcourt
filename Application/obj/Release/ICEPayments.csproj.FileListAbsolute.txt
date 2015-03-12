@@ -5,7 +5,6 @@ C:\Development\Newcourt\Application\bin\Release\EntityFramework.dll
 C:\Development\Newcourt\Application\bin\Release\EntityFramework.SqlServer.dll
 C:\Development\Newcourt\Application\bin\Release\EntityFramework.xml
 C:\Development\Newcourt\Application\bin\Release\EntityFramework.SqlServer.xml
-C:\Development\Newcourt\Application\obj\Release\ICEPayments.csprojResolveAssemblyReference.cache
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.BankAccountBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterBrowseCtrl.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.MasterEnquiryCtrl.resources
@@ -21,6 +20,7 @@ C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.LoginDialogFrm.re
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.Main.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Properties.Resources.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.MasterDialogFrm.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.PaymentDetailByBatchReportFrm.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.SupplierDialogFrm.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.SupplierSelectDialogFrm.resources
 C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.SupplierTypeDialogFrm.resources
@@ -29,3 +29,4 @@ C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.UserDialogFrm.res
 C:\Development\Newcourt\Application\obj\Release\ICEPayments.csproj.GenerateResource.Cache
 C:\Development\Newcourt\Application\obj\Release\Newcourt.exe
 C:\Development\Newcourt\Application\obj\Release\Newcourt.pdb
+C:\Development\Newcourt\Application\obj\Release\ICEPayments.csprojResolveAssemblyReference.cache

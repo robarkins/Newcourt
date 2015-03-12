@@ -26,8 +26,7 @@ namespace Newcourt.Views {
         ReportParameter[] param = new ReportParameter[1];
         param[0] = new ReportParameter("Batch", batch.ToString());
 
-        //rptViewer.ServerReport.ReportServerUrl = new Uri(@"http://ROB-LAPTOP/ReportServer");
-        rptViewer.ServerReport.ReportServerUrl = new Uri(@"http://IIS-DEVEL06/ReportServer");
+        rptViewer.ServerReport.ReportServerUrl = Global.ReportServer;
         rptViewer.ServerReport.ReportPath = "/Reports/PaymentDetailByBatch";
 
         rptViewer.ServerReport.SetParameters(param);
