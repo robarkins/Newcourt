@@ -27,6 +27,8 @@
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).BeginInit();
       this.grpRecords.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.bsRecords)).BeginInit();
@@ -35,8 +37,12 @@
       // grdRecords
       // 
       this.grdRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+      // 
+      // grpRecords
+      // 
+      this.grpRecords.Text = "Bank Identifier Codes";
       // 
       // bsRecords
       // 
@@ -70,6 +76,20 @@
       this.dataGridViewTextBoxColumn4.HeaderText = "Bank Identifier Code";
       this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
       // 
+      // dataGridViewTextBoxColumn5
+      // 
+      this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
+      this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+      this.dataGridViewTextBoxColumn5.Visible = false;
+      // 
+      // dataGridViewTextBoxColumn6
+      // 
+      this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.dataGridViewTextBoxColumn6.DataPropertyName = "Code";
+      this.dataGridViewTextBoxColumn6.HeaderText = "Bank Identifier Code";
+      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+      // 
       // BankIdentifierCodesCtrl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,5 +111,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
   }
 }

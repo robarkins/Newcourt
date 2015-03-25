@@ -25,5 +25,6 @@ namespace Newcourt.Data
         public string Address5 { get; set; }
         public string Phone { get; set; }
         public string VatRegNo { get; set; }
+        public string PaymentRef { get; set; }
     }
 }

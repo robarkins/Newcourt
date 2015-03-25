@@ -184,6 +184,7 @@
       <DependentUpon>NewcourtModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="SortableBindingList.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Views\BankAccountDialogFrm.cs">
       <SubType>Form</SubType>

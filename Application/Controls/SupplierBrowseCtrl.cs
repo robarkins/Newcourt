@@ -102,7 +102,7 @@ namespace Newcourt.Controls
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                bsRecords.DataSource = Data_Supplier.GetSuppliers();
+                bsRecords.DataSource = Data_Supplier.GetSortableSuppliers();
             }
             catch (Exception ex)
             {
@@ -112,6 +112,32 @@ namespace Newcourt.Controls
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+
+        private void grdRecords_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+          DataGridViewColumn newColumn = grdRecords.Columns[e.ColumnIndex];
+          DataGridViewColumn oldColumn = grdRecords.SortedColumn;
+          ListSortDirection direction;
+
+          if (oldColumn != null) {
+            if (oldColumn == newColumn && grdRecords.SortOrder == SortOrder.Ascending) {
+              direction = ListSortDirection.Descending;
+            } else {
+              direction = ListSortDirection.Ascending;
+              oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+            }
+          } else {
+            direction = ListSortDirection.Ascending;
+          }
+
+          grdRecords.Sort(newColumn, direction);
+          newColumn.HeaderCell.SortGlyphDirection = direction == ListSortDirection.Ascending ? SortOrder.Ascending : SortOrder.Descending;
+        }
+
+        private void grdRecords_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) {
+          foreach (DataGridViewColumn column in grdRecords.Columns) {
+            column.SortMode = DataGridViewColumnSortMode.Programmatic;
+          }
         }
     }
 }

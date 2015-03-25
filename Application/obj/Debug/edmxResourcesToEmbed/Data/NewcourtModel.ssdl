@@ -87,6 +87,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="70" />
     <Property Name="VatRegNo" Type="nvarchar" MaxLength="15" />
     <Property Name="SepaFileCount" Type="int" />
+    <Property Name="PaymentRef" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -172,6 +173,7 @@
   <Function Name="GenerateSEPAPaymentXML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="BankAccountCode" Type="nvarchar" Mode="In" />
     <Parameter Name="PaymentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PaymentRef" Type="nvarchar" Mode="In" />
     <Parameter Name="Username" Type="nvarchar" Mode="In" />
     <Parameter Name="Batch" Type="int" Mode="InOut" />
   </Function>

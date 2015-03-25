@@ -40,6 +40,7 @@
     <EntitySetMapping Name="SystemParameters">
       <EntityTypeMapping TypeName="NewcourtModel.SystemParameters">
         <MappingFragment StoreEntitySet="SystemParameters">
+          <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
           <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address5" ColumnName="Address5" />
