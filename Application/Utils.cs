@@ -21,6 +21,10 @@ namespace Newcourt
         {
             MessageBox.Show(message, Global.CompanyName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void ShowWarning(String message) {
+          MessageBox.Show(message, Global.CompanyName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         
         public static void ShowException(Exception ex)
         {
@@ -156,6 +160,42 @@ namespace Newcourt
                 }
             }
 
+        }
+
+        public static bool ValidIBAN(String iban) {
+
+          String countryCode = iban.Substring(0, 2);
+          String newIban = String.Empty;
+
+          if (countryCode == "IE") {
+            if (iban.Length != 22) {
+              return false;
+            }
+          }
+
+          // Move first four chars to end
+          iban = iban.Substring(4, iban.Length - 4) + iban.Substring(0, 4);
+          
+          // Replace each letter with 
+          foreach (char c in iban) {
+            if (Char.IsLetter(c)) {
+              newIban += (char.ToUpper(c) - 55).ToString();
+            } else {
+              newIban += c;
+            }
+          }
+
+          // Verify Checksum
+          return VerifyChecksum(newIban);;
+        }
+
+        private static bool VerifyChecksum(String n) {
+          int n1 = Convert.ToInt32(n.Substring(0, 9)) % 97;
+          int n2 = Convert.ToInt32(n1.ToString() + n.Substring(9, 7)) % 97;
+          int n3 = Convert.ToInt32(n2.ToString() + n.Substring(16, 7)) % 97;
+          int n4 = Convert.ToInt32(n3.ToString() + n.Substring(23, 5)) % 97;
+
+          return n4 == 1;
         }
     }
 }

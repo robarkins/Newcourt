@@ -10,6 +10,13 @@
     <Property Name="IBAN" Type="nvarchar" MaxLength="35" Nullable="false" />
     <Property Name="OIN" Type="nvarchar" MaxLength="35" Nullable="false" />
   </EntityType>
+  <EntityType Name="BankIdentifierCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="11" Nullable="false" />
+  </EntityType>
   <EntityType Name="Payments">
     <Key>
       <PropertyRef Name="PaymentID" />
@@ -46,14 +53,14 @@
     <Property Name="Address5" Type="nvarchar" MaxLength="70" />
     <Property Name="Phone" Type="nvarchar" MaxLength="70" />
     <Property Name="Mobile" Type="nvarchar" MaxLength="70" />
-    <Property Name="PPSVat" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PPSVat" Type="nvarchar" MaxLength="15" />
     <Property Name="BankName" Type="nvarchar" MaxLength="70" Nullable="false" />
     <Property Name="BankAddress1" Type="nvarchar" MaxLength="70" />
     <Property Name="BankAddress2" Type="nvarchar" MaxLength="70" />
     <Property Name="BankAddress3" Type="nvarchar" MaxLength="70" />
     <Property Name="BankAddress4" Type="nvarchar" MaxLength="70" />
     <Property Name="BankAddress5" Type="nvarchar" MaxLength="70" />
-    <Property Name="BankAccNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="BankAccNumber" Type="nvarchar" MaxLength="15" />
     <Property Name="SortCode" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="BIC" Type="nvarchar" MaxLength="11" Nullable="false" />
     <Property Name="IBAN" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -170,6 +177,7 @@
   </Function>
   <EntityContainer Name="NewcourtModelStoreContainer">
     <EntitySet Name="BankAccounts" EntityType="Self.BankAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BankIdentifierCodes" EntityType="Self.BankIdentifierCodes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentStaging" EntityType="Self.PaymentStaging" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />

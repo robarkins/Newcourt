@@ -98,5 +98,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
+    <EntitySetMapping Name="BankIdentifierCodes">
+      <EntityTypeMapping TypeName="NewcourtModel.BankIdentifierCodes">
+        <MappingFragment StoreEntitySet="BankIdentifierCodes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

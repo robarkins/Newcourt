@@ -105,6 +105,11 @@ namespace Newcourt.Views
             }
         }
 
+
+        private void btnBankIdentifierCodes_Click(object sender, EventArgs e) {
+          AddTab(new BankIdentifierCodesCtrl());
+        }
+
         private void btnCloseTab_Click(object sender, EventArgs e)
         {
             try

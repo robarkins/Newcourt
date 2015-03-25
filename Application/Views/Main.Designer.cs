@@ -54,6 +54,7 @@
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ddbUsers = new System.Windows.Forms.ToolStripDropDownButton();
       this.btnUserAccounts = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnBankIdentifierCodes = new System.Windows.Forms.ToolStripMenuItem();
       this.cmsTabControl.SuspendLayout();
       this.ucToolStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -103,7 +104,8 @@
       // ddbSystem
       // 
       this.ddbSystem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSystemParams});
+            this.btnSystemParams,
+            this.btnBankIdentifierCodes});
       this.ddbSystem.Image = ((System.Drawing.Image)(resources.GetObject("ddbSystem.Image")));
       this.ddbSystem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
       this.ddbSystem.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -251,9 +253,16 @@
       // btnUserAccounts
       // 
       this.btnUserAccounts.Name = "btnUserAccounts";
-      this.btnUserAccounts.Size = new System.Drawing.Size(152, 22);
+      this.btnUserAccounts.Size = new System.Drawing.Size(150, 22);
       this.btnUserAccounts.Text = "User Accounts";
       this.btnUserAccounts.Click += new System.EventHandler(this.btnUserAccounts_Click);
+      // 
+      // btnBankIdentifierCodes
+      // 
+      this.btnBankIdentifierCodes.Name = "btnBankIdentifierCodes";
+      this.btnBankIdentifierCodes.Size = new System.Drawing.Size(200, 30);
+      this.btnBankIdentifierCodes.Text = "Bank Identifier Codes";
+      this.btnBankIdentifierCodes.Click += new System.EventHandler(this.btnBankIdentifierCodes_Click);
       // 
       // Main
       // 
@@ -300,6 +309,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnPaymentDetail;
+        private System.Windows.Forms.ToolStripMenuItem btnBankIdentifierCodes;
     }
 }
 

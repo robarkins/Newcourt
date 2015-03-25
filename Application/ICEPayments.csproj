@@ -66,6 +66,12 @@
     <Compile Include="Controls\BankAccountBrowseCtrl.Designer.cs">
       <DependentUpon>BankAccountBrowseCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BankIdentifierCodesCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BankIdentifierCodesCtrl.Designer.cs">
+      <DependentUpon>BankIdentifierCodesCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MasterBrowseCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,7 +135,11 @@
     <Compile Include="Data\BankAccounts.cs">
       <DependentUpon>NewcourtModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\BankIdentifierCodes.cs">
+      <DependentUpon>NewcourtModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Data_BankAccount.cs" />
+    <Compile Include="Data\Data_BankIdentifierCode.cs" />
     <Compile Include="Data\Data_Payment.cs" />
     <Compile Include="Data\Data_PaymentStaging.cs" />
     <Compile Include="Data\Data_Procedures.cs" />
@@ -180,6 +190,12 @@
     </Compile>
     <Compile Include="Views\BankAccountDialogFrm.Designer.cs">
       <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankIdentifierCodeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BankIdentifierCodeDlg.Designer.cs">
+      <DependentUpon>BankIdentifierCodeDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginDialogFrm.cs">
       <SubType>Form</SubType>
@@ -240,6 +256,9 @@
     <EmbeddedResource Include="Controls\BankAccountBrowseCtrl.resx">
       <DependentUpon>BankAccountBrowseCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BankIdentifierCodesCtrl.resx">
+      <DependentUpon>BankIdentifierCodesCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MasterBrowseCtrl.resx">
       <DependentUpon>MasterBrowseCtrl.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BankAccountDialogFrm.resx">
       <DependentUpon>BankAccountDialogFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BankIdentifierCodeDlg.resx">
+      <DependentUpon>BankIdentifierCodeDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginDialogFrm.resx">
       <DependentUpon>LoginDialogFrm.cs</DependentUpon>
@@ -326,6 +348,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_BankAccount.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_BankAccounts.datasource" />
+    <None Include="Properties\DataSources\Newcourt.Data.Data_BankIdentifierCode.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_Payment.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_PaymentStaging.datasource" />
     <None Include="Properties\DataSources\Newcourt.Data.Data_Supplier.datasource" />
@@ -348,6 +371,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseTools\Scripts\1.0.0.2.sql" />
+    <Content Include="DatabaseTools\Scripts\1.0.0.3.sql" />
     <Content Include="Images\users.png" />
     <None Include="DatabaseTools\Scripts\1.0.0.1.sql" />
     <Content Include="Images\add.png" />
