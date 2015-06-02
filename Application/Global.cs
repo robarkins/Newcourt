@@ -10,7 +10,7 @@ namespace Newcourt
     public class Global
     {
         public const String FKVIOLATIONMSG = "{0} {1} cannot be deleted as it is currently referenced by another record in the system!";
-        public const String DBVERSION = "1.0.0.2";
+        public const String DBVERSION = "1.0.0.3";
 
         public static String Username { get; set; }
         public static bool IsAdmin { get; set; }

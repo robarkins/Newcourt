@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="NewcourtModel.PaymentStaging" Width="1.5" PointX="5.25" PointY="9.375" />
         <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Suppl__531856C7" />
         <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Usern__5224328E" />
-        <EntityTypeShape EntityType="NewcourtModel.BankIdentifierCodes" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewcourtModel.BankIdentifierCodes" Width="2" PointX="7.875" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

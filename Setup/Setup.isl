@@ -1904,6 +1904,7 @@
 		<row><td>NewShortcut21</td><td/></row>
 		<row><td>PROJECT_ASSISTANT_DEFAULT_FEATURE</td><td>AlwaysInstall</td></row>
 		<row><td>PROJECT_ASSISTANT_FEATURES</td><td>NonSelectable</td></row>
+		<row><td>UNINST_Uninstall_ICE_Payments</td><td/></row>
 	</table>
 
 	<table name="ISBillBoard">
@@ -3752,7 +3753,7 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.newcourtas.ie</td><td>0</td><td/><td>1763956588</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.newcourtas.ie</td><td>0</td><td/><td>321064302</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Robert Arkins</td><td>0</td><td/><td>1763960332</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>ISESEP~1|ISE SEPA Payments</td><td>0</td><td/><td>1763921644</td></row>
 		<row><td>ID_STRING3</td><td>1036</td><td>NEWSHO~1|NewShortcut1</td><td>0</td><td/><td>1763911404</td></row>
@@ -3760,6 +3761,8 @@
 		<row><td>ID_STRING4</td><td>1036</td><td>NEWSHO~1|NewShortcut2</td><td>0</td><td/><td>1763915789</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>ICEPAY~1|ICE Payments</td><td>0</td><td/><td>1763930285</td></row>
 		<row><td>ID_STRING5</td><td>1036</td><td>ICEPAY~1|ICE Payments</td><td>0</td><td/><td>1763930285</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td/><td>0</td><td/><td>321097070</td></row>
+		<row><td>ID_STRING6</td><td>1036</td><td/><td>0</td><td/><td>321097070</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1763948012</td></row>
 	</table>
 
@@ -3870,7 +3873,7 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>NewShortcut21_DFB790DBA28D4159A40C10A100EC9E28.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
 		<row><td>NewShortcut2_3A43E9E40BE24B8A81DCE396AEF0F506.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_I_DD37EEC65B8B4F01BC33C3E2A4D01B98.exe</td><td/><td>C:\Program Files\InstallShield\2013LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
+		<row><td>UNINST_Uninstall_I_0B14593860D94F11820D2B637812AAB4.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4379,7 +4382,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/></row>
 		<row><td>ProductName</td><td>ICE Payments</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0002</td><td/></row>
+		<row><td>ProductVersion</td><td>1.00.0003</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4544,7 +4547,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I4">ISAttributes</col>
 		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut2_3A43E9E40BE24B8A81DCE396AEF0F506.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut21</td><td>ice_payments</td><td>##ID_STRING4##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut21_DFB790DBA28D4159A40C10A100EC9E28.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>UNINST_Uninstall_ICE_Payments</td><td>ice_payments</td><td>UNINST|Uninstall ICE Payments</td><td>NewComponent2</td><td>[SystemFolder]msiexec.exe</td><td>/x {17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/><td/><td>UNINST_Uninstall_I_DD37EEC65B8B4F01BC33C3E2A4D01B98.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_ICE_Payments</td><td>ice_payments</td><td>UNINST|Uninstall ICE Payments</td><td>NewComponent2</td><td>[SystemFolder]msiexec.exe</td><td>/x {17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/><td/><td>UNINST_Uninstall_I_0B14593860D94F11820D2B637812AAB4.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

@@ -35,9 +35,11 @@
     <FunctionImport Name="GenerateSEPAPaymentXML" ReturnType="Collection(String)">
       <Parameter Name="BankAccountCode" Mode="In" Type="String" />
       <Parameter Name="PaymentDate" Mode="In" Type="DateTime" />
+      <Parameter Name="PaymentRef" Mode="In" Type="String" />
       <Parameter Name="Username" Mode="In" Type="String" />
       <Parameter Name="Batch" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="BankIdentifierCodes" EntityType="NewcourtModel.BankIdentifierCodes" />
   </EntityContainer>
   <EntityType Name="Suppliers">
     <Key>
@@ -92,6 +94,7 @@
     <Property Name="Address5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="VatRegNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentRef" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -216,4 +219,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="BankIdentifierCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

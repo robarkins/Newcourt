@@ -29,4 +29,7 @@ C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.UserDialogFrm.res
 C:\Development\Newcourt\Application\obj\Release\ICEPayments.csproj.GenerateResource.Cache
 C:\Development\Newcourt\Application\obj\Release\Newcourt.exe
 C:\Development\Newcourt\Application\obj\Release\Newcourt.pdb
-C:\Development\Newcourt\Application\obj\Release\ICEPayments.csprojResolveAssemblyReference.cache
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.BankIdentifierCodesCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.SupplierListReportCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Controls.SupplierListWithBankReportCtrl.resources
+C:\Development\Newcourt\Application\obj\Release\Newcourt.Views.BankIdentifierCodeDlg.resources

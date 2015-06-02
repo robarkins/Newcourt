@@ -978,7 +978,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.025in</Top>
+          <Top>0.0375in</Top>
           <Left>5.26042in</Left>
           <Height>0.25in</Height>
           <Width>2in</Width>
@@ -1157,10 +1157,11 @@ and (a.TimeProcessed &gt;= @DateFrom and a.TimeProcessed &lt; DATEADD(DAY, 1, co
     <DataSet Name="dsSuppliers">
       <Query>
         <DataSourceName>dsNewcourt</DataSourceName>
-        <CommandText>select SupplierID, FirstName + ' ' + Surname [Name]
+        <CommandText>select SupplierID, FirstName + ' ' + Surname [Name], Surname
 from Suppliers
 union
-select 0, ''</CommandText>
+select 0, '', ''
+order by Surname</CommandText>
       </Query>
       <Fields>
         <Field Name="SupplierID">
@@ -1171,6 +1172,10 @@ select 0, ''</CommandText>
           <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Surname">
+          <DataField>Surname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="dsSupplierTypes">
@@ -1179,7 +1184,8 @@ select 0, ''</CommandText>
         <CommandText>select SupplierTypeCode
 from SupplierTypes
 union
-select ''</CommandText>
+select ''
+order by SupplierTypeCode</CommandText>
       </Query>
       <Fields>
         <Field Name="SupplierTypeCode">
@@ -1194,7 +1200,8 @@ select ''</CommandText>
         <CommandText>select BankAccountCode
 from BankAccounts
 union
-select ''</CommandText>
+select ''
+order by BankAccountCode</CommandText>
       </Query>
       <Fields>
         <Field Name="BankAccountCode">

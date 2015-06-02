@@ -40,6 +40,7 @@
     <EntitySetMapping Name="SystemParameters">
       <EntityTypeMapping TypeName="NewcourtModel.SystemParameters">
         <MappingFragment StoreEntitySet="SystemParameters">
+          <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
           <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address5" ColumnName="Address5" />
@@ -98,5 +99,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
+    <EntitySetMapping Name="BankIdentifierCodes">
+      <EntityTypeMapping TypeName="NewcourtModel.BankIdentifierCodes">
+        <MappingFragment StoreEntitySet="BankIdentifierCodes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

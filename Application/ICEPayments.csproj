@@ -108,6 +108,18 @@
     <Compile Include="Controls\SupplierBrowseCtrl.Designer.cs">
       <DependentUpon>SupplierBrowseCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SupplierListReportCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SupplierListReportCtrl.Designer.cs">
+      <DependentUpon>SupplierListReportCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SupplierListWithBankReportCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SupplierListWithBankReportCtrl.Designer.cs">
+      <DependentUpon>SupplierListWithBankReportCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SupplierTypeBrowseCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -277,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SupplierBrowseCtrl.resx">
       <DependentUpon>SupplierBrowseCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SupplierListReportCtrl.resx">
+      <DependentUpon>SupplierListReportCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SupplierListWithBankReportCtrl.resx">
+      <DependentUpon>SupplierListWithBankReportCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SupplierTypeBrowseCtrl.resx">
       <DependentUpon>SupplierTypeBrowseCtrl.cs</DependentUpon>

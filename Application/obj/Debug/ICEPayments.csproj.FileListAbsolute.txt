@@ -77,3 +77,6 @@ C:\Development\Newcourt\Application\obj\Debug\Newcourt.exe
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.pdb
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.BankIdentifierCodesCtrl.resources
 C:\Development\Newcourt\Application\obj\Debug\Newcourt.Views.BankIdentifierCodeDlg.resources
+C:\Development\Newcourt\Application\obj\Debug\ICEPayments.csprojResolveAssemblyReference.cache
+C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.SupplierListReportCtrl.resources
+C:\Development\Newcourt\Application\obj\Debug\Newcourt.Controls.SupplierListWithBankReportCtrl.resources

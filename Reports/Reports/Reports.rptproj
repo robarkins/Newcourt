@@ -17,6 +17,14 @@
       <Name>PaymentDetailByBatch.rdl</Name>
       <FullPath>PaymentDetailByBatch.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>SupplierList.rdl</Name>
+      <FullPath>SupplierList.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SupplierListWithBank.rdl</Name>
+      <FullPath>SupplierListWithBank.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
@@ -25,7 +33,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://iis-devel06/ReportServer</TargetServerURL>
+        <TargetServerURL>http://station1010:8080/ReportServer</TargetServerURL>
         <TargetFolder>Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
