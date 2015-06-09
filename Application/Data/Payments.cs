@@ -21,6 +21,7 @@ namespace Newcourt.Data
         public decimal Amount { get; set; }
         public System.DateTime TimeProcessed { get; set; }
         public Nullable<int> Batch { get; set; }
+        public string PaymentRef { get; set; }
     
         public virtual BankAccounts BankAccounts { get; set; }
         public virtual Suppliers Suppliers { get; set; }

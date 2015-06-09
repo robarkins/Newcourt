@@ -40,6 +40,7 @@
     <EntitySetMapping Name="SystemParameters">
       <EntityTypeMapping TypeName="NewcourtModel.SystemParameters">
         <MappingFragment StoreEntitySet="SystemParameters">
+          <ScalarProperty Name="HideSensitiveSupplierFields" ColumnName="HideSensitiveSupplierFields" />
           <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
           <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -79,6 +80,7 @@
     <EntitySetMapping Name="Payments">
       <EntityTypeMapping TypeName="NewcourtModel.Payments">
         <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
           <ScalarProperty Name="Batch" ColumnName="Batch" />
           <ScalarProperty Name="TimeProcessed" ColumnName="TimeProcessed" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -89,20 +91,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
+    <EntitySetMapping Name="BankIdentifierCodes">
+      <EntityTypeMapping TypeName="NewcourtModel.BankIdentifierCodes">
+        <MappingFragment StoreEntitySet="BankIdentifierCodes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PaymentStaging">
       <EntityTypeMapping TypeName="NewcourtModel.PaymentStaging">
         <MappingFragment StoreEntitySet="PaymentStaging">
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
           <ScalarProperty Name="Username" ColumnName="Username" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="GenerateSEPAPaymentXML" FunctionName="NewcourtModel.Store.GenerateSEPAPaymentXML" />
-    <EntitySetMapping Name="BankIdentifierCodes">
-      <EntityTypeMapping TypeName="NewcourtModel.BankIdentifierCodes">
-        <MappingFragment StoreEntitySet="BankIdentifierCodes">
-          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

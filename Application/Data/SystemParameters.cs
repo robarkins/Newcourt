@@ -26,5 +26,6 @@ namespace Newcourt.Data
         public string Phone { get; set; }
         public string VatRegNo { get; set; }
         public string PaymentRef { get; set; }
+        public Nullable<short> HideSensitiveSupplierFields { get; set; }
     }
 }

@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAANqSURBVDhPbZJrTNNXGMaPBrUC3XAzi7aTFUpbSzsuba2RdkCLYKF1eCmIQkRRUbRiKSDd0BJn
+        mqJUFBGktMhloAaNgnE4EyVxJuOieDdGNy/LNP1gNH4YW7H8+/gvWxdY9uGXnPfN8zw57zkvATCFBCMv
+        JHG30KEwCUYVJr5XUUJjFLgTdvFt8iJu2H/1U4ovDEFtXxrnehMPRiDdJURW5xKsoUl3iqCyCsHL/dTD
+        1BBZQC/bEln4r5ljml4tqvwYuZ3JOH2nCVd/vYDehx1oGzkCW38pNp/RQesSg5/3CcXWz6pdkMN4Jyng
+        UBPm8G/IJnHVR76WITveed7gofsWanr2QG9TUbm2DKqq24gTw3aU/7AeGS0iJFmEyD65GPSIfweIbcG3
+        N7Rr6CPgAwV5Vfh7ViHRsdZPmy3cMSc4zjSvOa1C5nMN2FF8bg3Sm8TQd/0TsMIpC/WHKOpZGzZ1aj1Z
+        jgTv/DIS4+/5ERQzk7VWuad78AQuPT6DrpuNWOWSI7MtHopSAUWWFPP+jDewHKlO/rSU41yGqJrBCZj9
+        zMonDKGZeWmrQ++78eIarj+7DNegHanNfCSahRTJq02nNLViyA0Ro3EGln6yeTKz80mEqCzs95oeCx6/
+        voddF7KhskRTpPBYFlU3YIGG/jbZbjYiC0JfMnNJxP+F+InZO2ft5sbVf/XdP4ul+8XjZIdjHTX86hqy
+        WxXQOmOwsnURpOVsSrgzrD90KwmebJ63kUQpqzkhkXmhQUtroruW7Zd4iLEln7rj/hmnbjqgOspFZosE
+        y49LoCxfOMbfztQFzKwCwpeaPn+v2hs9ttgcbvb3Uq3iz0hpRwH1y5sHGHjeD0vfNqQ08KCs5PnSrLHt
+        9DYGKxvYQbyikCRpGduzslWKVe2LoLRysGDb9Gf+EFJxspByj/6G73pKcM89jCM/WZDSyIXqEP3K+/je
+        5H0Cr/qAABkOMTaeWoa8TjXoMcDaSY5NBOTUqcdFFWFv6caeNFvM+BD9Vb0PvqdvU0SvtZo2qGA8vxbf
+        XtyC8t58ZDbIwC2bORIYjWjssdmBYn4x4XxljfrD/mMl+h5148qTXpy724bWocOwXi7B8sNSX5R5RkdA
+        PxEwufBDbyZDd1Ri+Lpe+jSnOcmzzqke0zcpRnX1kuvaurjIqXqQD2++OVlNnVydAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="bsRecords.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>137, 17</value>
   </metadata>

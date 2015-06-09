@@ -33,7 +33,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://station1010:8080/ReportServer</TargetServerURL>
+        <TargetServerURL>http://iis-devel06/ReportServer</TargetServerURL>
         <TargetFolder>Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>

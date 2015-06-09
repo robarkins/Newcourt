@@ -19,6 +19,9 @@ namespace Newcourt.Views {
 
       try {
         this.formMode = formMode;
+        if (Global.HideSensitiveSupplierFields) {
+          HideSensitiveFields();
+        }
 
         bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
         if (formMode == Common.FormMode.Add) {
@@ -157,6 +160,23 @@ namespace Newcourt.Views {
       txtSortCode.Text = supplier.SortCode;
       txtBIC.Text = supplier.BIC;
       txtIBAN.Text = supplier.IBAN;
+    }
+
+    private void HideSensitiveFields() {
+      txtPhone.Visible = false;
+      lblPhone.Visible = false;
+      txtMobile.Visible = false;
+      lblMobile.Visible = false;
+      txtPPSVat.Visible = false;
+      lblPPSVat.Visible = false;
+      txtBankAccNumber.Visible = false;
+      lblBankAccNumber.Visible = false;
+      txtBankAddress1.Visible = false;
+      lblBankAddress.Visible = false;
+      txtBankAddress2.Visible = false;
+      txtBankAddress3.Visible = false;
+      txtBankAddress4.Visible = false;
+      txtBankAddress5.Visible = false;
     }
   }
 }

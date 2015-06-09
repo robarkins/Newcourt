@@ -23,15 +23,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Payments" EntitySet="Payments" />
     </AssociationSet>
-    <EntitySet Name="PaymentStaging" EntityType="NewcourtModel.PaymentStaging" />
-    <AssociationSet Name="FK__PaymentSt__Suppl__531856C7" Association="NewcourtModel.FK__PaymentSt__Suppl__531856C7">
-      <End Role="Suppliers" EntitySet="Suppliers" />
-      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PaymentSt__Usern__5224328E" Association="NewcourtModel.FK__PaymentSt__Usern__5224328E">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
-    </AssociationSet>
     <FunctionImport Name="GenerateSEPAPaymentXML" ReturnType="Collection(String)">
       <Parameter Name="BankAccountCode" Mode="In" Type="String" />
       <Parameter Name="PaymentDate" Mode="In" Type="DateTime" />
@@ -40,6 +31,15 @@
       <Parameter Name="Batch" Mode="InOut" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="BankIdentifierCodes" EntityType="NewcourtModel.BankIdentifierCodes" />
+    <EntitySet Name="PaymentStaging" EntityType="NewcourtModel.PaymentStaging" />
+    <AssociationSet Name="FK__PaymentSt__Suppl__3D5E1FD2" Association="NewcourtModel.FK__PaymentSt__Suppl__3D5E1FD2">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentSt__Usern__3C69FB99" Association="NewcourtModel.FK__PaymentSt__Usern__3C69FB99">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PaymentStaging" EntitySet="PaymentStaging" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Suppliers">
     <Key>
@@ -69,7 +69,7 @@
     <Property Name="IBAN" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SupplierTypes" Relationship="NewcourtModel.FK__Suppliers__Suppl__17F790F9" FromRole="Suppliers" ToRole="SupplierTypes" />
     <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Suppliers" ToRole="Payments" />
-    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Suppl__531856C7" FromRole="Suppliers" ToRole="PaymentStaging" />
+    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Suppl__3D5E1FD2" FromRole="Suppliers" ToRole="PaymentStaging" />
   </EntityType>
   <EntityType Name="SupplierTypes">
     <Key>
@@ -95,6 +95,7 @@
     <Property Name="Phone" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="VatRegNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="PaymentRef" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="HideSensitiveSupplierFields" Type="Int16" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -105,7 +106,7 @@
     <Property Name="IsAdmin" Type="Byte" Nullable="false" />
     <Property Name="LastLoggedIn" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Payments" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Users" ToRole="Payments" />
-    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Usern__5224328E" FromRole="Users" ToRole="PaymentStaging" />
+    <NavigationProperty Name="PaymentStaging" Relationship="NewcourtModel.FK__PaymentSt__Usern__3C69FB99" FromRole="Users" ToRole="PaymentStaging" />
   </EntityType>
   <Association Name="FK__Suppliers__Suppl__17F790F9">
     <End Type="NewcourtModel.SupplierTypes" Role="SupplierTypes" Multiplicity="0..1" />
@@ -147,6 +148,7 @@
     <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" FromRole="Payments" ToRole="Suppliers" />
     <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__Payments__Userna__3F466844" FromRole="Payments" ToRole="Users" />
     <Property Name="Batch" Type="Int32" />
+    <Property Name="PaymentRef" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Payments__BankAc__3E52440B">
     <End Type="NewcourtModel.BankAccounts" Role="BankAccounts" Multiplicity="1" />
@@ -184,18 +186,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="BankIdentifierCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="PaymentStaging">
     <Key>
-      <PropertyRef Name="Username" />
-      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="SupplierId" Type="Int32" Nullable="false" />
     <Property Name="Amount" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
-    <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__PaymentSt__Suppl__531856C7" FromRole="PaymentStaging" ToRole="Suppliers" />
-    <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__PaymentSt__Usern__5224328E" FromRole="PaymentStaging" ToRole="Users" />
+    <NavigationProperty Name="Suppliers" Relationship="NewcourtModel.FK__PaymentSt__Suppl__3D5E1FD2" FromRole="PaymentStaging" ToRole="Suppliers" />
+    <NavigationProperty Name="Users" Relationship="NewcourtModel.FK__PaymentSt__Usern__3C69FB99" FromRole="PaymentStaging" ToRole="Users" />
   </EntityType>
-  <Association Name="FK__PaymentSt__Suppl__531856C7">
+  <Association Name="FK__PaymentSt__Suppl__3D5E1FD2">
     <End Type="NewcourtModel.Suppliers" Role="Suppliers" Multiplicity="1" />
     <End Type="NewcourtModel.PaymentStaging" Role="PaymentStaging" Multiplicity="*" />
     <ReferentialConstraint>
@@ -207,7 +216,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PaymentSt__Usern__5224328E">
+  <Association Name="FK__PaymentSt__Usern__3C69FB99">
     <End Type="NewcourtModel.Users" Role="Users" Multiplicity="1" />
     <End Type="NewcourtModel.PaymentStaging" Role="PaymentStaging" Multiplicity="*" />
     <ReferentialConstraint>
@@ -219,11 +228,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="BankIdentifierCodes">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Code" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

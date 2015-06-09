@@ -31,6 +31,7 @@ namespace Newcourt.Data {
     public String SupplierTypeName { get; set; }
     public decimal? PaymentAmount { get; set; }
     public bool PaymentExists { get; set; }
+    public bool IsValidForPayment { get; set; }
 
     public static List<Data_Supplier> GetSuppliers() {
       try {
@@ -176,7 +177,8 @@ namespace Newcourt.Data {
                          SortCode = a.SortCode,
                          BIC = a.BIC,
                          IBAN = a.IBAN,
-                         SupplierTypeName = a.SupplierTypes.Name
+                         SupplierTypeName = a.SupplierTypes.Name,
+                         IsValidForPayment = true
                        }).ToList();
 
           List<Data_PaymentStaging> payments = Data_PaymentStaging.GetPaymentStagingByUsername(username);
@@ -185,6 +187,10 @@ namespace Newcourt.Data {
             foreach (var i in suppliers) {
               if (payments.Exists(a => a.SuppplierId == i.SupplierID)) {
                 i.PaymentExists = true;
+              }
+
+              if (String.IsNullOrEmpty(i.BIC) || String.IsNullOrEmpty(i.IBAN)) {
+                i.IsValidForPayment = false;
               }
             }
           }
@@ -268,7 +274,7 @@ namespace Newcourt.Data {
       }
     }
 
-    public static List<Data_Supplier> SearchSuppliers(String username, String keyword, String supplierTypeCode) {
+    public static List<Data_Supplier> SearchSuppliers(String username, String keyword, String supplierTypeCode, bool includeBank) {
       try {
         List<Data_Supplier> suppliers = null;
 
@@ -277,6 +283,7 @@ namespace Newcourt.Data {
           suppliers = (from a in ctx.Suppliers
                        where (keyword == String.Empty || a.FirstName.Contains(keyword) || a.Surname.Contains(keyword) || a.Address1.Contains(keyword)
                              || a.Address2.Contains(keyword) || a.Address3.Contains(keyword) || a.Address4.Contains(keyword) || a.Address5.Contains(keyword))
+                             || (includeBank && a.BIC.Contains(keyword)) || (includeBank && a.BIC.Contains(keyword))
                        where (a.SupplierTypes.SupplierTypeCode == supplierTypeCode || supplierTypeCode == String.Empty)
                        select new Data_Supplier() {
                          SupplierID = a.SupplierID,
@@ -301,7 +308,8 @@ namespace Newcourt.Data {
                          SortCode = a.SortCode,
                          BIC = a.BIC,
                          IBAN = a.IBAN,
-                         SupplierTypeName = a.SupplierTypes.Name
+                         SupplierTypeName = a.SupplierTypes.Name,
+                         IsValidForPayment = true
                        }).ToList();
 
           List<Data_PaymentStaging> payments = Data_PaymentStaging.GetPaymentStagingByUsername(username);
@@ -310,6 +318,10 @@ namespace Newcourt.Data {
             foreach (var i in suppliers) {
               if (payments.Exists(a => a.SuppplierId == i.SupplierID)) {
                 i.PaymentExists = true;
+              }
+
+              if (i.BIC.Trim() == String.Empty || i.IBAN.Trim() == String.Empty) {
+                i.IsValidForPayment = false;
               }
             }
           }

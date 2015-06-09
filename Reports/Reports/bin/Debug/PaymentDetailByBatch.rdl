@@ -1142,6 +1142,7 @@ where a.Batch = @Batch</CommandText>
     <ReportParameter Name="Batch">
       <DataType>Integer</DataType>
       <Prompt>Batch</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <Language>en-IE</Language>

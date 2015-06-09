@@ -22,6 +22,15 @@ namespace Newcourt.Controls {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
                 bsBankAccounts.DataSource = Data_BankAccount.GetBankAccounts();
                 txtReference.Text = Data_SystemParameters.GetPaymentRef();
+
+                String regAmount = Utils.GetRegistryValue("PaymentAmount") == null ? "0" : Utils.GetRegistryValue("PaymentAmount").ToString();
+                decimal amount;
+                if (!Decimal.TryParse(regAmount, out amount)) {
+                  throw new Exception("Error retrieving Amount from Registry! Invalid decimal type.");
+                }
+                numAmount.Value = amount;
+
+
                 GetRecords();
             }
             catch(Exception ex)
@@ -101,7 +110,8 @@ namespace Newcourt.Controls {
     }
 
     private void btnAdd_Click(object sender, EventArgs e) {
-      SupplierSelectDialogFrm frm = new SupplierSelectDialogFrm();
+      decimal amount = numAmount.Value;
+      SupplierSelectDialogFrm frm = new SupplierSelectDialogFrm(amount);
 
       if (frm.ShowDialog() == DialogResult.OK) {
         GetRecords();
@@ -186,6 +196,14 @@ namespace Newcourt.Controls {
     private void grdRecords_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
       try {
         grdRecords.Sort(grdRecords.Columns[e.ColumnIndex], ListSortDirection.Ascending);
+      } catch (Exception ex) {
+        Utils.ShowException(ex);
+      }
+    }
+
+    private void numAmount_Leave(object sender, EventArgs e) {
+      try {
+        Utils.SaveRegistryValue("PaymentAmount", numAmount.Value);
       } catch (Exception ex) {
         Utils.ShowException(ex);
       }

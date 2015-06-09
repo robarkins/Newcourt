@@ -9,6 +9,7 @@ namespace Newcourt.Data
 {
     public class Data_PaymentStaging
     {
+        public int ID { get; set; }
         public String Username { get; set; }
         public int SuppplierId { get; set; }
         public decimal Amount { get; set; }
@@ -29,8 +30,10 @@ namespace Newcourt.Data
                 {
                     return (from a in ctx.PaymentStaging
                             where a.Username == username
+                            orderby a.ID
                             select new Data_PaymentStaging()
                             {
+                                ID = a.ID,
                                 Username = a.Username,
                                 SuppplierId = a.SupplierId,
                                 Amount = a.Amount,

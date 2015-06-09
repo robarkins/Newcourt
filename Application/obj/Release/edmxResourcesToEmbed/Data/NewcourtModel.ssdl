@@ -28,12 +28,13 @@
     <Property Name="Amount" Type="numeric" Precision="15" Scale="2" Nullable="false" />
     <Property Name="TimeProcessed" Type="datetime" Nullable="false" />
     <Property Name="Batch" Type="int" />
+    <Property Name="PaymentRef" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="PaymentStaging">
     <Key>
-      <PropertyRef Name="Username" />
-      <PropertyRef Name="SupplierId" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="SupplierId" Type="int" Nullable="false" />
     <Property Name="Amount" Type="numeric" Precision="15" Scale="2" Nullable="false" />
@@ -88,6 +89,7 @@
     <Property Name="VatRegNo" Type="nvarchar" MaxLength="15" />
     <Property Name="SepaFileCount" Type="int" />
     <Property Name="PaymentRef" Type="nvarchar" MaxLength="128" />
+    <Property Name="HideSensitiveSupplierFields" Type="smallint" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -134,7 +136,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PaymentSt__Suppl__1ED998B2">
+  <Association Name="FK__PaymentSt__Suppl__3D5E1FD2">
     <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
     <End Role="PaymentStaging" Type="Self.PaymentStaging" Multiplicity="*" />
     <ReferentialConstraint>
@@ -146,7 +148,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PaymentSt__Usern__1DE57479">
+  <Association Name="FK__PaymentSt__Usern__3C69FB99">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="PaymentStaging" Type="Self.PaymentStaging" Multiplicity="*" />
     <ReferentialConstraint>
@@ -198,11 +200,11 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Payments" EntitySet="Payments" />
     </AssociationSet>
-    <AssociationSet Name="FK__PaymentSt__Suppl__1ED998B2" Association="Self.FK__PaymentSt__Suppl__1ED998B2">
+    <AssociationSet Name="FK__PaymentSt__Suppl__3D5E1FD2" Association="Self.FK__PaymentSt__Suppl__3D5E1FD2">
       <End Role="Suppliers" EntitySet="Suppliers" />
       <End Role="PaymentStaging" EntitySet="PaymentStaging" />
     </AssociationSet>
-    <AssociationSet Name="FK__PaymentSt__Usern__1DE57479" Association="Self.FK__PaymentSt__Usern__1DE57479">
+    <AssociationSet Name="FK__PaymentSt__Usern__3C69FB99" Association="Self.FK__PaymentSt__Usern__3C69FB99">
       <End Role="Users" EntitySet="Users" />
       <End Role="PaymentStaging" EntitySet="PaymentStaging" />
     </AssociationSet>

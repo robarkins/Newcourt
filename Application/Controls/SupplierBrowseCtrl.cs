@@ -93,7 +93,17 @@ namespace Newcourt.Controls
             }
             catch (Exception ex)
             {
-                Utils.ShowException(ex);
+              if (ex.InnerException != null)
+              {
+                if (ex.InnerException.InnerException != null) {
+                  if (ex.InnerException.InnerException.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint")) {
+                    Utils.ShowInformation("Cannot delete! Supplier is associated with one or more transactions.");
+                    return;
+                  }
+                }
+              }
+
+               Utils.ShowException(ex);
             }
         }
 
@@ -138,6 +148,10 @@ namespace Newcourt.Controls
           foreach (DataGridViewColumn column in grdRecords.Columns) {
             column.SortMode = DataGridViewColumnSortMode.Programmatic;
           }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e) {
+          bsRecords.DataSource = Data_Supplier.SearchSuppliers(Global.Username, txtSearchTerm.Text.Trim(), String.Empty, true);
         }
     }
 }

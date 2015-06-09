@@ -43,7 +43,7 @@ namespace Newcourt.Views
 #if DEBUG
                 DialogResult = DialogResult.OK;
                 int test = loginAttemps;
-                Global.InitGlobalVariables("Admin", true, "Irish School of English");
+                Global.InitGlobalVariables("Admin", true, "Irish School of English", false);
 #else
                 Cursor.Current = Cursors.WaitCursor;
                 Data_User user = Data_User.GetUser(txtUsername.Text.Trim(), txtPassword.Text);
@@ -52,12 +52,13 @@ namespace Newcourt.Views
                 {
                     if (!VerifyDatabaseVersion())
                     {
-                        Utils.ShowError("The database is out of date for the current system. System load cannot contune. Please contact your administrator.");
+                        Utils.ShowError("The database is out of date for the current system. System load cannot continue. Please contact your administrator.");
                         Application.Exit();
                     }
 
-                    String companyName = Data_SystemParameters.GetCompanyName();
-                    Global.InitGlobalVariables(user.Username, user.IsAdmin, companyName);
+                    //String companyName = Data_SystemParameters.GetCompanyName();
+                    Data_SystemParameters systemParams = Data_SystemParameters.GetSystemParameters();
+                    Global.InitGlobalVariables(user.Username, user.IsAdmin, systemParams.CompanyName, systemParams.HideSensitiveSupplierFields);
                     Utils.SaveRegistryValue(Common.KEY_USERLOGIN, txtUsername.Text);
                     DialogResult = DialogResult.OK;
                 }

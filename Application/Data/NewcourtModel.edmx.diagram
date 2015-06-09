@@ -15,10 +15,10 @@
         <AssociationConnector Association="NewcourtModel.FK__Payments__BankAc__3E52440B" />
         <AssociationConnector Association="NewcourtModel.FK__Payments__Suppli__3D5E1FD2" />
         <AssociationConnector Association="NewcourtModel.FK__Payments__Userna__3F466844" />
-        <EntityTypeShape EntityType="NewcourtModel.PaymentStaging" Width="1.5" PointX="5.25" PointY="9.375" />
-        <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Suppl__531856C7" />
-        <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Usern__5224328E" />
         <EntityTypeShape EntityType="NewcourtModel.BankIdentifierCodes" Width="2" PointX="7.875" PointY="0.75" />
+        <EntityTypeShape EntityType="NewcourtModel.PaymentStaging" Width="1.5" PointX="8.25" PointY="6.25" />
+        <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Suppl__3D5E1FD2" />
+        <AssociationConnector Association="NewcourtModel.FK__PaymentSt__Usern__3C69FB99" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

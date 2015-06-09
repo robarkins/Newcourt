@@ -37,13 +37,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.4425in</Width>
+              <Width>2.15083in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.38in</Width>
+              <Width>1.30708in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.35917in</Width>
+              <Width>1.22375in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.0675in</Width>
@@ -123,6 +123,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -266,6 +267,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -401,6 +403,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -537,6 +540,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -674,6 +678,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -760,7 +765,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.01125in</Size>
+                <Size>0.93833in</Size>
                 <CellContents>
                   <Textbox Name="Textbox81">
                     <CanGrow>true</CanGrow>
@@ -798,7 +803,48 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <KeepTogether>true</KeepTogether>
+                  <TablixHeader>
+                    <Size>0.57292in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox19">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Batch</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox19</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>SteelBlue</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
@@ -814,7 +860,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.01125in</Size>
+                <Size>0.93833in</Size>
                 <CellContents>
                   <Textbox Name="TimeProcessed">
                     <CanGrow>true</CanGrow>
@@ -850,27 +896,152 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="table1_Details_Group">
-                    <DataElementName>Detail</DataElementName>
-                  </Group>
+                  <TablixHeader>
+                    <Size>0.57292in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox20">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox20</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
                   <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
-                  <DataElementName>Detail_Collection</DataElementName>
-                  <DataElementOutput>Output</DataElementOutput>
-                  <KeepTogether>true</KeepTogether>
+                  <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
+                  <Group Name="Batch">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Batch.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Batch.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.57292in</Size>
+                    <CellContents>
+                      <Textbox Name="Batch">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Batch.Value</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Batch</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="table1_Details_Group">
+                        <DataElementName>Detail</DataElementName>
+                      </Group>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                      <DataElementName>Detail_Collection</DataElementName>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.57292in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox22">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1.01125in</Size>
+                <Size>0.93833in</Size>
                 <CellContents>
                   <Textbox Name="Textbox5">
                     <CanGrow>true</CanGrow>
@@ -904,7 +1075,45 @@
                   </Textbox>
                 </CellContents>
               </TablixHeader>
-              <KeepWithGroup>Before</KeepWithGroup>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.57292in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox23">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox23</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
@@ -952,7 +1161,7 @@
     <Height>1.92889in</Height>
     <Style />
   </Body>
-  <Width>7.26042in</Width>
+  <Width>8.26042in</Width>
   <Page>
     <PageHeader>
       <Height>0.32167in</Height>
@@ -1109,14 +1318,19 @@
           <QueryParameter Name="@DateTo">
             <Value>=Parameters!DateTo.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@Batch">
+            <Value>=Parameters!Batch.Value</Value>
+          </QueryParameter>
         </QueryParameters>
-        <CommandText>select a.PaymentID, a.SupplierID, b.FirstName, b.Surname, b.SupplierTypeCode, a.BankAccountCode, DATEADD(dd, DATEDIFF(dd, 0, a.TimeProcessed), 0) [TimeProcessed], a.Amount
+        <CommandText>select a.PaymentID, a.SupplierID, b.FirstName, b.Surname, b.SupplierTypeCode, a.BankAccountCode, DATEADD(dd, DATEDIFF(dd, 0, a.TimeProcessed), 0) [TimeProcessed], a.Amount, a.Batch
 from Payments a
 inner join Suppliers b on (a.SupplierID = b.SupplierID)
 where (a.SupplierID = @SupplierID or @SupplierID = 0)
 and (b.SupplierTypeCode = @SupplierTypeCode or @SupplierTypeCode = '')
 and (a.BankAccountCode = @BankAccountCode or @BankAccountCode = '')
-and (a.TimeProcessed &gt;= @DateFrom and a.TimeProcessed &lt; DATEADD(DAY, 1, convert(DATETIME, (CONVERT(DATE, @DateTo)))))</CommandText>
+and (a.TimeProcessed &gt; = @DateFrom or @DateFrom is null) 
+and (a.TimeProcessed &lt; DATEADD(DAY, 1, convert(DATETIME, (CONVERT(DATE, @DateTo)))) or @DateTo is null)
+and (a.Batch = @Batch or @Batch is null)</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1151,6 +1365,10 @@ and (a.TimeProcessed &gt;= @DateFrom and a.TimeProcessed &lt; DATEADD(DAY, 1, co
         <Field Name="Amount">
           <DataField>Amount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Batch">
+          <DataField>Batch</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1210,24 +1428,37 @@ order by BankAccountCode</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsBatch">
+      <Query>
+        <DataSourceName>dsNewcourt</DataSourceName>
+        <CommandText>select distinct Batch, CAST(Batch as varchar(10)) + ' - ' + CAST(TimeProcessed as varchar(20)) [Description]
+from Payments
+where Batch is not null
+union 
+select null, null
+order by Batch</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Batch">
+          <DataField>Batch</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="DateFrom">
       <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=CDate("01/01/" &amp; Str(DateTime.Now.Year))</Value>
-        </Values>
-      </DefaultValue>
+      <Nullable>true</Nullable>
       <Prompt>Date From:</Prompt>
     </ReportParameter>
     <ReportParameter Name="DateTo">
       <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=DateTime.Now.Date</Value>
-        </Values>
-      </DefaultValue>
+      <Nullable>true</Nullable>
       <Prompt>Date To:</Prompt>
     </ReportParameter>
     <ReportParameter Name="SupplierID">
@@ -1280,6 +1511,23 @@ order by BankAccountCode</CommandText>
           <DataSetName>dsBankAccounts</DataSetName>
           <ValueField>BankAccountCode</ValueField>
           <LabelField>BankAccountCode</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Batch">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+        </Values>
+      </DefaultValue>
+      <Prompt>Batch:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsBatch</DataSetName>
+          <ValueField>Batch</ValueField>
+          <LabelField>Description</LabelField>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>

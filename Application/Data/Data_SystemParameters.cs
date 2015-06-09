@@ -16,6 +16,8 @@ namespace Newcourt.Data {
     public String Phone { get; set; }
     public String VatRegNo { get; set; }
     public int SepaFileCount { get; set; }
+    public bool HideSensitiveSupplierFields { get; set; }
+
 
     public static Data_SystemParameters GetSystemParameters() {
       try {
@@ -31,7 +33,8 @@ namespace Newcourt.Data {
                     Address5 = a.Address5,
                     Phone = a.Phone,
                     VatRegNo = a.VatRegNo,
-                    SepaFileCount = a.SepaFileCount ?? 0
+                    SepaFileCount = a.SepaFileCount ?? 0,
+                    HideSensitiveSupplierFields = (a.HideSensitiveSupplierFields == 0 || a.HideSensitiveSupplierFields == null) ? false : true
                   }).FirstOrDefault();
         }
       } catch (Exception ex) {
@@ -53,6 +56,7 @@ namespace Newcourt.Data {
             param.Address5 = systemParams.Address5;
             param.Phone = systemParams.Phone;
             param.VatRegNo = systemParams.VatRegNo;
+            param.HideSensitiveSupplierFields = systemParams.HideSensitiveSupplierFields == true ? (short)1 : (short)0;
           } else {
             ctx.SystemParameters.Add(new SystemParameters() {
               ID = 1,
@@ -63,7 +67,8 @@ namespace Newcourt.Data {
               Address4 = systemParams.Address4,
               Address5 = systemParams.Address5,
               Phone = systemParams.Phone,
-              VatRegNo = systemParams.VatRegNo
+              VatRegNo = systemParams.VatRegNo,
+              HideSensitiveSupplierFields = systemParams.HideSensitiveSupplierFields == true ? (short)1 : (short)0
             });
           }
 

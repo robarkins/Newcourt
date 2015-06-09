@@ -461,9 +461,15 @@
     <DataSet Name="dsSuppliers">
       <Query>
         <DataSourceName>dsNewcourt</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SupplierTypeCode">
+            <Value>=Parameters!SupplierTypeCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select a.*, b.Name [SupplierTypeName]
 from Suppliers a
 left join SupplierTypes b on (a.SupplierTypeCode = b.SupplierTypeCode)
+where (a.SupplierTypeCode = @SupplierTypeCode or @SupplierTypeCode = '')
 order by a.Surname</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -562,7 +568,46 @@ order by a.Surname</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsSupplierTypes">
+      <Query>
+        <DataSourceName>dsNewcourt</DataSourceName>
+        <CommandText>select *
+from SupplierTypes
+union
+select '', ''
+order by SupplierTypeCode</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SupplierTypeCode">
+          <DataField>SupplierTypeCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SupplierTypeCode">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Supplier Type Code</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsSupplierTypes</DataSetName>
+          <ValueField>SupplierTypeCode</ValueField>
+          <LabelField>Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

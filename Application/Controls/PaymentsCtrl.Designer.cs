@@ -33,6 +33,10 @@ namespace Newcourt.Controls
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentsCtrl));
       this.grpOptions = new System.Windows.Forms.GroupBox();
+      this.numAmount = new Newcourt.Controls.NumericUpDownNoSpinner();
+      this.lblAmount = new System.Windows.Forms.Label();
+      this.txtReference = new System.Windows.Forms.TextBox();
+      this.lblReference = new System.Windows.Forms.Label();
       this.lblPaymentDate = new System.Windows.Forms.Label();
       this.dtPaymentDate = new System.Windows.Forms.DateTimePicker();
       this.luBankAccounts = new System.Windows.Forms.ComboBox();
@@ -62,9 +66,8 @@ namespace Newcourt.Controls
       this.btnCreateFile = new System.Windows.Forms.Button();
       this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
       this.bsSupplierTypes = new System.Windows.Forms.BindingSource(this.components);
-      this.lblReference = new System.Windows.Forms.Label();
-      this.txtReference = new System.Windows.Forms.TextBox();
       this.grpOptions.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.bsBankAccounts)).BeginInit();
       this.grpSuppliers.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.grdRecords)).BeginInit();
@@ -77,6 +80,8 @@ namespace Newcourt.Controls
       // 
       // grpOptions
       // 
+      this.grpOptions.Controls.Add(this.numAmount);
+      this.grpOptions.Controls.Add(this.lblAmount);
       this.grpOptions.Controls.Add(this.txtReference);
       this.grpOptions.Controls.Add(this.lblReference);
       this.grpOptions.Controls.Add(this.lblPaymentDate);
@@ -90,6 +95,41 @@ namespace Newcourt.Controls
       this.grpOptions.TabIndex = 0;
       this.grpOptions.TabStop = false;
       this.grpOptions.Text = "Options";
+      // 
+      // numAmount
+      // 
+      this.numAmount.DecimalPlaces = 2;
+      this.numAmount.Location = new System.Drawing.Point(779, 26);
+      this.numAmount.Name = "numAmount";
+      this.numAmount.Size = new System.Drawing.Size(120, 20);
+      this.numAmount.TabIndex = 10;
+      this.numAmount.Leave += new System.EventHandler(this.numAmount_Leave);
+      // 
+      // lblAmount
+      // 
+      this.lblAmount.AutoSize = true;
+      this.lblAmount.Location = new System.Drawing.Point(718, 28);
+      this.lblAmount.Name = "lblAmount";
+      this.lblAmount.Size = new System.Drawing.Size(46, 13);
+      this.lblAmount.TabIndex = 9;
+      this.lblAmount.Text = "Amount:";
+      // 
+      // txtReference
+      // 
+      this.txtReference.Location = new System.Drawing.Point(566, 25);
+      this.txtReference.MaxLength = 128;
+      this.txtReference.Name = "txtReference";
+      this.txtReference.Size = new System.Drawing.Size(121, 20);
+      this.txtReference.TabIndex = 8;
+      // 
+      // lblReference
+      // 
+      this.lblReference.AutoSize = true;
+      this.lblReference.Location = new System.Drawing.Point(490, 28);
+      this.lblReference.Name = "lblReference";
+      this.lblReference.Size = new System.Drawing.Size(60, 13);
+      this.lblReference.TabIndex = 7;
+      this.lblReference.Text = "Reference:";
       // 
       // lblPaymentDate
       // 
@@ -355,23 +395,6 @@ namespace Newcourt.Controls
       // 
       this.bsSupplierTypes.DataSource = typeof(Newcourt.Data.Data_SupplierType);
       // 
-      // lblReference
-      // 
-      this.lblReference.AutoSize = true;
-      this.lblReference.Location = new System.Drawing.Point(490, 28);
-      this.lblReference.Name = "lblReference";
-      this.lblReference.Size = new System.Drawing.Size(60, 13);
-      this.lblReference.TabIndex = 7;
-      this.lblReference.Text = "Reference:";
-      // 
-      // txtReference
-      // 
-      this.txtReference.Location = new System.Drawing.Point(566, 25);
-      this.txtReference.MaxLength = 128;
-      this.txtReference.Name = "txtReference";
-      this.txtReference.Size = new System.Drawing.Size(121, 20);
-      this.txtReference.TabIndex = 8;
-      // 
       // PaymentsCtrl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +407,7 @@ namespace Newcourt.Controls
       this.Tag = "SEPA Payments Wizard";
       this.grpOptions.ResumeLayout(false);
       this.grpOptions.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numAmount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.bsBankAccounts)).EndInit();
       this.grpSuppliers.ResumeLayout(false);
       this.grpSuppliers.PerformLayout();
@@ -432,5 +456,7 @@ namespace Newcourt.Controls
         private System.Windows.Forms.DataGridViewTextBoxColumn address5DataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblReference;
         private System.Windows.Forms.TextBox txtReference;
+        private System.Windows.Forms.Label lblAmount;
+        private NumericUpDownNoSpinner numAmount;
     }
 }

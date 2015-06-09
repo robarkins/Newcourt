@@ -341,8 +341,11 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ICEPayments.Primary_output</td><td>{9C5C46F2-C252-4DB9-AB34-3DA9EB68F932}</td><td>INSTALLDIR</td><td>2</td><td/><td>icepayments.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{41CCB372-D25B-414E-A332-E60FBC8078EB}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NewComponent1</td><td>{FFDADDC1-29ED-43E2-9ACE-B4BD8782C153}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NewComponent2</td><td>{9861503B-C388-41C0-8068-4B0E1907B9FB}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NewComponent3</td><td>{BC1109AF-AD7E-4D0B-9A97-489BF43F125B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NewComponent4</td><td>{B0BAAE4A-1447-40F2-99AF-3F7EBB0916E0}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1053,6 +1056,8 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>NewComponent1</td></row>
 		<row><td>INSTALLDIR</td><td>NewComponent2</td></row>
+		<row><td>INSTALLDIR</td><td>NewComponent3</td></row>
+		<row><td>INSTALLDIR</td><td>NewComponent4</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1174,9 +1179,7 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
-		<row><td>ice_payments</td><td>robert_1_robert_arkins</td><td>ICEPAY~1|ice payments</td><td/><td>1</td><td/></row>
-		<row><td>ise_sepa_payments</td><td>robert_1_robert_arkins</td><td>ISESEP~1|ise sepa payments</td><td/><td>1</td><td/></row>
-		<row><td>robert_1_robert_arkins</td><td>ProgramMenuFolder</td><td>robert~1|robert arkins</td><td/><td>1</td><td/></row>
+		<row><td>robert_1_robert_arkins</td><td>ProgramMenuFolder</td><td>ICEPAY~1|ICE Payments</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -1869,8 +1872,11 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ICEPayments.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>NewComponent1</td></row>
 		<row><td>AlwaysInstall</td><td>NewComponent2</td></row>
+		<row><td>AlwaysInstall</td><td>NewComponent3</td></row>
+		<row><td>AlwaysInstall</td><td>NewComponent4</td></row>
 	</table>
 
 	<table name="File">
@@ -1885,6 +1891,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>ice.ico</td><td>ISX_DEFAULTCOMPONENT</td><td>ice.ico</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Development\Newcourt\Setup\ice.ico</td><td>1</td><td/></row>
 		<row><td>icepayments.primary_output</td><td>ICEPayments.Primary_output</td><td>ICEPayments.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;ICEPayments&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
@@ -1905,6 +1912,7 @@
 		<row><td>PROJECT_ASSISTANT_DEFAULT_FEATURE</td><td>AlwaysInstall</td></row>
 		<row><td>PROJECT_ASSISTANT_FEATURES</td><td>NonSelectable</td></row>
 		<row><td>UNINST_Uninstall_ICE_Payments</td><td/></row>
+		<row><td>_Built</td><td/></row>
 	</table>
 
 	<table name="ISBillBoard">
@@ -2032,8 +2040,11 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ICEPayments.Primary_output</td><td/><td/><td>_345832EE_08E9_41EC_B2EC_BA8C93DC94BB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_69AC12C7_12CF_4DBB_856B_26CACE14972A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NewComponent1</td><td/><td/><td>_006E4675_0F13_42E5_9B35_59C0776C20F4_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NewComponent2</td><td/><td/><td>_D7A5A173_15EB_4043_8EB8_1F9BBA991526_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NewComponent3</td><td/><td/><td>_8B42486C_B3E5_41F1_8DC7_2E70242477B8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NewComponent4</td><td/><td/><td>_2764D595_0978_4932_958B_894E06A723E0_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3465,6 +3476,12 @@
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>1763948012</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>ICE Payments</td><td>0</td><td/><td>1126385744</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1036</td><td/><td>0</td><td/><td>1126377552</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>ICE Payments</td><td>0</td><td/><td>1126381872</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1036</td><td/><td>0</td><td/><td>1126373680</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1033</td><td>ICE Payments</td><td>0</td><td/><td>1126398256</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1036</td><td/><td>0</td><td/><td>1126394160</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1763948012</td></row>
@@ -3763,6 +3780,10 @@
 		<row><td>ID_STRING5</td><td>1036</td><td>ICEPAY~1|ICE Payments</td><td>0</td><td/><td>1763930285</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td/><td>0</td><td/><td>321097070</td></row>
 		<row><td>ID_STRING6</td><td>1036</td><td/><td>0</td><td/><td>321097070</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td>ICE Payments</td><td>0</td><td/><td>1126398032</td></row>
+		<row><td>ID_STRING7</td><td>1036</td><td>ICE Payments</td><td>0</td><td/><td>1126398032</td></row>
+		<row><td>ID_STRING8</td><td>1033</td><td>ICE Payments</td><td>0</td><td/><td>1126400304</td></row>
+		<row><td>ID_STRING8</td><td>1036</td><td>ICE Payments</td><td>0</td><td/><td>1126400304</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1763948012</td></row>
 	</table>
 
@@ -3871,9 +3892,9 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
-		<row><td>NewShortcut21_DFB790DBA28D4159A40C10A100EC9E28.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
-		<row><td>NewShortcut2_3A43E9E40BE24B8A81DCE396AEF0F506.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_I_0B14593860D94F11820D2B637812AAB4.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
+		<row><td>UNINST_Uninstall_I_044FD803E37146A9B0917B1E4A703A6E.exe</td><td/><td>C:\Program Files\InstallShield\2013LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
+		<row><td>_Built1_0EFD043A68AF4CB8A061FB0BDAA30F9D.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
+		<row><td>_Built_674324BB474D49C3858A88B484EE6BD6.exe</td><td/><td>&lt;ISProjectFolder&gt;\ice.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4006,7 +4027,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{7DE03CF5-9A89-4716-BE7E-DD9F3F574224}</td></row>
 		<row><td>ISUSSignature</td><td>{5F8C896F-F969-4084-8B50-FFEB428E9E57}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewShortcuts,viewISToday</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewShortcuts,viewISToday,viewSystemSearch</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4382,7 +4403,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/></row>
 		<row><td>ProductName</td><td>ICE Payments</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0003</td><td/></row>
+		<row><td>ProductVersion</td><td>1.00.0004</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4458,8 +4479,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>NewShortcut21</td><td>ICEPayments.Primary_output</td><td/><td>ice_payments</td><td>2</td></row>
-		<row><td>UNINST_Uninstall_ICE_Payments</td><td>NewComponent2</td><td/><td>ice_payments</td><td>2</td></row>
+		<row><td>UNINST_Uninstall_ICE_Payments</td><td>NewComponent4</td><td/><td>robert_1_robert_arkins</td><td>2</td></row>
+		<row><td>_Built</td><td>ICEPayments.Primary_output</td><td/><td>robert_1_robert_arkins</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4545,9 +4566,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING4##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut2_3A43E9E40BE24B8A81DCE396AEF0F506.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut21</td><td>ice_payments</td><td>##ID_STRING4##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>NewShortcut21_DFB790DBA28D4159A40C10A100EC9E28.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>UNINST_Uninstall_ICE_Payments</td><td>ice_payments</td><td>UNINST|Uninstall ICE Payments</td><td>NewComponent2</td><td>[SystemFolder]msiexec.exe</td><td>/x {17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/><td/><td>UNINST_Uninstall_I_0B14593860D94F11820D2B637812AAB4.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_ICE_Payments</td><td>robert_1_robert_arkins</td><td>UNINST|Uninstall ICE Payments</td><td>NewComponent4</td><td>[SystemFolder]msiexec.exe</td><td>/x {17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/><td/><td>UNINST_Uninstall_I_044FD803E37146A9B0917B1E4A703A6E.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built</td><td>robert_1_robert_arkins</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>_Built_674324BB474D49C3858A88B484EE6BD6.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>ICEPayments.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td>_Built1_0EFD043A68AF4CB8A061FB0BDAA30F9D.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

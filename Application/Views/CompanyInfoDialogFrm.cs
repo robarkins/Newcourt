@@ -19,6 +19,10 @@ namespace Newcourt.Views
 
             try
             {
+                if (!Global.IsAdmin) {
+                  chkHideSupplierFields.Enabled = false;
+                }
+
                 Data_SystemParameters systemParams = Data_SystemParameters.GetSystemParameters();
 
                 if (systemParams != null)
@@ -44,6 +48,7 @@ namespace Newcourt.Views
             txtPhone.Text = systemParams.Phone;
             txtVatRegNo.Text = systemParams.VatRegNo;
             txtSepaFileCount.Text = systemParams.SepaFileCount.ToString().PadLeft(6, '0');
+            chkHideSupplierFields.Checked = systemParams.HideSensitiveSupplierFields;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -65,9 +70,11 @@ namespace Newcourt.Views
                     Address4 = txtAddress4.Text.Trim(),
                     Address5 = txtAddress5.Text.Trim(),
                     Phone = txtPhone.Text.Trim(),
-                    VatRegNo = txtVatRegNo.Text.Trim()
+                    VatRegNo = txtVatRegNo.Text.Trim(),
+                    HideSensitiveSupplierFields = chkHideSupplierFields.Checked
                 });
 
+                Global.RefreshGlobalVariables();
                 DialogResult = DialogResult.OK;
             }
         }

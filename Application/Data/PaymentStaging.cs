@@ -14,6 +14,7 @@ namespace Newcourt.Data
     
     public partial class PaymentStaging
     {
+        public int ID { get; set; }
         public string Username { get; set; }
         public int SupplierId { get; set; }
         public decimal Amount { get; set; }

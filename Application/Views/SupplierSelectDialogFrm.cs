@@ -14,13 +14,15 @@ namespace Newcourt.Views
     public partial class SupplierSelectDialogFrm : MasterDialogFrm
     {
         private List<Data_Supplier> suppliers;
-        public SupplierSelectDialogFrm()
+        private decimal amount;
+        public SupplierSelectDialogFrm(decimal amount = 0)
         {
             InitializeComponent();
 
             try
             {
                 bsSupplierTypes.DataSource = Data_SupplierType.GetSupplierTypes();
+                this.amount = amount;
 
                 suppliers = Data_Supplier.GetSuppliersWithPaymentStagingCheck(Global.Username);
                 bsSuppliers.DataSource = suppliers;
@@ -62,7 +64,7 @@ namespace Newcourt.Views
         {
             try
             {
-                suppliers = Data_Supplier.SearchSuppliers(Global.Username, txtSearchKeyword.Text.Trim(), luSupplierType.Text.Trim());
+                suppliers = Data_Supplier.SearchSuppliers(Global.Username, txtSearchKeyword.Text.Trim(), luSupplierType.Text.Trim(), false);
                 bsSuppliers.DataSource = suppliers;
             }
             catch(Exception ex)
@@ -94,7 +96,7 @@ namespace Newcourt.Views
                             {
                                 Username = Global.Username,
                                 SuppplierId = supplier.SupplierID,
-                                Amount = 0
+                                Amount = amount
                             });
                         }
                     }
@@ -118,6 +120,9 @@ namespace Newcourt.Views
                 {
                     grdSuppliers.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = true;
                     e.CellStyle.BackColor = ColorTranslator.FromHtml("#ff3333");
+                } else if (!suppliers[e.RowIndex].IsValidForPayment) {
+                  grdSuppliers.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = true;
+                  e.CellStyle.BackColor = ColorTranslator.FromHtml("#ffff00");
                 }
             }
             catch(Exception ex)
