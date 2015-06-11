@@ -2663,7 +2663,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Robert Arkins</td><td>0</td><td/><td>1763960332</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Robert Arkins</td><td>0</td><td/><td>1394835088</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1033</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>1763948012</td></row>
@@ -3770,8 +3770,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1763948012</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.newcourtas.ie</td><td>0</td><td/><td>321064302</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Robert Arkins</td><td>0</td><td/><td>1763960332</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.RobertArkins.com</td><td>0</td><td/><td>1394835088</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Robert Arkins</td><td>0</td><td/><td>1394835088</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>ISESEP~1|ISE SEPA Payments</td><td>0</td><td/><td>1763921644</td></row>
 		<row><td>ID_STRING3</td><td>1036</td><td>NEWSHO~1|NewShortcut1</td><td>0</td><td/><td>1763911404</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>ICEPAY~1|ICE Payments</td><td>0</td><td/><td>1763919885</td></row>
@@ -4027,7 +4027,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{7DE03CF5-9A89-4716-BE7E-DD9F3F574224}</td></row>
 		<row><td>ISUSSignature</td><td>{5F8C896F-F969-4084-8B50-FFEB428E9E57}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewShortcuts,viewISToday,viewSystemSearch</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewShortcuts,viewISToday,viewSystemSearch,viewSetupDesign,viewUpdateService</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4401,9 +4401,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{17695004-76B0-4980-B76D-77D1B6F1573E}</td><td/></row>
+		<row><td>ProductCode</td><td>{FD2C18D8-6DA4-4DA1-8D17-868C99E0C65A}</td><td/></row>
 		<row><td>ProductName</td><td>ICE Payments</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0004</td><td/></row>
+		<row><td>ProductVersion</td><td>1.000.0001</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4418,7 +4418,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
-		<row><td>UpgradeCode</td><td>{F67166D1-2FDC-463D-AB9B-A919BA33A6AD}</td><td/></row>
+		<row><td>UpgradeCode</td><td>{1A4D6DF1-3FB5-4799-B21F-3D9998F4F140}</td><td/></row>
 		<row><td>_IsMaintenance</td><td>Change</td><td/></row>
 		<row><td>_IsSetupTypeMin</td><td>Typical</td><td/></row>
 	</table>

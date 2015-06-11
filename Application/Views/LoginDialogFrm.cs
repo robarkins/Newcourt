@@ -46,7 +46,7 @@ namespace Newcourt.Views
                 Global.InitGlobalVariables("Admin", true, "Irish School of English", false);
 #else
                 Cursor.Current = Cursors.WaitCursor;
-                Data_User user = Data_User.GetUser(txtUsername.Text.Trim(), txtPassword.Text);
+                Data_User user = Data_User.LoginUser(txtUsername.Text.Trim(), txtPassword.Text);
 
                 if (user != null)
                 {

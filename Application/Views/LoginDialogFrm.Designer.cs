@@ -53,12 +53,14 @@
       // 
       this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
       this.btnSave.Location = new System.Drawing.Point(48, 5);
+      this.btnSave.TabIndex = 0;
       this.btnSave.Text = "Login";
       this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
       // 
       // btnCancel
       // 
       this.btnCancel.Location = new System.Drawing.Point(129, 5);
+      this.btnCancel.TabIndex = 1;
       this.btnCancel.Text = "Close";
       // 
       // grpDetails
@@ -90,14 +92,14 @@
       this.txtPassword.Name = "txtPassword";
       this.txtPassword.PasswordChar = '*';
       this.txtPassword.Size = new System.Drawing.Size(120, 20);
-      this.txtPassword.TabIndex = 2;
+      this.txtPassword.TabIndex = 1;
       // 
       // txtUsername
       // 
       this.txtUsername.Location = new System.Drawing.Point(84, 25);
       this.txtUsername.Name = "txtUsername";
       this.txtUsername.Size = new System.Drawing.Size(120, 20);
-      this.txtUsername.TabIndex = 1;
+      this.txtUsername.TabIndex = 0;
       // 
       // lblUsername
       // 

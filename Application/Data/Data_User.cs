@@ -37,48 +37,47 @@ namespace Newcourt.Data
 
         public static Data_User GetUserByUsername(String username)
         {
+            Data_User user = null;
+
             try
             {
                 using (NewcourtEntities ctx = new NewcourtEntities())
                 {
-                    return (from a in ctx.Users
-                            where a.Username == username
-                            select new Data_User()
-                            {
-                                Username = a.Username,
-                                Password = a.Password,
-                                IsAdmin = a.IsAdmin == 1,
-                                LastLoggedIn = a.LastLoggedIn
-                            }).FirstOrDefault();
+                  user = (from a in ctx.Users
+                          where a.Username == username
+                          select new Data_User() {
+                            Username = a.Username,
+                            Password = a.Password,
+                            IsAdmin = a.IsAdmin == 1,
+                            LastLoggedIn = a.LastLoggedIn
+                          }).FirstOrDefault();
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+              Utils.ShowException(ex);
             }
+
+            return user;
         }
 
-        public static Data_User GetUser(String username, String password)
-        {
-            try
-            {
-                using(NewcourtEntities ctx = new NewcourtEntities())
-                {
-                    return (from a in ctx.Users
-                            where a.Username == username && a.Password == password
-                            select new Data_User()
-                            {
-                                Username = a.Username,
-                                Password = a.Password,
-                                IsAdmin = a.IsAdmin == 1,
-                                LastLoggedIn = a.LastLoggedIn
-                            }).FirstOrDefault();
-                }
+        public static Data_User LoginUser(String username, String password) {
+          Data_User user = null;
+
+          try {
+            user = GetUserByUsername(username);
+
+            // LINQ will not do case-sensitive string comparisons so need to do this locally:
+            if (user != null) {
+              if (!user.Password.Equals(password)) {
+                return null;
+              }
             }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+          } catch (Exception ex) {
+            Utils.ShowException(ex);
+          }
+
+          return user;
         }
 
         public static void SaveUser(Data_User user)
